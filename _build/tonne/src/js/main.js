@@ -1,4 +1,4 @@
-/* By The Tonne site behaviour. Settings from window.BTT; estimator data from window.BTT_ITEMS and BTT_EG. */
+/* BTT (By The Tonne) site behaviour. Settings from window.BTT; estimator data from window.BTT_ITEMS and BTT_EG. */
 (function () {
   "use strict";
   var S = window.BTT || { phone: "0427888222", minKg: 1000, contact: "Nigel" };
@@ -97,6 +97,7 @@
       var big = kg >= S.minKg;
       $("mf-t").textContent = kg >= 1000 ? fmt(kg / 1000, 1) : fmt(kg);
       $("mf-u").textContent = kg >= 1000 ? "tonnes" : "kg";
+      $("mf-t").parentNode.classList.toggle("long", $("mf-t").textContent.length > 5);
       $("mf-sub").innerHTML = lines ? fmt(kg) + "&nbsp;kg · " + lines + (lines === 1 ? " line" : " lines") : "No lines yet";
       var bar = $("mf-bar");
       bar.style.setProperty("--p", Math.min(100, kg / (3 * S.minKg) * 100) + "%");
@@ -108,11 +109,11 @@
         cta.innerHTML = "";
       } else if (big) {
         v.innerHTML = "<b>Over the one-tonne minimum.</b>Send this list for a quote. One service fee, quoted before we&nbsp;come.";
-        cta.innerHTML = '<a class="btn btn-white" href="quote.html?kg=' + Math.round(kg) + "&what=" + encodeURIComponent(what.join(", ")) + '#quote">Request a quote with this list</a>' +
+        cta.innerHTML = '<a class="btn btn-yellow" href="quote.html?kg=' + Math.round(kg) + "&what=" + encodeURIComponent(what.join(", ")) + '#quote">Request a quote with this list</a>' +
           '<a class="btn btn-ghost" href="tel:' + S.phone + '">Call ' + esc(S.contact) + "</a>";
       } else {
         v.innerHTML = "<b>Under a tonne, for now.</b>Add anything else on site, or drop it off at 116 Furner Avenue. Clean scrap metal is no charge at the&nbsp;gate.";
-        cta.innerHTML = '<a class="btn btn-white" href="drop-off.html">Drop-off details</a>';
+        cta.innerHTML = '<a class="btn btn-yellow" href="drop-off.html">Drop-off details</a>';
       }
     };
     render();

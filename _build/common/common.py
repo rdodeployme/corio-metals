@@ -1,4 +1,4 @@
-"""Shared facts, data and checks for the four metal-site concepts.
+"""Shared facts, data and checks for the five metal-site concepts.
 
 One source of truth for the offer, contact, gate fees, can't-take list and item weights,
 so every concept says the same thing. Concept builds import this module.

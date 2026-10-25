@@ -10,9 +10,9 @@ html.rv-on.rv-hidden{--rv:0px}
 .rv-in{height:44px;max-width:1240px;margin:0 auto;padding:0 12px;display:flex;align-items:center;gap:8px}
 .rv-label{font-weight:600;color:#5C6066;margin-right:6px;white-space:nowrap}
 .rv-btn{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 12px;border:1px solid #CFCFCB;border-radius:8px;
-  background:#F6F6F4;color:#16181B;font:inherit;cursor:pointer;white-space:nowrap;min-width:0}
+  background:#F6F6F4;color:#16181B;font:inherit;cursor:pointer;white-space:nowrap;min-width:0;max-width:100%;overflow:hidden}
 .rv-btn:hover,.rv-btn[aria-expanded=true]{background:#EDEDEA;border-color:#B8B8B3}
-.rv-btn b{font-weight:700}
+.rv-btn b{font-weight:700;overflow:hidden;text-overflow:ellipsis}
 .rv-n{color:#6A6E74;font-size:12px}
 .rv-caret{font-size:11px;color:#6A6E74}
 .rv-dots{display:inline-flex}

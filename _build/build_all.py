@@ -2,7 +2,7 @@
 """Build every concept, the review switcher and the comparison page.
 
 python3 _build/build_all.py            # all
-python3 _build/build_all.py corio drop # some
+python3 _build/build_all.py corio drop # some: corio, drop, tonne, shed, rgm, concepts
 """
 import os, sys, shutil, subprocess, re, glob, datetime
 
@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.join(HERE, "common"))
 import common as C  # noqa: E402
 
 CONCEPTS = [("corio", "corio/build.py"), ("drop", "metaldrop/build.py"), ("tonne", "tonne/build.py"),
-            ("shed", "shedload/build.py"), ("concepts", "concepts/build.py")]
+            ("shed", "shedload/build.py"), ("rgm", "rgm/build.py"), ("concepts", "concepts/build.py")]
 
 
 def run(which):

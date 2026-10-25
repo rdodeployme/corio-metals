@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the comparison page: concepts/index.html, with fresh screenshots of each concept.
 
-Neutral on purpose: this page belongs to the review, not to any of the four brands.
+Neutral on purpose: this page belongs to the review, not to any of the five concepts.
 """
 import os, sys, json, html, datetime, threading, functools, http.server
 
@@ -25,18 +25,24 @@ CONCEPTS = [
      "tool": "Item checker: tap what you've got to see no charge, a fee or prep first, and whether to drop off or book a collection.",
      "best": "The order of the brief: a clear public drop-off, then a clear commercial path. The name says what it does.",
      "watch": "The name says drop, so business buyers rely on the Business collections page."},
-    {"id": "tonne", "name": "By The Tonne", "dir": "by-the-tonne/", "dots": ["#0E0E0E", "#8B8E91", "#EFEEEA"],
+    {"id": "tonne", "name": "BTT By The Tonne", "dir": "by-the-tonne/", "dots": ["#0E0E0E", "#FFD200", "#FFFFFF"], "flag": "Redone",
      "line": "Commercial first. Collections from one tonne, every tonne on the record. Drop-off is the second path.",
-     "look": "Black and white editorial: serif headlines, figures in mono, a sample weighbridge docket.",
+     "look": "Black and white with safety yellow: heavy, straight expanded type, a riveted steel nameplate logo, black-and-white photos and a sample weighbridge docket. No serif, no italics.",
      "tool": "Tonnage estimator: list what's on site, see the total against the one-tonne minimum, send the list with the quote.",
-     "best": "Councils, procurement teams and multi-site businesses. Reads as the most corporate of the four.",
-     "watch": "Households find the drop-off on its own page, not front and centre."},
+     "best": "Councils, procurement teams and multi-site businesses. Reads as a serious commercial operator.",
+     "watch": "Households find the drop-off on its own page, not front and centre. BTT needs By The Tonne beside it until people know it."},
     {"id": "shed", "name": "Shedload", "dir": "shedload/", "dots": ["#2C2D2F", "#7C9177", "#EAE3D2"],
      "line": "Brand first. Shedload? Drop it off. Truckload? We'll collect.",
-     "look": "Colorbond shed colours, stencil capitals, poster photos and rubber-stamp labels.",
+     "look": "Colorbond shed colours, stencil capitals, poster photos and labels like rubber stamps.",
      "tool": "Load scale: slide from a bucket to a full site and it tells you which way to go.",
      "best": "A memorable local brand for ads, signage and radio. The tagline explains the one-tonne line by itself.",
      "watch": "Shedload Pty Ltd is registered in Victoria (not in metal or waste). Casual tone for some council buyers."},
+    {"id": "rgm", "name": "Recycle Group Metals", "dir": "recycle-group-metals/", "dots": ["#0E1114", "#C2804F", "#ECEFF1"], "flag": "New",
+     "line": "Master brand. No new name: the offer under Recycle Group, built from Richard's own lines and his directory of 766 items.",
+     "look": "The Recycle Group site's own design: Archivo capitals, copper on light grey with dark bands, and real photos from Furner Avenue (plus three generated collection shots in the same style).",
+     "tool": "Directory finder: search 766 items across 15 sectors, with Specialist items and gate fees flagged, beside how to get it to us.",
+     "best": "Fast approval and instant credibility. The same name as the gate people already drive to, with the group's EPA registration, ISO certifications and YARTA reporting carried straight over.",
+     "watch": "The METALS tag beside the official logo is a proposed lockup, for sign-off. Less punchy than a new brand for ads. It keeps Group in the name because Vic Recycle Metals, a Seaford scrap buyer, already trades."},
 ]
 
 SAME = [
@@ -46,8 +52,8 @@ SAME = [
     "A weighbridge docket for every load, and environmental reporting through YARTA.",
     "Nigel Taylor as the only contact: 0427 888 222, nigel@recycle.net.au. Enquiry forms open an email to Nigel.",
     "The same can't-take list: asbestos, chemicals and hazardous waste, full or hired gas cylinders, firearms and explosives, clinical waste, anything holding fuel or oil.",
-    "“A Recycle Group business” with the official Recycle mark near the logo and in every footer.",
-    "The same item list and guide weights, from one shared source file, so the facts can't drift between versions.",
+    "“A Recycle Group business” with the official Recycle mark near the logo and in every footer. The fifth version is Recycle Group itself.",
+    "The same address, hours, fees, can't-take list and contact from one shared source file, so the facts can't drift between versions.",
 ]
 
 FEEDBACK = [
@@ -57,7 +63,7 @@ FEEDBACK = [
     ("Nigel only", "One contact on every page, form and footer."),
     ("No em dashes", "Checked automatically on every build."),
     ("Easy, Aussie names", "Checked on the ABN register on 25 Oct."),
-    ("Logos that say scrap metal", "A hook-lift bin, a hex nut, a counterweight and a corrugated shed. No sleek app marks."),
+    ("Logos that say scrap metal", "A hook-lift bin, a hex nut, a riveted steel nameplate and a corrugated shed. No sleek app marks. The fifth uses the official Recycle Group logo."),
     ("Not pigeonholed", "Households, trades, business, farms, government and industry in every version."),
     ("Uniform images", "One photo treatment per site, captions that match the shot, nothing cropped awkwardly."),
     ("The tool on the home page", "Inputs above results on phones, results level with the inputs on desktop."),
@@ -66,8 +72,8 @@ FEEDBACK = [
     ("Recycle Group credit", "Near the logo and in every footer."),
     ("YARTA reporting", "On the commercial side of every version."),
     ("Batteries and data", "Batteries taken; drives removed or wiped before IT collections."),
-    ("No pink, orange or blue", "Corio keeps the Recycle Group copper it already had."),
-    ("Published to GitHub", "All four live on the one link, with the switcher at the top."),
+    ("No pink, orange or blue", "Corio and Recycle Group Metals use the Recycle Group copper. BTT uses safety yellow."),
+    ("Published to GitHub", "All five live on the one link, with the switcher at the top."),
 ]
 
 CONFIRM = [
@@ -78,7 +84,8 @@ CONFIRM = [
     "How non-metal parts of a load are charged (sites say the transfer station's usual rate).",
     "The collection minimum fee, the service area, and bin sizes.",
     "Whether a collection statement goes with each docket.",
-    "The final name, domain and email address.",
+    "The final name, domain and email address. BTT is a common set of initials, so check the ABN register and trade marks before committing to it.",
+    "For Recycle Group Metals: the METALS tag beside the official logo, and showing the group's EPA registration and ISO certifications on a metals site (both are on the Recycle Group site now).",
 ]
 
 
@@ -127,7 +134,7 @@ def page():
     <a class="phone" href="../{c["dir"]}" tabindex="-1" aria-hidden="true"><img src="img/{c["id"]}-phone.webp" width="600" height="1298" alt="" loading="lazy"></a>
   </div>
   <div class="txt">
-    <p class="num"><span>{i}</span><span class="dots" aria-hidden="true">{dots}</span></p>
+    <p class="num"><span>{i}</span><span class="dots" aria-hidden="true">{dots}</span>{f'<span class="flag">{esc(c["flag"])}</span>' if c.get("flag") else ""}</p>
     <h2>{esc(c["name"])}</h2>
     <p class="line">{esc(c["line"])}</p>
     <dl>
@@ -148,8 +155,8 @@ def page():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Four concepts for approval | Scrap metal drop-off and collections</title>
-<meta name="description" content="Four versions of the scrap metal site for 116 Furner Avenue, North Geelong: Corio Metals, The Metal Drop, By The Tonne and Shedload. Same offer, four different brands.">
+<title>Five concepts for approval | Scrap metal drop-off and collections</title>
+<meta name="description" content="Five versions of the scrap metal site for 116 Furner Avenue, North Geelong: Corio Metals, The Metal Drop, BTT By The Tonne, Shedload and Recycle Group Metals. Same offer, five different looks.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:,">
 {C.review_script(1)}
@@ -175,6 +182,7 @@ h1{{margin:0 0 14px;font-size:clamp(34px,4.6vw,56px);line-height:1.05}}
 .rec h2{{margin:0 0 8px;font-size:20px}}
 .rec p{{margin:0 0 8px}}
 .rec p:last-child{{margin:0;color:var(--mute);font-size:15px}}
+.rec b{{font-weight:700}}
 .cards{{display:grid;gap:28px;padding:28px 0 20px}}
 .card{{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;align-items:start;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:14px}}
 .shots{{position:relative;padding:0 46px 40px 0}}
@@ -184,6 +192,7 @@ h1{{margin:0 0 14px;font-size:clamp(34px,4.6vw,56px);line-height:1.05}}
 .txt{{min-width:0}}
 .num{{display:flex;align-items:center;gap:10px;margin:0 0 6px;color:var(--mute);font-weight:700}}
 .num span:first-child{{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:14px}}
+.flag{{margin-left:4px;padding:3px 9px;border-radius:999px;background:#EDEDEA;color:var(--ink);font-size:12px;font-weight:700;letter-spacing:.02em}}
 .card h2{{margin:0 0 6px;font-size:clamp(26px,2.6vw,34px);line-height:1.1}}
 .line{{margin:0 0 14px;font-size:18px;color:#33363A}}
 dl{{margin:0 0 16px;border-top:1px solid var(--line)}}
@@ -205,24 +214,25 @@ footer{{padding:28px 0 48px;color:var(--mute);font-size:14px;border-top:1px soli
 <body data-concept="compare" data-page="home">
 <header class="top"><div class="wrap">
   <p class="kick">For approval · {today}</p>
-  <h1>One offer, four brands.</h1>
-  <p class="intro">Four versions of the scrap metal site for 116 Furner Avenue, North Geelong. Each one has a clear public drop-off and commercial collections from one tonne, and none of them pays for metal. They differ in name, look, which path leads, and the tool on the home page. Use the bar at the top of any page to swap between them; it keeps you on the matching&nbsp;page.</p>
+  <h1>One offer, five versions.</h1>
+  <p class="intro">Five versions of the scrap metal site for 116 Furner Avenue, North Geelong. Each one has a clear public drop-off and commercial collections from one tonne, and none of them pays for metal. Four are new brands; the fifth puts the offer under the Recycle Group name. They differ in name, look, which path leads, and the tool on the home page. Use the bar at the top of any page to swap between them; it keeps you on the matching&nbsp;page.</p>
   <ul class="pick">{"".join(f'<li><a href="#{c["id"]}"><span class="dots">{"".join(f"<i style=background:{d}></i>" for d in c["dots"])}</span>{esc(c["name"])}</a></li>' for c in CONCEPTS)}</ul>
   <div class="rec">
-    <h2>If you want one pick: The Metal Drop</h2>
-    <p>It follows the brief's order (public drop-off first, then commercial collections), the name says exactly what it does for signage and Google, its item checker answers the question people ask before they load up, and no conflicting name turned up on the ABN&nbsp;register.</p>
-    <p>If collections are the bigger revenue goal, By The Tonne is the stronger business pitch. If you want the most memorable brand for ads and signs, Shedload, after a check on the existing Shedload Pty&nbsp;Ltd.</p>
+    <h2>The one question that picks it: a new brand, or not?</h2>
+    <p><b>No new brand: Recycle Group Metals.</b> The fastest to approve and launch. It carries the same name as the gate people already drive to, plus the group's EPA registration, ISO certifications and YARTA reporting, and it's built from Richard's own lines and&nbsp;directory.</p>
+    <p><b>A new brand: The Metal Drop.</b> It follows the brief's order, the name says exactly what it does for signage and Google, and its item checker answers the question people ask before they load&nbsp;up.</p>
+    <p>BTT if collections are the bigger revenue goal. Shedload for the most memorable ads and signs, after a check on Shedload Pty&nbsp;Ltd.</p>
   </div>
 </div></header>
 <main class="wrap">
-  <section class="cards" aria-label="The four concepts">{cards}</section>
+  <section class="cards" aria-label="The five concepts">{cards}</section>
   <section class="cols">
-    <div class="box"><h3>The same in all four</h3><ul>{same}</ul></div>
+    <div class="box"><h3>The same in all five</h3><ul>{same}</ul></div>
     <div class="box"><h3>Your feedback, applied</h3><ul>{fb}</ul></div>
     <div class="box"><h3>Needs confirming before launch</h3><ul>{conf}</ul></div>
   </section>
 </main>
-<footer><div class="wrap">Review page for the four concepts. Not part of any brand. Contact for all four: {C.CONTACT_FULL}, {C.PHONE}.</div></footer>
+<footer><div class="wrap">Review page for the five concepts. Not part of any brand. Contact for all five: {C.CONTACT_FULL}, {C.PHONE}.</div></footer>
 </body>
 </html>
 '''

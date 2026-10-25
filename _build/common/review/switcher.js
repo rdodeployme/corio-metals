@@ -11,12 +11,15 @@
     { id: "drop", name: "The Metal Drop", dir: "the-metal-drop/", line: "Public first: an item checker and a dead-easy drop-off",
       dots: ["#FFFFFF", "#D52B1E", "#1B1D20"],
       pages: { home: "index.html", dropoff: "drop-off.html", collect: "business.html", take: "what-we-take.html", contact: "faq.html", load: "what-we-take.html" } },
-    { id: "tonne", name: "By The Tonne", dir: "by-the-tonne/", line: "Commercial first: collections from one tonne, every tonne on the record",
-      dots: ["#0E0E0E", "#8B8E91", "#EFEEEA"],
-      pages: { home: "index.html", dropoff: "drop-off.html", collect: "services.html", take: "what-we-collect.html", contact: "quote.html", load: "drop-off.html", report: "reporting.html" } },
+    { id: "tonne", name: "BTT By The Tonne", dir: "by-the-tonne/", line: "Commercial first: collections from one tonne, every tonne on the record",
+      dots: ["#0E0E0E", "#FFD200", "#FFFFFF"],
+      pages: { home: "index.html", dropoff: "drop-off.html", collect: "services.html", take: "what-we-collect.html", contact: "quote.html", load: "index.html#estimate", report: "reporting.html" } },
     { id: "shed", name: "Shedload", dir: "shedload/", line: "Brand first: Shedload? Drop it off. Truckload? We'll collect.",
       dots: ["#2C2D2F", "#7C9177", "#EAE3D2"],
-      pages: { home: "index.html", dropoff: "drop-off.html", collect: "collect.html", take: "what-we-take.html", contact: "find-us.html", load: "index.html#scale" } }
+      pages: { home: "index.html", dropoff: "drop-off.html", collect: "collect.html", take: "what-we-take.html", contact: "find-us.html", load: "index.html#scale" } },
+    { id: "rgm", name: "Recycle Group Metals", dir: "recycle-group-metals/", line: "Master brand: the group's own name, facility and credentials, with Richard's directory",
+      dots: ["#0E1114", "#C2804F", "#ECEFF1"],
+      pages: { home: "index.html", dropoff: "drop-off.html", collect: "collections.html", take: "what-we-collect.html", contact: "contact.html", load: "index.html#finder", report: "reporting.html" } }
   ];
   var body = document.body;
   var cur = body.getAttribute("data-concept") || "corio";
@@ -42,12 +45,12 @@
       '<span class="rv-label">Concepts for approval</span>' +
       '<a class="rv-arrow" href="' + hrefFor(prev) + '" aria-label="Previous concept: ' + prev.name + '">&#8592;</a>' +
       '<button class="rv-btn" type="button" aria-expanded="false" aria-controls="rv-menu">' +
-        (onCompare ? '<b>Compare all four</b>' :
+        (onCompare ? '<b>Compare all five</b>' :
         '<span class="rv-n">' + (idx + 1) + ' of ' + C.length + '</span>' + dots(C[idx]) + '<b>' + C[idx].name + '</b>') +
         '<span class="rv-caret" aria-hidden="true">&#9662;</span>' +
       '</button>' +
       '<a class="rv-arrow" href="' + hrefFor(next) + '" aria-label="Next concept: ' + next.name + '">&#8594;</a>' +
-      (onCompare ? '<span class="rv-all"></span>' : '<a class="rv-all" href="' + base + 'concepts/">Compare all 4</a>') +
+      (onCompare ? '<span class="rv-all"></span>' : '<a class="rv-all" href="' + base + 'concepts/">Compare all 5</a>') +
       '<button class="rv-hide" type="button" aria-label="Hide the concept bar">Hide</button>' +
     '</div>' +
     '<div class="rv-menu" id="rv-menu" hidden><ol>' +
@@ -56,7 +59,7 @@
           '<span class="rv-num">' + (i + 1) + '</span>' + dots(c) +
           '<span class="rv-txt"><b>' + c.name + '</b><small>' + c.line + '</small></span></a></li>';
       }).join("") +
-      '<li class="rv-cmp"><a href="' + base + 'concepts/"' + (onCompare ? ' aria-current="true"' : '') + '><span class="rv-txt"><b>Compare all four side by side</b><small>What each one is for, and what is the same in all of them</small></span></a></li>' +
+      '<li class="rv-cmp"><a href="' + base + 'concepts/"' + (onCompare ? ' aria-current="true"' : '') + '><span class="rv-txt"><b>Compare all five side by side</b><small>What each one is for, and what is the same in all of them</small></span></a></li>' +
     '</ol></div>';
   var tab = document.createElement("button");
   tab.className = "rv-tab"; tab.type = "button";

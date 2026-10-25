@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build By The Tonne (concept 3): commercial first. Collections from one tonne, every tonne on the record.
+"""Build BTT By The Tonne (concept 3): commercial first. Collections from one tonne, every tonne on the record.
 
 Output: by-the-tonne/ in the repo.
 """
@@ -12,7 +12,8 @@ import common as C  # noqa: E402
 SRC = os.path.join(ROOT, "src")
 SITE = os.path.join(C.REPO, "by-the-tonne")
 DEPTH = 1
-NAME = "By The Tonne"
+NAME = "BTT By The Tonne"
+SHORT = "BTT"
 SITE_URL = C.SITE_BASE + "by-the-tonne/"
 
 NAV = [("collect", "services.html", "Services"), ("take", "what-we-collect.html", "What we collect"),
@@ -100,7 +101,7 @@ def manifest():
 def docket(big=False):
     return f'''<figure class="docket{" big" if big else ""}">
   <div class="dk" role="img" aria-label="Sample weighbridge docket: date, customer, site, material, then gross, tare and net weight">
-    <div class="dk-head"><img src="assets/brand/logo-light.svg" alt="" width="120" height="40"><span>Weighbridge docket</span></div>
+    <div class="dk-head"><img src="assets/brand/logo-light.svg" alt="" width="173" height="34"><span>Weighbridge docket</span></div>
     <dl class="dk-rows">
       <div><dt>Docket</dt><dd>No. 000000</dd></div>
       <div><dt>Date</dt><dd>DD / MM / YYYY</dd></div>
@@ -161,9 +162,9 @@ def header(nav_key):
     return f'''<a class="sr skip" href="#main">Skip to content</a>
 {topbar()}
 <header class="hd"><div class="wrap hd-in">
-  <a class="brand" href="./" aria-label="{NAME} home"><img src="assets/brand/logo-light.svg" alt="{NAME}" width="179" height="61"></a>
+  <a class="brand" href="./" aria-label="{NAME} home"><picture><source media="(max-width:620px)" srcset="assets/brand/plate.svg"><img src="assets/brand/logo-dark.svg" alt="{NAME}" width="306" height="60"></picture></a>
   <nav class="nav" id="nav" aria-label="Main">{links}<a class="m-only m-call" href="tel:{C.PHONE_TEL}">Call {C.CONTACT_NAME} {C.PHONE}</a></nav>
-  <a class="btn btn-black hd-cta" href="quote.html"{" aria-current=page" if nav_key == "contact" else ""}>Get a quote</a>
+  <a class="btn btn-yellow hd-cta" href="quote.html"{" aria-current=page" if nav_key == "contact" else ""}><span><span class="long">Get a </span>quote</span></a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
 </div></header>'''
 
@@ -173,7 +174,7 @@ def footer():
     pages = "".join(f'<li><a href="{h}">{l}</a></li>' for _, h, l in NAV)
     return f'''<footer class="ft"><div class="wrap">
   <div class="ft-top">
-    <img class="ft-logo" src="assets/brand/logo-dark.svg" alt="{NAME}" width="179" height="61">
+    <img class="ft-logo" src="assets/brand/logo-dark.svg" alt="{NAME}" width="306" height="60">
     <p class="ft-line">Scrap metal collections from one tonne. Every tonne on the&nbsp;record.</p>
   </div>
   <div class="ft-grid">
@@ -205,7 +206,7 @@ def page(fname):
     assert "{{" not in body, f"unfilled placeholder in {fname}: {re.findall(r'{{[A-Z_:a-z]+}}', body)}"
     body = C.glue(body)
     url = SITE_URL + ("" if fname == "index.html" else fname)
-    schema = {"@context": "https://schema.org", "@type": "LocalBusiness", "name": NAME,
+    schema = {"@context": "https://schema.org", "@type": "LocalBusiness", "name": NAME, "alternateName": SHORT,
               "description": "Scrap metal collections from one tonne for businesses, sites, farms and councils. One service fee, quoted before we come. A weighbridge docket for every load.",
               "url": SITE_URL, "telephone": C.PHONE_INTL, "email": C.EMAIL,
               "areaServed": ["Geelong", "Melbourne", "Regional Victoria"],
@@ -227,7 +228,7 @@ def page(fname):
 <link rel="icon" type="image/svg+xml" href="assets/brand/icon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/saira-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/main.css?v={VER}">
 {C.review_script(DEPTH)}
@@ -262,6 +263,8 @@ def _ttf(woff2):
 def og_image():
     from PIL import Image, ImageDraw, ImageFont
     import cairosvg, io
+    sys.path.insert(0, ROOT)
+    import logo as L
     W, H = 1200, 630
     ph = Image.open(os.path.join(SITE, "assets/img/hero.webp")).convert("RGB")
     s = max(W / ph.width, H / ph.height)
@@ -269,19 +272,19 @@ def og_image():
     left = int((ph.width - W) * 0.7)
     ph = ph.crop((left, (ph.height - H) // 2, left + W, (ph.height - H) // 2 + H))
     shade = Image.new("L", (W, H))
-    shade.putdata([int(max(0, 225 - x * 0.3)) for x in range(W)] * H)
+    shade.putdata([int(max(0, 232 - x * 0.3)) for x in range(W)] * H)
     black = Image.new("RGB", (W, H), (14, 14, 14))
     bg = Image.composite(black, ph, shade)
-    logo = cairosvg.svg2png(url=os.path.join(SITE, "assets/brand/logo-dark.svg"), output_width=260)
+    logo = cairosvg.svg2png(url=os.path.join(SITE, "assets/brand/logo-dark.svg"), output_width=330)
     lg = Image.open(io.BytesIO(logo)).convert("RGBA")
-    bg.paste(lg, (56, 52), lg)
+    bg.paste(lg, (56, 54), lg)
     d = ImageDraw.Draw(bg)
-    f1 = ImageFont.truetype(_ttf(os.path.join(ROOT, "fonts", "instrument-serif-latin-400-normal.woff2")), 92)
-    f2 = ImageFont.truetype(_ttf(os.path.join(ROOT, "fonts", "ibm-plex-mono-latin-500-normal.woff2")), 24)
-    d.text((56, 250), "Metal collections,", font=f1, fill=(255, 255, 255))
-    f1i = ImageFont.truetype(_ttf(os.path.join(ROOT, "fonts", "instrument-serif-latin-400-italic.woff2")), 92)
-    d.text((56, 340), "by the tonne.", font=f1i, fill=(255, 255, 255))
-    d.text((56, 500), "FROM 1 TONNE · ONE FEE, QUOTED FIRST · A DOCKET FOR EVERY LOAD", font=f2, fill=(200, 200, 200))
+    f1 = ImageFont.truetype(L.static_ttf(800, 125), 70)
+    f2 = ImageFont.truetype(_ttf(os.path.join(ROOT, "fonts", "ibm-plex-mono-latin-500-normal.woff2")), 23)
+    d.text((56, 268), "Metal collections,", font=f1, fill=(255, 255, 255))
+    d.text((56, 350), "by the tonne.", font=f1, fill=(255, 255, 255))
+    d.rectangle((56, 470, 104, 480), fill=(255, 210, 0))
+    d.text((56, 506), "FROM 1 TONNE · ONE FEE, QUOTED FIRST · A DOCKET FOR EVERY LOAD", font=f2, fill=(205, 205, 205))
     bg.save(os.path.join(SITE, "og.jpg"), quality=86)
 
 
