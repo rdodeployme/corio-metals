@@ -37,12 +37,12 @@ CONCEPTS = [
      "tool": "Load scale: slide from a bucket to a full site and it tells you which way to go.",
      "best": "A memorable local brand for ads, signage and radio. The tagline explains the one-tonne line by itself.",
      "watch": "Shedload Pty Ltd is registered in Victoria (not in metal or waste). Casual tone for some council buyers."},
-    {"id": "rgm", "name": "Recycle Group Metals", "dir": "recycle-group-metals/", "dots": ["#0E1114", "#C2804F", "#ECEFF1"], "flag": "New",
-     "line": "Master brand. No new name: the offer under Recycle Group, built from Richard's own lines and his directory of 766 items.",
-     "look": "The Recycle Group site's own design: Archivo capitals, copper on light grey with dark bands, and real photos from Furner Avenue (plus three generated collection shots in the same style).",
-     "tool": "Directory finder: search 766 items across 15 sectors, with Specialist items and gate fees flagged, beside how to get it to us.",
-     "best": "Fast approval and instant credibility. The same name as the gate people already drive to, with the group's EPA registration, ISO certifications and YARTA reporting carried straight over.",
-     "watch": "The METALS tag beside the official logo is a proposed lockup, for sign-off. Less punchy than a new brand for ads. It keeps Group in the name because Vic Recycle Metals, a Seaford scrap buyer, already trades."},
+    {"id": "crux", "name": "Crux Metals", "dir": "crux-metals/", "dots": ["#1E1B19", "#8E3B26", "#EDE6DA"], "flag": "New",
+     "line": "Richard's focus. His own lines and his directory of 766 items, under a new name with national reach: Crux is the Southern Cross.",
+     "look": "Raw steel and red oxide primer: charcoal, red oxide and bone, heavy slab headings, an X made of two steel bars bolted like cross-bracing, and big real photos from Furner Avenue.",
+     "tool": "Directory finder: search 766 items across 15 sectors, with Specialist items and gate fees flagged, beside how to get it to us.",
+     "best": "Councils, institutions and big sites. It leads with credibility: the group's EPA registration, ISO certifications and YARTA reporting, and his three-beat lines.",
+     "watch": "Crux needs a word of explanation for some people. A Castlemaine business already trades as Crux Forge (a forge, not scrap metal). No Crux on the NSW scrap metal register."},
 ]
 
 SAME = [
@@ -52,7 +52,7 @@ SAME = [
     "A weighbridge docket for every load, and environmental reporting through YARTA.",
     "Nigel Taylor as the only contact: 0427 888 222, nigel@recycle.net.au. Enquiry forms open an email to Nigel.",
     "The same can't-take list: asbestos, chemicals and hazardous waste, full or hired gas cylinders, firearms and explosives, clinical waste, anything holding fuel or oil.",
-    "“A Recycle Group business” with the official Recycle mark near the logo and in every footer. The fifth version is Recycle Group itself.",
+    "“A Recycle Group business” with the official Recycle mark near the logo and in every footer.",
     "The same address, hours, fees, can't-take list and contact from one shared source file, so the facts can't drift between versions.",
 ]
 
@@ -63,7 +63,7 @@ FEEDBACK = [
     ("Nigel only", "One contact on every page, form and footer."),
     ("No em dashes", "Checked automatically on every build."),
     ("Easy, Aussie names", "Checked on the ABN register on 25 Oct."),
-    ("Logos that say scrap metal", "A hook-lift bin, a hex nut, a riveted steel nameplate and a corrugated shed. No sleek app marks. The fifth uses the official Recycle Group logo."),
+    ("Logos that say scrap metal", "A hook-lift bin, a hex nut, a riveted steel nameplate, a corrugated shed and two bolted steel bars. No sleek app marks."),
     ("Not pigeonholed", "Households, trades, business, farms, government and industry in every version."),
     ("Uniform images", "One photo treatment per site, captions that match the shot, nothing cropped awkwardly."),
     ("The tool on the home page", "Inputs above results on phones, results level with the inputs on desktop."),
@@ -72,8 +72,8 @@ FEEDBACK = [
     ("Recycle Group credit", "Near the logo and in every footer."),
     ("YARTA reporting", "On the commercial side of every version."),
     ("Batteries and data", "Batteries taken; drives removed or wiped before IT collections."),
-    ("No pink, orange or blue", "Corio and Recycle Group Metals use the Recycle Group copper. BTT uses safety yellow."),
-    ("Published to GitHub", "All five live on the one link, with the switcher at the top."),
+    ("No pink, orange or blue", "Corio keeps the Recycle Group copper. BTT uses safety yellow, Crux uses red oxide."),
+    ("One link, big buttons", "All five live on the one link. Big buttons at the top of every page swap between them."),
 ]
 
 CONFIRM = [
@@ -85,7 +85,7 @@ CONFIRM = [
     "The collection minimum fee, the service area, and bin sizes.",
     "Whether a collection statement goes with each docket.",
     "The final name, domain and email address. BTT is a common set of initials, so check the ABN register and trade marks before committing to it.",
-    "For Recycle Group Metals: the METALS tag beside the official logo, and showing the group's EPA registration and ISO certifications on a metals site (both are on the Recycle Group site now).",
+    "For Crux Metals: showing the group's EPA registration and ISO certifications as its backing (both are on the Recycle Group site now).",
 ]
 
 
@@ -156,7 +156,7 @@ def page():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Five concepts for approval | Scrap metal drop-off and collections</title>
-<meta name="description" content="Five versions of the scrap metal site for 116 Furner Avenue, North Geelong: Corio Metals, The Metal Drop, BTT By The Tonne, Shedload and Recycle Group Metals. Same offer, five different looks.">
+<meta name="description" content="Five versions of the scrap metal site for 116 Furner Avenue, North Geelong: Corio Metals, The Metal Drop, BTT By The Tonne, Shedload and Crux Metals. Same offer, five different brands.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:,">
 {C.review_script(1)}
@@ -215,12 +215,12 @@ footer{{padding:28px 0 48px;color:var(--mute);font-size:14px;border-top:1px soli
 <header class="top"><div class="wrap">
   <p class="kick">For approval · {today}</p>
   <h1>One offer, five versions.</h1>
-  <p class="intro">Five versions of the scrap metal site for 116 Furner Avenue, North Geelong. Each one has a clear public drop-off and commercial collections from one tonne, and none of them pays for metal. Four are new brands; the fifth puts the offer under the Recycle Group name. They differ in name, look, which path leads, and the tool on the home page. Use the bar at the top of any page to swap between them; it keeps you on the matching&nbsp;page.</p>
+  <p class="intro">Five versions of the scrap metal site for 116 Furner Avenue, North Geelong. Each one has a clear public drop-off and commercial collections from one tonne, and none of them pays for metal. They differ in name, look, which path leads, and the tool on the home page. Tap the big buttons at the top of any page to swap between them; you stay on the matching&nbsp;page.</p>
   <ul class="pick">{"".join(f'<li><a href="#{c["id"]}"><span class="dots">{"".join(f"<i style=background:{d}></i>" for d in c["dots"])}</span>{esc(c["name"])}</a></li>' for c in CONCEPTS)}</ul>
   <div class="rec">
-    <h2>The one question that picks it: a new brand, or not?</h2>
-    <p><b>No new brand: Recycle Group Metals.</b> The fastest to approve and launch. It carries the same name as the gate people already drive to, plus the group's EPA registration, ISO certifications and YARTA reporting, and it's built from Richard's own lines and&nbsp;directory.</p>
-    <p><b>A new brand: The Metal Drop.</b> It follows the brief's order, the name says exactly what it does for signage and Google, and its item checker answers the question people ask before they load&nbsp;up.</p>
+    <h2>Two picks, depending on what leads</h2>
+    <p><b>Richard's focus: Crux Metals.</b> Built around his own lines and his directory of 766&nbsp;items, with the group's credentials and YARTA reporting up front, under a name with national&nbsp;reach.</p>
+    <p><b>The public first: The Metal Drop.</b> It follows the brief's order, the name says exactly what it does for signage and Google, and its item checker answers the question people ask before they load&nbsp;up.</p>
     <p>BTT if collections are the bigger revenue goal. Shedload for the most memorable ads and signs, after a check on Shedload Pty&nbsp;Ltd.</p>
   </div>
 </div></header>

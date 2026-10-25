@@ -1,52 +1,55 @@
-/* Concept switcher (review bar). Neutral on purpose: it is not part of any concept's brand. */
+/* Version switcher: big buttons, one per version. Neutral on purpose: not part of any brand. */
 :root{--rv:0px}
-html.rv-on{--rv:44px}
+html.rv-on{--rv:66px}
 html.rv-on.rv-hidden{--rv:0px}
+@media (max-width:999px){html.rv-on{--rv:60px}html.rv-on.rv-hidden{--rv:0px}}
 .rv-space{height:var(--rv)}
-.rv-bar{position:fixed;top:0;left:0;right:0;z-index:2147483000;height:44px;background:#FFFFFF;color:#16181B;
-  border-bottom:1px solid #D9D9D6;box-shadow:0 1px 6px rgba(0,0,0,.08);
-  font:500 14px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:0;text-transform:none}
+.rv-bar{position:fixed;top:0;left:0;right:0;z-index:2147483000;height:66px;background:#FFFFFF;color:#16181B;
+  border-bottom:1px solid #D9D9D6;box-shadow:0 2px 10px rgba(0,0,0,.1);
+  font:500 15px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:0;text-transform:none;text-align:left}
 .rv-hidden .rv-bar{display:none}
-.rv-in{height:44px;max-width:1240px;margin:0 auto;padding:0 12px;display:flex;align-items:center;gap:8px}
-.rv-label{font-weight:600;color:#5C6066;margin-right:6px;white-space:nowrap}
-.rv-btn{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 12px;border:1px solid #CFCFCB;border-radius:8px;
-  background:#F6F6F4;color:#16181B;font:inherit;cursor:pointer;white-space:nowrap;min-width:0;max-width:100%;overflow:hidden}
-.rv-btn:hover,.rv-btn[aria-expanded=true]{background:#EDEDEA;border-color:#B8B8B3}
-.rv-btn b{font-weight:700;overflow:hidden;text-overflow:ellipsis}
-.rv-n{color:#6A6E74;font-size:12px}
-.rv-caret{font-size:11px;color:#6A6E74}
-.rv-dots{display:inline-flex}
-.rv-dots i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.25);margin-left:-3px}
+.rv-in{height:100%;max-width:1440px;margin:0 auto;padding:0 12px;display:flex;align-items:center;gap:12px}
+.rv-label{flex:none;font-weight:800;font-size:14px;line-height:1.15;color:#16181B;white-space:nowrap}
+.rv-label small{font-weight:500;font-size:12px;color:#6A6E74}
+.rv-row{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:8px;padding:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rv-row::-webkit-scrollbar{display:none}
+/* fade the edge that has more buttons past it, so a scrollable row looks scrollable */
+.rv-row.fr{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}
+.rv-row.fl{-webkit-mask-image:linear-gradient(90deg,transparent,#000 28px);mask-image:linear-gradient(90deg,transparent,#000 28px)}
+.rv-row.fl.fr{-webkit-mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent)}
+.rv-v{flex:none;display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 15px 0 8px;border:1.5px solid #CFCFCB;border-radius:12px;
+  background:#F6F6F4;color:#16181B;text-decoration:none;white-space:nowrap;transition:background .15s,border-color .15s,color .15s}
+.rv-v:hover{border-color:#16181B;background:#FFFFFF}
+.rv-v.on{background:#16181B;border-color:#16181B;color:#FFFFFF}
+.rv-v:focus-visible{outline:3px solid #16181B;outline-offset:2px}
+.rv-v.on:focus-visible{outline-color:#6A6E74}
+.rv-n{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#16181B;color:#FFFFFF;font-weight:800;font-size:15px;flex:none}
+.rv-v.on .rv-n{background:#FFFFFF;color:#16181B}
+.rv-dots{display:inline-flex;flex:none}
+.rv-dots i{width:13px;height:13px;border-radius:50%;border:1px solid rgba(0,0,0,.28);margin-left:-4px}
 .rv-dots i:first-child{margin-left:0}
-.rv-arrow{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;border:1px solid #CFCFCB;
-  color:#16181B;text-decoration:none;font-size:16px;flex:none}
-.rv-arrow:hover{background:#EDEDEA}
-.rv-all{margin-left:auto;color:#16181B;font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
-.rv-hide{height:32px;padding:0 10px;border:0;background:none;color:#6A6E74;font:inherit;cursor:pointer;white-space:nowrap}
-.rv-hide:hover{color:#16181B}
-.rv-menu{position:absolute;top:44px;left:50%;transform:translateX(-50%);width:min(560px,calc(100vw - 16px));background:#FFF;
-  border:1px solid #D9D9D6;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.18);padding:8px}
-.rv-menu ol{list-style:none;margin:0;padding:0}
-.rv-menu a{display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;color:#16181B;text-decoration:none}
-.rv-menu a:hover{background:#F2F2EF}
-.rv-menu a[aria-current]{background:#EDEDEA}
-.rv-num{width:26px;height:26px;border-radius:50%;background:#16181B;color:#FFF;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none}
-.rv-txt{display:flex;flex-direction:column;gap:4px;min-width:0}
-.rv-txt b{font-size:15px}
-.rv-txt small{font-size:13px;color:#5C6066;line-height:1.35;white-space:normal}
-.rv-cmp{border-top:1px solid #E6E6E3;margin-top:6px;padding-top:6px}
-.rv-tab{position:fixed;top:8px;right:8px;z-index:2147483000;display:none;height:30px;padding:0 10px;border-radius:8px;border:1px solid #CFCFCB;
-  background:#FFF;color:#16181B;font:600 13px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.rv-v.on .rv-dots i{border-color:rgba(255,255,255,.55)}
+.rv-name{font-weight:800;font-size:16px}
+.rv-short{display:none}
+.rv-cmp{padding:0 16px;background:#FFFFFF}
+.rv-cmp.on{background:#16181B}
+.rv-hide{flex:none;width:40px;height:40px;border:0;border-radius:10px;background:none;color:#6A6E74;font:400 26px/1 system-ui,Arial,sans-serif;cursor:pointer}
+.rv-hide:hover{background:#EDEDEA;color:#16181B}
+.rv-tab{position:fixed;top:10px;right:10px;z-index:2147483000;display:none;height:40px;padding:0 14px;border-radius:10px;border:1.5px solid #16181B;
+  background:#FFFFFF;color:#16181B;font:800 14px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 .rv-hidden .rv-tab{display:block}
-@media (max-width:760px){
-  .rv-label,.rv-hide{display:none}
-  .rv-all{font-size:13px}
-  .rv-btn{padding:0 10px;gap:6px}
-  .rv-btn .rv-dots{display:none}
-}
-@media (max-width:420px){
-  .rv-in{gap:6px;padding:0 8px}
-  .rv-all{display:none}
-  .rv-btn{flex:1;justify-content:center}
+@media (max-width:1320px){.rv-dots{display:none}.rv-v{padding:0 14px 0 8px}}
+@media (max-width:1140px){.rv-label{display:none}.rv-name{font-size:15px}}
+@media (max-width:1100px){.rv-long{display:none}.rv-short{display:inline}}
+@media (max-width:999px){
+  .rv-bar{height:60px}
+  .rv-in{padding:0 6px 0 8px;gap:4px}
+  .rv-row{gap:6px;padding:6px 4px;scroll-snap-type:x proximity}
+  .rv-v{height:44px;padding:0 12px 0 6px;gap:7px;border-radius:10px;scroll-snap-align:center}
+  .rv-cmp{padding:0 12px}
+  .rv-n{width:28px;height:28px;font-size:14px}
+  .rv-long{display:none}
+  .rv-short{display:inline}
+  .rv-hide{width:36px;height:36px;font-size:24px}
 }
 @media print{.rv-bar,.rv-space,.rv-tab{display:none}}

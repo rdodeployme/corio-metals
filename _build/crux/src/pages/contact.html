@@ -1,0 +1,57 @@
+<!--
+title: Contact | Nigel Taylor, 0427 888 222 | Crux Metals
+description: Talk to Nigel Taylor about scrap metal collections from one tonne, or drop off at Recycle North Geelong, 116 Furner Avenue, North Geelong. Open Monday to Saturday.
+nav: contact
+-->
+<section class="phead">
+  <div class="wrap">
+    <p class="crumbs"><a href="./">Crux Metals</a><span>/</span><span>Contact</span></p>
+    <p class="eyebrow">Contact</p>
+    <h1 class="h1">Talk to&nbsp;{{CONTACT}}.</h1>
+    <p class="lead">Call, email or send the form to {{CONTACT_FULL}} about a collection or the drop-off, and he'll come back to&nbsp;you.</p>
+    <div class="actions"><a class="btn btn-solid" href="tel:{{PHONE_TEL}}">Call {{PHONE}}</a><a class="tlink" href="mailto:{{EMAIL}}">Email {{CONTACT}}</a></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap split top">
+    <div>
+      <p class="eyebrow">Details</p>
+      <h2 class="h2">116 Furner Avenue, North&nbsp;Geelong.</h2>
+      <dl class="dl">
+        <div><dt>Call</dt><dd>{{CONTACT_FULL}} <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></dd></div>
+        <div><dt>Drop-off</dt><dd>{{FACILITY}}<br>{{ADDRESS}}</dd></div>
+        <div><dt>Open</dt><dd>{{HOURS}} · {{HOURS_NOTE}}</dd></div>
+        <div><dt>Collections</dt><dd>From one tonne. Geelong, Melbourne and regional Victoria, further afield by&nbsp;arrangement.</dd></div>
+      </dl>
+      <div class="actions"><a class="btn btn-line" href="{{MAPS_DIR}}" target="_blank" rel="noopener">Directions</a></div>
+    </div>
+    <div class="map">{{MAP}}</div>
+  </div>
+</section>
+
+<section class="sec l1">
+  <div class="wrap split top">
+    <div class="faq">
+      <details open><summary>Do you pay for scrap metal?</summary><div class="a"><p>No. We don't buy scrap metal. Clean scrap metal is no charge to drop off, and collections carry one service fee, quoted before we&nbsp;come.</p></div></details>
+      <details><summary>Drop off or collection?</summary><div class="a"><p>Under a tonne, drop it off at 116 Furner Avenue. A tonne or more, we collect it. About twenty steel filing cabinets make a&nbsp;tonne.</p></div></details>
+      <details><summary>Do I need to book?</summary><div class="a"><p>Not for a car, ute or trailer. We're open {{HOURS}}; call {{CONTACT}} for gate&nbsp;times.</p></div></details>
+      <details><summary>Anything extra at the gate?</summary><div class="a"><p>Gas bottles, fire extinguishers, nitrous canisters, solar panels and tyres on rims carry a handling fee. <a href="drop-off.html#fees">See the gate&nbsp;fees</a>.</p></div></details>
+      <details><summary>Hard drives and batteries?</summary><div class="a"><p>Remove or wipe drives and SSDs before we collect servers or computers. Batteries come out of equipment and travel separately, and we take them&nbsp;too.</p></div></details>
+      <details><summary>What can't you take?</summary><div class="a"><p>{{CANT_SHORT}} <a href="what-we-collect.html#cant">See the&nbsp;list</a>.</p></div></details>
+    </div>
+    <form class="enq" data-to="{{EMAIL}}" data-subject="Crux Metals enquiry">
+      <h2 class="h3" style="margin-bottom:18px">Send a message</h2>
+      <div><label for="g-name">Your name</label><input id="g-name" name="name" data-label="Name" type="text" autocomplete="name" required></div>
+      <div class="row2">
+        <div><label for="g-phone">Phone</label><input id="g-phone" name="phone" data-label="Phone" type="tel" autocomplete="tel" required></div>
+        <div><label for="g-site">Suburb</label><input id="g-site" name="site" data-label="Suburb" type="text"></div>
+      </div>
+      <div><label for="g-what">Your question</label><textarea id="g-what" name="what" data-label="Question" required></textarea></div>
+      <button class="btn btn-solid" type="submit">Email {{CONTACT}}</button>
+      <p class="form-note">Opens your email app with this filled&nbsp;in.</p>
+      <p class="form-note form-done" hidden>Your email app should now be open. Press send when you're&nbsp;ready.</p>
+    </form>
+  </div>
+</section>

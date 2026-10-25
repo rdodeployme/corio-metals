@@ -1,70 +1,63 @@
-/* Concept switcher: a review bar at the top of every page of every concept.
-   Swaps to the matching page in another concept. Not part of any brand. */
+/* Version switcher: a bar of big buttons at the top of every page of every concept.
+   One button per version. Tapping one opens the matching page in that version
+   (drop-off to drop-off, collections to collections). Not part of any brand. */
 (function () {
   "use strict";
   var me = document.currentScript;
   var base = me ? me.src.replace(/review\/switcher\.js.*$/, "") : "/";
   var C = [
-    { id: "corio", name: "Corio Metals", dir: "", line: "Balanced: drop-off and collections side by side",
+    { id: "corio", name: "Corio Metals", short: "Corio", dir: "", line: "Balanced: drop-off and collections side by side",
       dots: ["#111417", "#E38A45", "#F2EFE9"],
       pages: { home: "index.html", dropoff: "drop-off.html", collect: "collections.html", take: "what-we-take.html", contact: "contact.html", load: "load-check.html" } },
-    { id: "drop", name: "The Metal Drop", dir: "the-metal-drop/", line: "Public first: an item checker and a dead-easy drop-off",
+    { id: "drop", name: "The Metal Drop", short: "Metal Drop", dir: "the-metal-drop/", line: "Public first: an item checker and a dead-easy drop-off",
       dots: ["#FFFFFF", "#D52B1E", "#1B1D20"],
       pages: { home: "index.html", dropoff: "drop-off.html", collect: "business.html", take: "what-we-take.html", contact: "faq.html", load: "what-we-take.html" } },
-    { id: "tonne", name: "BTT By The Tonne", dir: "by-the-tonne/", line: "Commercial first: collections from one tonne, every tonne on the record",
+    { id: "tonne", name: "BTT By The Tonne", short: "BTT", dir: "by-the-tonne/", line: "Commercial first: collections from one tonne, every tonne on the record",
       dots: ["#0E0E0E", "#FFD200", "#FFFFFF"],
       pages: { home: "index.html", dropoff: "drop-off.html", collect: "services.html", take: "what-we-collect.html", contact: "quote.html", load: "index.html#estimate", report: "reporting.html" } },
-    { id: "shed", name: "Shedload", dir: "shedload/", line: "Brand first: Shedload? Drop it off. Truckload? We'll collect.",
+    { id: "shed", name: "Shedload", short: "Shedload", dir: "shedload/", line: "Brand first: Shedload? Drop it off. Truckload? We'll collect.",
       dots: ["#2C2D2F", "#7C9177", "#EAE3D2"],
       pages: { home: "index.html", dropoff: "drop-off.html", collect: "collect.html", take: "what-we-take.html", contact: "find-us.html", load: "index.html#scale" } },
-    { id: "rgm", name: "Recycle Group Metals", dir: "recycle-group-metals/", line: "Master brand: the group's own name, facility and credentials, with Richard's directory",
-      dots: ["#0E1114", "#C2804F", "#ECEFF1"],
+    { id: "crux", name: "Crux Metals", short: "Crux", dir: "crux-metals/", line: "Richard's focus: his lines, his 766-item directory, the group's credentials",
+      dots: ["#1E1B19", "#8E3B26", "#EDE6DA"],
       pages: { home: "index.html", dropoff: "drop-off.html", collect: "collections.html", take: "what-we-collect.html", contact: "contact.html", load: "index.html#finder", report: "reporting.html" } }
   ];
   var body = document.body;
   var cur = body.getAttribute("data-concept") || "corio";
   var page = body.getAttribute("data-page") || "home";
-  var idx = -1;
-  C.forEach(function (c, i) { if (c.id === cur) idx = i; });
-  var onCompare = idx < 0;
+  var onCompare = cur === "compare";
   function hrefFor(c) {
     var p = c.pages[page] || c.pages.home;
     return base + c.dir + (p === "index.html" ? "" : p);
   }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]; }); }
   var hidden = false;
   try { hidden = sessionStorage.getItem("rv-hidden") === "1"; } catch (e) {}
 
   var bar = document.createElement("div");
   bar.className = "rv-bar";
-  bar.setAttribute("role", "region");
-  bar.setAttribute("aria-label", "Concept switcher");
-  var prev = onCompare ? C[C.length - 1] : C[(idx + C.length - 1) % C.length], next = onCompare ? C[0] : C[(idx + 1) % C.length];
+  bar.setAttribute("role", "navigation");
+  bar.setAttribute("aria-label", "Versions for approval");
   var dots = function (c) { return '<span class="rv-dots" aria-hidden="true">' + c.dots.map(function (d) { return '<i style="background:' + d + '"></i>'; }).join("") + "</span>"; };
   bar.innerHTML =
     '<div class="rv-in">' +
-      '<span class="rv-label">Concepts for approval</span>' +
-      '<a class="rv-arrow" href="' + hrefFor(prev) + '" aria-label="Previous concept: ' + prev.name + '">&#8592;</a>' +
-      '<button class="rv-btn" type="button" aria-expanded="false" aria-controls="rv-menu">' +
-        (onCompare ? '<b>Compare all five</b>' :
-        '<span class="rv-n">' + (idx + 1) + ' of ' + C.length + '</span>' + dots(C[idx]) + '<b>' + C[idx].name + '</b>') +
-        '<span class="rv-caret" aria-hidden="true">&#9662;</span>' +
-      '</button>' +
-      '<a class="rv-arrow" href="' + hrefFor(next) + '" aria-label="Next concept: ' + next.name + '">&#8594;</a>' +
-      (onCompare ? '<span class="rv-all"></span>' : '<a class="rv-all" href="' + base + 'concepts/">Compare all 5</a>') +
-      '<button class="rv-hide" type="button" aria-label="Hide the concept bar">Hide</button>' +
-    '</div>' +
-    '<div class="rv-menu" id="rv-menu" hidden><ol>' +
-      C.map(function (c, i) {
-        return '<li><a href="' + hrefFor(c) + '"' + (i === idx ? ' aria-current="true"' : "") + '>' +
-          '<span class="rv-num">' + (i + 1) + '</span>' + dots(c) +
-          '<span class="rv-txt"><b>' + c.name + '</b><small>' + c.line + '</small></span></a></li>';
-      }).join("") +
-      '<li class="rv-cmp"><a href="' + base + 'concepts/"' + (onCompare ? ' aria-current="true"' : '') + '><span class="rv-txt"><b>Compare all five side by side</b><small>What each one is for, and what is the same in all of them</small></span></a></li>' +
-    '</ol></div>';
+      '<span class="rv-label">Versions<br><small>for approval</small></span>' +
+      '<div class="rv-row">' +
+        C.map(function (c, i) {
+          var on = c.id === cur;
+          return '<a class="rv-v' + (on ? " on" : "") + '" href="' + hrefFor(c) + '"' + (on ? ' aria-current="page"' : "") +
+            ' title="' + esc(c.name + ": " + c.line) + '">' +
+            '<span class="rv-n">' + (i + 1) + '</span>' + dots(c) +
+            '<span class="rv-name"><span class="rv-long">' + esc(c.name) + '</span><span class="rv-short">' + esc(c.short) + '</span></span></a>';
+        }).join("") +
+        '<a class="rv-v rv-cmp' + (onCompare ? " on" : "") + '" href="' + base + 'concepts/"' + (onCompare ? ' aria-current="page"' : "") + '>' +
+          '<span class="rv-name"><span class="rv-long">Compare all</span><span class="rv-short">Compare</span></span></a>' +
+      '</div>' +
+      '<button class="rv-hide" type="button" aria-label="Hide the version buttons"><span aria-hidden="true">&times;</span></button>' +
+    '</div>';
   var tab = document.createElement("button");
   tab.className = "rv-tab"; tab.type = "button";
-  tab.innerHTML = "Concepts &#9662;";
-  tab.setAttribute("aria-label", "Show the concept bar");
+  tab.textContent = "Show versions";
   var spacer = document.createElement("div");
   spacer.className = "rv-space";
   body.insertBefore(spacer, body.firstChild);
@@ -79,11 +72,21 @@
   setHidden(hidden);
   document.documentElement.classList.add("rv-on");
 
-  var btn = bar.querySelector(".rv-btn"), menu = bar.querySelector(".rv-menu");
-  function open(o) { menu.hidden = !o; btn.setAttribute("aria-expanded", o ? "true" : "false"); }
-  btn.addEventListener("click", function () { open(menu.hidden); });
-  document.addEventListener("click", function (e) { if (!bar.contains(e.target)) open(false); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") open(false); });
-  bar.querySelector(".rv-hide").addEventListener("click", function () { open(false); setHidden(true); });
+  /* on phones the row scrolls sideways: bring the current version into view */
+  var row = bar.querySelector(".rv-row"), on = bar.querySelector(".rv-v.on");
+  function edges() {
+    var max = row.scrollWidth - row.clientWidth;
+    row.classList.toggle("fl", max > 2 && row.scrollLeft > 2);
+    row.classList.toggle("fr", max > 2 && row.scrollLeft < max - 2);
+  }
+  if (row) {
+    if (on && row.scrollWidth > row.clientWidth) {
+      row.scrollLeft = Math.max(0, on.offsetLeft - (row.clientWidth - on.offsetWidth) / 2);
+    }
+    edges();
+    row.addEventListener("scroll", edges, { passive: true });
+    window.addEventListener("resize", edges);
+  }
+  bar.querySelector(".rv-hide").addEventListener("click", function () { setHidden(true); });
   tab.addEventListener("click", function () { setHidden(false); });
 })();
