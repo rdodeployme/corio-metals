@@ -1,0 +1,52 @@
+/* Concept switcher (review bar). Neutral on purpose: it is not part of any concept's brand. */
+:root{--rv:0px}
+html.rv-on{--rv:44px}
+html.rv-on.rv-hidden{--rv:0px}
+.rv-space{height:var(--rv)}
+.rv-bar{position:fixed;top:0;left:0;right:0;z-index:2147483000;height:44px;background:#FFFFFF;color:#16181B;
+  border-bottom:1px solid #D9D9D6;box-shadow:0 1px 6px rgba(0,0,0,.08);
+  font:500 14px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:0;text-transform:none}
+.rv-hidden .rv-bar{display:none}
+.rv-in{height:44px;max-width:1240px;margin:0 auto;padding:0 12px;display:flex;align-items:center;gap:8px}
+.rv-label{font-weight:600;color:#5C6066;margin-right:6px;white-space:nowrap}
+.rv-btn{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 12px;border:1px solid #CFCFCB;border-radius:8px;
+  background:#F6F6F4;color:#16181B;font:inherit;cursor:pointer;white-space:nowrap;min-width:0}
+.rv-btn:hover,.rv-btn[aria-expanded=true]{background:#EDEDEA;border-color:#B8B8B3}
+.rv-btn b{font-weight:700}
+.rv-n{color:#6A6E74;font-size:12px}
+.rv-caret{font-size:11px;color:#6A6E74}
+.rv-dots{display:inline-flex}
+.rv-dots i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.25);margin-left:-3px}
+.rv-dots i:first-child{margin-left:0}
+.rv-arrow{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;border:1px solid #CFCFCB;
+  color:#16181B;text-decoration:none;font-size:16px;flex:none}
+.rv-arrow:hover{background:#EDEDEA}
+.rv-all{margin-left:auto;color:#16181B;font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.rv-hide{height:32px;padding:0 10px;border:0;background:none;color:#6A6E74;font:inherit;cursor:pointer;white-space:nowrap}
+.rv-hide:hover{color:#16181B}
+.rv-menu{position:absolute;top:44px;left:50%;transform:translateX(-50%);width:min(560px,calc(100vw - 16px));background:#FFF;
+  border:1px solid #D9D9D6;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.18);padding:8px}
+.rv-menu ol{list-style:none;margin:0;padding:0}
+.rv-menu a{display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;color:#16181B;text-decoration:none}
+.rv-menu a:hover{background:#F2F2EF}
+.rv-menu a[aria-current]{background:#EDEDEA}
+.rv-num{width:26px;height:26px;border-radius:50%;background:#16181B;color:#FFF;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none}
+.rv-txt{display:flex;flex-direction:column;gap:4px;min-width:0}
+.rv-txt b{font-size:15px}
+.rv-txt small{font-size:13px;color:#5C6066;line-height:1.35;white-space:normal}
+.rv-cmp{border-top:1px solid #E6E6E3;margin-top:6px;padding-top:6px}
+.rv-tab{position:fixed;top:8px;right:8px;z-index:2147483000;display:none;height:30px;padding:0 10px;border-radius:8px;border:1px solid #CFCFCB;
+  background:#FFF;color:#16181B;font:600 13px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.rv-hidden .rv-tab{display:block}
+@media (max-width:760px){
+  .rv-label,.rv-hide{display:none}
+  .rv-all{font-size:13px}
+  .rv-btn{padding:0 10px;gap:6px}
+  .rv-btn .rv-dots{display:none}
+}
+@media (max-width:420px){
+  .rv-in{gap:6px;padding:0 8px}
+  .rv-all{display:none}
+  .rv-btn{flex:1;justify-content:center}
+}
+@media print{.rv-bar,.rv-space,.rv-tab{display:none}}

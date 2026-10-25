@@ -1,0 +1,242 @@
+#!/usr/bin/env python3
+"""Build the comparison page: concepts/index.html, with fresh screenshots of each concept.
+
+Neutral on purpose: this page belongs to the review, not to any of the four brands.
+"""
+import os, sys, json, html, datetime, threading, functools, http.server
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(os.path.dirname(ROOT), "common"))
+import common as C  # noqa: E402
+
+OUT = os.path.join(C.REPO, "concepts")
+IMG = os.path.join(OUT, "img")
+
+CONCEPTS = [
+    {"id": "corio", "name": "Corio Metals", "dir": "", "dots": ["#111417", "#E38A45", "#F2EFE9"],
+     "line": "Balanced. Drop-off and collections side by side, as two equal paths.",
+     "look": "Industrial and dark, with Recycle Group copper. Condensed headlines, real yard photos.",
+     "tool": "Load check: pick items by category for a rough weight, gate fees, and drop off or collect.",
+     "best": "Both paths matter equally, and the brand should feel like a working yard.",
+     "watch": "A Geelong place name. It may feel local when we collect in Melbourne and regional Victoria."},
+    {"id": "drop", "name": "The Metal Drop", "dir": "the-metal-drop/", "dots": ["#FFFFFF", "#D52B1E", "#1B1D20"],
+     "line": "Public first. The easiest place in Geelong to get rid of scrap metal, with business collections second.",
+     "look": "Light and friendly, signal red, rounded type and a full set of item pictograms.",
+     "tool": "Item checker: tap what you've got to see no charge, a fee or prep first, and whether to drop off or book a collection.",
+     "best": "The order of the brief: a clear public drop-off, then a clear commercial path. The name says what it does.",
+     "watch": "The name says drop, so business buyers rely on the Business collections page."},
+    {"id": "tonne", "name": "By The Tonne", "dir": "by-the-tonne/", "dots": ["#0E0E0E", "#8B8E91", "#EFEEEA"],
+     "line": "Commercial first. Collections from one tonne, every tonne on the record. Drop-off is the second path.",
+     "look": "Black and white editorial: serif headlines, figures in mono, a sample weighbridge docket.",
+     "tool": "Tonnage estimator: list what's on site, see the total against the one-tonne minimum, send the list with the quote.",
+     "best": "Councils, procurement teams and multi-site businesses. Reads as the most corporate of the four.",
+     "watch": "Households find the drop-off on its own page, not front and centre."},
+    {"id": "shed", "name": "Shedload", "dir": "shedload/", "dots": ["#2C2D2F", "#7C9177", "#EAE3D2"],
+     "line": "Brand first. Shedload? Drop it off. Truckload? We'll collect.",
+     "look": "Colorbond shed colours, stencil capitals, poster photos and rubber-stamp labels.",
+     "tool": "Load scale: slide from a bucket to a full site and it tells you which way to go.",
+     "best": "A memorable local brand for ads, signage and radio. The tagline explains the one-tonne line by itself.",
+     "watch": "Shedload Pty Ltd is registered in Victoria (not in metal or waste). Casual tone for some council buyers."},
+]
+
+SAME = [
+    "Public drop-off at Recycle North Geelong, 116 Furner Avenue. Clean scrap metal is no charge: we don't pay for it, and you don't pay to leave it.",
+    "Handling fees on a few items only: gas bottles, fire extinguishers, nitrous canisters, solar panels and tyres on rims, as on Recycle North Geelong's price list.",
+    "Collections from one tonne. One service fee, quoted before we come. Our crew and truck, a bin on site or a load on the day.",
+    "A weighbridge docket for every load, and environmental reporting through YARTA.",
+    "Nigel Taylor as the only contact: 0427 888 222, nigel@recycle.net.au. Enquiry forms open an email to Nigel.",
+    "The same can't-take list: asbestos, chemicals and hazardous waste, full or hired gas cylinders, firearms and explosives, clinical waste, anything holding fuel or oil.",
+    "“A Recycle Group business” with the official Recycle mark near the logo and in every footer.",
+    "The same item list and guide weights, from one shared source file, so the facts can't drift between versions.",
+]
+
+FEEDBACK = [
+    ("No payment for metal", "Nothing about buying metal in any version: no rates, no payment details, no ID checks."),
+    ("Two clear paths", "A public drop-off and commercial collections from one tonne."),
+    ("One service fee, quoted first", "Every collection carries one service fee, quoted before we come. Checked automatically on every build."),
+    ("Nigel only", "One contact on every page, form and footer."),
+    ("No em dashes", "Checked automatically on every build."),
+    ("Easy, Aussie names", "Checked on the ABN register on 25 Oct."),
+    ("Logos that say scrap metal", "A hook-lift bin, a hex nut, a counterweight and a corrugated shed. No sleek app marks."),
+    ("Not pigeonholed", "Households, trades, business, farms, government and industry in every version."),
+    ("Uniform images", "One photo treatment per site, captions that match the shot, nothing cropped awkwardly."),
+    ("The tool on the home page", "Inputs above results on phones, results level with the inputs on desktop."),
+    ("Real scale for one tonne", "Twenty steel filing cabinets, and more than an unbraked trailer may weigh."),
+    ("Mobile and line breaks", "Every page checked at phone, tablet and desktop widths."),
+    ("Recycle Group credit", "Near the logo and in every footer."),
+    ("YARTA reporting", "On the commercial side of every version."),
+    ("Batteries and data", "Batteries taken; drives removed or wiped before IT collections."),
+    ("No pink, orange or blue", "Corio keeps the Recycle Group copper it already had."),
+    ("Published to GitHub", "All four live on the one link, with the switcher at the top."),
+]
+
+CONFIRM = [
+    "Gate times for the drop-off (sites say Monday to Saturday, call for gate times).",
+    "That the metal drop-off runs through Recycle North Geelong's gate, and what the signage says.",
+    "That no booking is needed to drop off from a car, ute or trailer.",
+    "The fee items and amounts (taken from the price list as captured in June 2026).",
+    "How non-metal parts of a load are charged (sites say the transfer station's usual rate).",
+    "The collection minimum fee, the service area, and bin sizes.",
+    "Whether a collection statement goes with each docket.",
+    "The final name, domain and email address.",
+]
+
+
+def shots():
+    """Desktop and phone screenshots of each concept's home page, without the review bar."""
+    from playwright.sync_api import sync_playwright
+    from PIL import Image
+    os.makedirs(IMG, exist_ok=True)
+
+    class Q(http.server.SimpleHTTPRequestHandler):
+        def log_message(self, *a):
+            pass
+    srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), functools.partial(Q, directory=C.REPO))
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    base = f"http://127.0.0.1:{srv.server_address[1]}/"
+    with sync_playwright() as pw:
+        b = pw.chromium.launch()
+        for c in CONCEPTS:
+            for kind, vw, vh in (("desk", 1440, 900), ("phone", 390, 844)):
+                ctx = b.new_context(viewport={"width": vw, "height": vh}, device_scale_factor=2 if kind == "phone" else 1)
+                ctx.add_init_script("try{sessionStorage.setItem('rv-hidden','1')}catch(e){}")
+                pg = ctx.new_page()
+                pg.goto(base + c["dir"], wait_until="networkidle")
+                pg.add_style_tag(content=".rv-bar,.rv-tab,.rv-space{display:none!important}html{--rv:0px!important}")
+                pg.wait_for_timeout(400)
+                tmp = os.path.join(IMG, f"{c['id']}-{kind}.png")
+                pg.screenshot(path=tmp)
+                im = Image.open(tmp).convert("RGB")
+                w = 1200 if kind == "desk" else 600
+                im = im.resize((w, int(im.height * w / im.width)), Image.LANCZOS)
+                im.save(tmp.replace(".png", ".webp"), quality=82)
+                os.remove(tmp)
+                ctx.close()
+        b.close()
+    srv.shutdown()
+
+
+def page():
+    esc = html.escape
+    cards = ""
+    for i, c in enumerate(CONCEPTS, 1):
+        dots = "".join(f'<i style="background:{d}"></i>' for d in c["dots"])
+        cards += f'''<article class="card" id="{c["id"]}">
+  <div class="shots">
+    <a class="desk" href="../{c["dir"]}" aria-label="Open {esc(c["name"])}"><img src="img/{c["id"]}-desk.webp" width="1200" height="750" alt="{esc(c["name"])} home page on a desktop screen" loading="lazy"></a>
+    <a class="phone" href="../{c["dir"]}" tabindex="-1" aria-hidden="true"><img src="img/{c["id"]}-phone.webp" width="600" height="1298" alt="" loading="lazy"></a>
+  </div>
+  <div class="txt">
+    <p class="num"><span>{i}</span><span class="dots" aria-hidden="true">{dots}</span></p>
+    <h2>{esc(c["name"])}</h2>
+    <p class="line">{esc(c["line"])}</p>
+    <dl>
+      <div><dt>Look</dt><dd>{esc(c["look"])}</dd></div>
+      <div><dt>Home page tool</dt><dd>{esc(c["tool"])}</dd></div>
+      <div><dt>Best if</dt><dd>{esc(c["best"])}</dd></div>
+      <div><dt>Watch</dt><dd>{esc(c["watch"])}</dd></div>
+    </dl>
+    <a class="open" href="../{c["dir"]}">Open {esc(c["name"])} <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</article>'''
+    same = "".join(f"<li>{esc(x)}</li>" for x in SAME)
+    fb = "".join(f"<li><b>{esc(a)}.</b> {esc(b)}</li>" for a, b in FEEDBACK)
+    conf = "".join(f"<li>{esc(x)}</li>" for x in CONFIRM)
+    today = datetime.date.today().strftime("%-d %B %Y")
+    doc = f'''<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four concepts for approval | Scrap metal drop-off and collections</title>
+<meta name="description" content="Four versions of the scrap metal site for 116 Furner Avenue, North Geelong: Corio Metals, The Metal Drop, By The Tonne and Shedload. Same offer, four different brands.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+{C.review_script(1)}
+<style>
+:root{{--ink:#16181B;--mute:#5C6066;--line:#DDDCD8;--bg:#F6F6F4;--card:#FFFFFF}}
+*{{box-sizing:border-box}}
+body{{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}}
+img{{display:block;max-width:100%;height:auto}}
+a{{color:inherit;text-underline-offset:3px}}
+.wrap{{max-width:1240px;margin:0 auto;padding:0 28px}}
+h1,h2,h3{{text-wrap:balance;letter-spacing:-.015em}}
+p,li,dd{{text-wrap:pretty}}
+header.top{{padding:56px 0 28px}}
+.kick{{margin:0 0 10px;font-size:14px;font-weight:600;color:var(--mute);letter-spacing:.04em;text-transform:uppercase}}
+h1{{margin:0 0 14px;font-size:clamp(34px,4.6vw,56px);line-height:1.05}}
+.intro{{max-width:46em;font-size:19px;color:#33363A;margin:0}}
+.pick{{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;padding:0;list-style:none}}
+.pick a{{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:#fff;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}}
+.pick a:hover{{border-color:var(--ink)}}
+.pick i,.dots i{{display:inline-block;width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.25);margin-left:-3px}}
+.pick i:first-child,.dots i:first-child{{margin-left:0}}
+.rec{{margin:30px 0 0;padding:22px 24px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--ink);border-radius:10px;max-width:60em}}
+.rec h2{{margin:0 0 8px;font-size:20px}}
+.rec p{{margin:0 0 8px}}
+.rec p:last-child{{margin:0;color:var(--mute);font-size:15px}}
+.cards{{display:grid;gap:28px;padding:28px 0 20px}}
+.card{{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;align-items:start;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:14px}}
+.shots{{position:relative;padding:0 46px 40px 0}}
+.shots .desk img{{border-radius:8px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.08)}}
+.shots .phone{{position:absolute;right:0;bottom:0;width:26%;}}
+.shots .phone img{{border-radius:16px;border:5px solid #1B1C1F;box-shadow:0 10px 26px rgba(0,0,0,.22);aspect-ratio:390/700;object-fit:cover;object-position:top}}
+.txt{{min-width:0}}
+.num{{display:flex;align-items:center;gap:10px;margin:0 0 6px;color:var(--mute);font-weight:700}}
+.num span:first-child{{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:14px}}
+.card h2{{margin:0 0 6px;font-size:clamp(26px,2.6vw,34px);line-height:1.1}}
+.line{{margin:0 0 14px;font-size:18px;color:#33363A}}
+dl{{margin:0 0 16px;border-top:1px solid var(--line)}}
+dl > div{{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}}
+dt{{font-weight:700;font-size:14px;color:var(--mute);padding-top:2px}}
+dd{{margin:0;font-size:15.5px}}
+.open{{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 18px;border-radius:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;white-space:nowrap}}
+.open:hover{{background:#000}}
+.cols{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding:20px 0 64px}}
+.box{{padding:22px 22px 10px;background:#fff;border:1px solid var(--line);border-radius:14px}}
+.box h3{{margin:0 0 10px;font-size:20px}}
+.box ul{{margin:0;padding:0 0 0 18px}}
+.box li{{margin:0 0 10px;font-size:15.5px}}
+footer{{padding:28px 0 48px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}}
+@media (max-width:980px){{.card{{grid-template-columns:1fr}}.cols{{grid-template-columns:1fr}}}}
+@media (max-width:560px){{.wrap{{padding:0 16px}}.card{{padding:16px}}.shots{{padding:0 30px 34px 0}}dl > div{{grid-template-columns:1fr;gap:2px}}}}
+</style>
+</head>
+<body data-concept="compare" data-page="home">
+<header class="top"><div class="wrap">
+  <p class="kick">For approval · {today}</p>
+  <h1>One offer, four brands.</h1>
+  <p class="intro">Four versions of the scrap metal site for 116 Furner Avenue, North Geelong. Each one has a clear public drop-off and commercial collections from one tonne, and none of them pays for metal. They differ in name, look, which path leads, and the tool on the home page. Use the bar at the top of any page to swap between them; it keeps you on the matching&nbsp;page.</p>
+  <ul class="pick">{"".join(f'<li><a href="#{c["id"]}"><span class="dots">{"".join(f"<i style=background:{d}></i>" for d in c["dots"])}</span>{esc(c["name"])}</a></li>' for c in CONCEPTS)}</ul>
+  <div class="rec">
+    <h2>If you want one pick: The Metal Drop</h2>
+    <p>It follows the brief's order (public drop-off first, then commercial collections), the name says exactly what it does for signage and Google, its item checker answers the question people ask before they load up, and no conflicting name turned up on the ABN&nbsp;register.</p>
+    <p>If collections are the bigger revenue goal, By The Tonne is the stronger business pitch. If you want the most memorable brand for ads and signs, Shedload, after a check on the existing Shedload Pty&nbsp;Ltd.</p>
+  </div>
+</div></header>
+<main class="wrap">
+  <section class="cards" aria-label="The four concepts">{cards}</section>
+  <section class="cols">
+    <div class="box"><h3>The same in all four</h3><ul>{same}</ul></div>
+    <div class="box"><h3>Your feedback, applied</h3><ul>{fb}</ul></div>
+    <div class="box"><h3>Needs confirming before launch</h3><ul>{conf}</ul></div>
+  </section>
+</main>
+<footer><div class="wrap">Review page for the four concepts. Not part of any brand. Contact for all four: {C.CONTACT_FULL}, {C.PHONE}.</div></footer>
+</body>
+</html>
+'''
+    C.check(doc, "concepts/index.html")
+    open(os.path.join(OUT, "index.html"), "w").write(C.glue(doc))
+
+
+def main():
+    os.makedirs(OUT, exist_ok=True)
+    if "--no-shots" not in sys.argv:
+        shots()
+    page()
+    print("concepts page built")
+
+
+if __name__ == "__main__":
+    main()

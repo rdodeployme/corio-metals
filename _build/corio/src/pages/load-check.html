@@ -1,0 +1,53 @@
+<!--
+title: Load check | Corio Metals, North Geelong
+description: Add up your scrap metal: a rough weight, any fees at the gate, and whether to drop it off at Recycle North Geelong or book a collection.
+nav: load
+-->
+<section class="phead">
+  <div class="phead-img"><img src="assets/img/sorted-bays.webp" alt="" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow on-dark">Load check</p>
+    <h1>How much have you&nbsp;got?</h1>
+    <p class="lead">Add your items and how many. You'll get a rough weight, any fees at the gate, and whether to drop it off or book a&nbsp;collection.</p>
+    <div class="btns" style="margin-top:26px">
+      <a class="btn btn-amber" href="#lc">Start adding</a>
+      <a class="btn btn-line" href="#gate">Gate guide</a>
+    </div>
+  </div>
+</section>
+<div class="hazard"></div>
+
+<section class="sec">
+  <div class="wrap">
+    {{LOAD_CHECK}}
+  </div>
+</section>
+
+<section class="sec dark tonne-sec">
+  <div class="wrap tonne small-tonne">
+    <div class="tonne-num" aria-hidden="true">1<span>tonne</span></div>
+    <div>
+      <p class="eyebrow">Why one tonne</p>
+      <h2 class="h-wide">Under a tonne fits a trailer. Over a tonne fits a&nbsp;truck.</h2>
+      <p class="lead" style="color:#C9CDD0">A trailer without brakes can't weigh more than 750&nbsp;kg fully loaded. Once you're past a tonne it's quicker and safer for our crew to bring a truck or a bin to&nbsp;you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gate">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <p class="eyebrow">Gate guide</p>
+      <h2>What it costs at the&nbsp;gate.</h2>
+      <p class="lead">We don't pay for scrap metal, and clean metal costs nothing to drop off. These items carry a handling&nbsp;fee.</p>
+    </div>
+    {{GATE_GUIDE_LIGHT}}
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>{{HOURS}}, 116 Furner Avenue.</h2>
+    <div class="btns"><a class="btn btn-ink" href="drop-off.html">Drop-off details</a><a class="btn btn-line" href="collections.html#quote">Book a collection</a></div>
+  </div>
+</section>

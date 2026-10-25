@@ -1,4 +1,4 @@
-/* Corio Metals site behaviour. Rates come from rates.js (window.WM_RATES); site settings from window.CM. */
+/* Corio Metals site behaviour. Site settings from window.CM; item data from window.CM_ITEMS. */
 (function () {
   "use strict";
   var CM = window.CM || { phone: "0427888222", minKg: 1000, maps: "#" };
@@ -18,37 +18,13 @@
     window.addEventListener("resize", function () { if (window.innerWidth > 1060 && nav.classList.contains("open")) setMenu(false); });
   }
 
-  function fmt(n, d) { return Number(n).toLocaleString("en-AU", { maximumFractionDigits: d || 0, minimumFractionDigits: d || 0 }); }
-  var R = window.WM_RATES || { rates: {}, fees: {} };
-  var rates = R.rates || {}, fees = R.fees || {};
-  var money = function (n, dp) { return "$" + Number(n).toLocaleString("en-AU", { minimumFractionDigits: dp, maximumFractionDigits: dp }); };
-  var has = function (v) { return typeof v === "number" && isFinite(v) && v >= 0; };
+  function fmt(n) { return Number(n).toLocaleString("en-AU", { maximumFractionDigits: 0 }); }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
-  /* ---- any price on the page (board, home strip) ---- */
-  document.querySelectorAll("[data-rate]").forEach(function (el) {
-    var v = rates[el.getAttribute("data-rate")];
-    if (has(v)) el.innerHTML = '<span class="amt">' + money(v, 2) + '</span><span class="per">/kg</span>';
-  });
-  document.querySelectorAll("[data-fee]").forEach(function (el) {
-    var v = fees[el.getAttribute("data-fee")];
-    if (has(v)) el.innerHTML = '<span class="amt">' + money(v, 0) + '</span><span class="per">each</span>';
-  });
-  document.querySelectorAll("[data-rates-updated]").forEach(function (el) {
-    if (R.updated) el.textContent = String(R.updated);
-  });
-
-  /* ---- price board ---- */
-  var board = document.querySelector(".board");
-  if (board) {
-    var anyRate = Object.keys(rates).some(function (k) { return has(rates[k]); });
-    var stamp = document.getElementById("rates-stamp");
-    if (stamp && R.updated) {
-      stamp.classList.add("is-live");
-      stamp.querySelector("span").innerHTML = "Rates per kg · <b>" + String(R.updated).replace(/[<>&]/g, "") + "</b>";
-    } else if (stamp && !anyRate) {
-      stamp.querySelector("span").textContent = "Call for today's rates · per kg, clean and sorted";
-    }
-    var tabs = board.querySelectorAll('[role="tab"]');
+  /* ---- load check ---- */
+  var lc = document.getElementById("lc");
+  if (lc) {
+    var tabs = lc.querySelectorAll('[role="tab"]');
     var pick = function (t) {
       tabs.forEach(function (x) {
         var on = x === t; x.setAttribute("aria-selected", on ? "true" : "false"); x.tabIndex = on ? 0 : -1;
@@ -57,82 +33,77 @@
     };
     tabs.forEach(function (t, i) {
       t.tabIndex = i === 0 ? 0 : -1;
-      t.addEventListener("click", function () { pick(t); t.scrollIntoView({ block: "nearest", inline: "nearest" }); });
+      t.addEventListener("click", function () { pick(t); });
       t.addEventListener("keydown", function (e) {
         var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0; if (!d) return;
         e.preventDefault(); var n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus();
       });
     });
-  }
-
-  /* ---- load estimate: drop off under a tonne, collection from a tonne ---- */
-  var est = document.getElementById("est");
-  if (est) {
-    var rows = est.querySelectorAll(".mrow");
-    var kgOf = function (row) { var v = parseFloat(row.querySelector(".kg-in").value); return isFinite(v) && v > 0 ? Math.round(v) : 0; };
-    var setKg = function (row, v) { row.querySelector(".kg-in").value = Math.max(0, Math.round(v)); calcEst(); };
+    var rows = lc.querySelectorAll(".lrow");
+    var countOf = function (row) { var v = parseInt(row.querySelector(".lc-n").value, 10); return isFinite(v) && v > 0 ? v : 0; };
+    var setCount = function (row, v) { row.querySelector(".lc-n").value = Math.max(0, Math.min(999, v)); calc(); };
     rows.forEach(function (row) {
-      row.querySelector(".kg-minus").addEventListener("click", function () { setKg(row, kgOf(row) - 10); });
-      row.querySelector(".kg-plus").addEventListener("click", function () { setKg(row, kgOf(row) + 10); });
-      row.querySelector(".kg-in").addEventListener("input", calcEst);
-      row.querySelector(".kg-in").addEventListener("focus", function () { if (this.value === "0") this.select(); });
-      row.querySelector(".mgrade").addEventListener("change", calcEst);
+      row.querySelector(".lc-minus").addEventListener("click", function () { setCount(row, countOf(row) - 1); });
+      row.querySelector(".lc-plus").addEventListener("click", function () { setCount(row, countOf(row) + 1); });
+      var inp = row.querySelector(".lc-n");
+      inp.addEventListener("input", calc);
+      inp.addEventListener("focus", function () { if (this.value === "0") this.select(); });
     });
-    document.getElementById("est-clear").addEventListener("click", function () { rows.forEach(function (r) { r.querySelector(".kg-in").value = 0; }); calcEst(); });
-    calcEst();
+    lc.querySelectorAll(".lc-more").forEach(function (b) {
+      b.addEventListener("click", function () { b.parentNode.classList.add("show-all"); });
+    });
+    document.getElementById("lc-clear").addEventListener("click", function () { rows.forEach(function (r) { r.querySelector(".lc-n").value = 0; }); calc(); });
+    calc();
   }
 
-  function calcEst() {
-    var money0 = function (n) { return "$" + Math.round(n).toLocaleString("en-AU"); };
-    var lines = [], kg = 0, value = 0, priced = true;
-    est.querySelectorAll(".mrow").forEach(function (row) {
-      var v = parseFloat(row.querySelector(".kg-in").value); v = isFinite(v) && v > 0 ? Math.round(v) : 0;
-      row.classList.toggle("has", v > 0);
-      if (!v) return;
-      var sel = row.querySelector(".mgrade"), gid = sel.value, gname = sel.options[sel.selectedIndex].text;
-      var r = rates[gid];
-      kg += v;
-      if (has(r)) { value += v * r; lines.push([gname, fmt(v) + " kg · " + money0(v * r)]); }
-      else { priced = false; lines.push([gname, fmt(v) + " kg"]); }
+  function calc() {
+    var kg = 0, n = 0, lines = [], fees = [], preps = [], calls = [], what = [];
+    lc.querySelectorAll(".lrow").forEach(function (row) {
+      var c = parseInt(row.querySelector(".lc-n").value, 10); c = isFinite(c) && c > 0 ? c : 0;
+      row.classList.toggle("has", c > 0);
+      if (!c) return;
+      var k = +row.getAttribute("data-kg") * c, st = row.getAttribute("data-st"), name = row.getAttribute("data-name"), note = row.getAttribute("data-note");
+      kg += k; n += c;
+      lines.push("<li><span>" + esc(name) + (c > 1 ? " &times; " + c : "") + "</span><b>" + fmt(k) + "&nbsp;kg</b></li>");
+      what.push(name + (c > 1 ? " x " + c : ""));
+      if (st === "fee") fees.push(name + (c > 1 ? " &times; " + c : "") + ": " + esc(note.split(". ")[0].replace(/\.$/, "")));
+      if (st === "prep" && note) preps.push(esc(note.charAt(0).toLowerCase() + note.slice(1).replace(/\.$/, "")));
+      if (st === "call") calls.push(esc(name));
     });
-    var val = document.getElementById("est-val"), cap = document.getElementById("est-cap"), lbl = document.getElementById("est-lbl");
-    document.getElementById("est-lines").innerHTML = lines.map(function (l) { return "<li><span>" + l[0] + "</span><b>" + l[1] + "</b></li>"; }).join("");
-    document.getElementById("est-kg").textContent = fmt(kg) + " kg";
-    val.classList.remove("is-call");
+    var val = document.getElementById("lc-val"), cap = document.getElementById("lc-cap"), verdict = document.getElementById("lc-verdict");
     var big = kg >= CM.minKg;
-    if (!kg) {
-      lbl.textContent = "Your estimate"; val.textContent = "$0"; cap.textContent = "Add some kilos to get started";
-    } else if (priced) {
-      lbl.textContent = "Your estimate";
-      val.textContent = value < 20 ? money0(value) : money0(value * 0.9) + "–" + money0(value);
-      cap.textContent = "For about " + fmt(kg) + " kg at our listed rates";
+    val.innerHTML = fmt(kg) + "&nbsp;kg";
+    cap.textContent = n ? "Rough estimate for " + n + (n === 1 ? " item" : " items") : "Add a few items to get started";
+    var meter = document.getElementById("lc-meter");
+    meter.style.setProperty("--p", Math.min(100, kg / (2 * CM.minKg) * 100) + "%");
+    meter.classList.toggle("over", big);
+    document.getElementById("lc-lines").innerHTML = lines.join("");
+    var cost = document.getElementById("lc-cost"), gate = document.getElementById("lc-gate");
+    gate.querySelector("span").textContent = big ? "Collection" : "At the gate";
+    gate.classList.toggle("has-fee", !big && fees.length > 0);
+    cost.innerHTML = big ? "Quoted first" : fees.length ? "Handling fee on " + fees.length + (fees.length === 1 ? " item" : " items") : "No charge";
+    var extra = "";
+    if (fees.length && !big) extra += '<p class="lc-note">' + fees.join("<br>") + "</p>";
+    if (preps.length) extra += '<p class="lc-note">Before ' + (big ? "we come" : "you come") + ": " + preps.join("; ") + ".</p>";
+    if (calls.length) extra += '<p class="lc-note">Call first for: ' + calls.join(", ") + ".</p>";
+    gate.querySelectorAll(".lc-note").forEach(function (x) { x.remove(); });
+    gate.insertAdjacentHTML("beforeend", extra);
+    var cta = document.getElementById("lc-cta");
+    if (!n) {
+      verdict.innerHTML = "Under a tonne, drop it off. A tonne or more, we collect.";
+      cta.innerHTML = "";
+    } else if (big) {
+      verdict.innerHTML = "<b>That's over a tonne.</b> We can collect it from your site. One service fee, quoted before we come.";
+      cta.innerHTML = '<a class="btn btn-amber" href="collections.html?kg=' + Math.round(kg) + "&what=" + encodeURIComponent(what.join(", ")) + '#quote">Book a collection</a>' +
+        '<a class="btn btn-line" href="tel:' + CM.phone + '">Call Nigel</a>';
     } else {
-      lbl.textContent = "Your load"; val.classList.add("is-call"); val.textContent = fmt(kg) + " kg";
-      cap.textContent = "Call for today's rate on this load";
-    }
-    // which way in: the tonne line
-    var path = document.getElementById("est-path"), cta = document.getElementById("est-cta"), note = document.getElementById("est-note");
-    var meter = document.getElementById("est-meter");
-    if (meter) {
-      var pct = Math.min(100, kg / (2 * CM.minKg) * 100);
-      meter.style.setProperty("--p", pct + "%");
-      meter.classList.toggle("over", big);
-    }
-    var what = lines.map(function (l) { return l[0] + " (" + l[1].split(" · ")[0] + ")"; }).join(", ");
-    if (big) {
-      path.innerHTML = "<b>That's over a tonne.</b> We can collect it from your site. Collections are quoted before we come.";
-      cta.innerHTML = '<a class="btn btn-amber" href="collections.html?kg=' + kg + (what ? "&what=" + encodeURIComponent(what) : "") + '#quote">Book a collection</a>' +
-        '<a class="btn btn-line" href="tel:' + CM.phone + '">Call for today\'s rate</a>';
-      note.innerHTML = "Metal value at our listed rates, set on our weighbridge. The collection itself is quoted&nbsp;separately.";
-    } else {
-      path.innerHTML = kg ? "Under a tonne: <b>drop it off</b> at 116 Furner Avenue. " + fmt(CM.minKg - kg) + " kg more and we can collect it." : "Under a tonne: drop it off. A tonne or more: we can collect it.";
-      cta.innerHTML = (kg && !priced ? '<a class="btn btn-amber" href="tel:' + CM.phone + '">Call for today\'s rate</a>' : "") +
-        '<a class="btn btn-line" href="' + CM.maps + '" target="_blank" rel="noopener">Get directions</a>';
-      note.innerHTML = "Final price set on the scale at the yard. Paid by bank transfer, so bring photo&nbsp;ID.";
+      verdict.innerHTML = "<b>Drop it off.</b> " + fmt(CM.minKg - kg) + "&nbsp;kg under a tonne, so bring it to 116 Furner Avenue.";
+      cta.innerHTML = '<a class="btn btn-amber" href="' + CM.maps + '" target="_blank" rel="noopener">Directions</a>' +
+        '<a class="btn btn-line" href="drop-off.html">Drop-off details</a>';
     }
   }
 
-  /* ---- collection form: prefill from the load estimate ---- */
+  /* ---- collection form: prefill from the load check ---- */
   (function () {
     var f = document.querySelector('form.enq[data-subject="Collection quote request"]'); if (!f) return;
     try {
@@ -140,8 +111,8 @@
       if (q.get("what") && f.elements.what && !f.elements.what.value) f.elements.what.value = q.get("what").slice(0, 600);
       var kg = parseInt(q.get("kg"), 10);
       if (kg && f.elements.size) {
-        var t = kg / 1000, opt = t < 3 ? "1 to 3 tonnes" : t < 10 ? "3 to 10 tonnes" : "More than 10 tonnes";
-        f.elements.size.value = opt;
+        var t = kg / 1000;
+        f.elements.size.value = t < 3 ? "1 to 3 tonnes" : t < 10 ? "3 to 10 tonnes" : "More than 10 tonnes";
       }
     } catch (e) {}
   })();
