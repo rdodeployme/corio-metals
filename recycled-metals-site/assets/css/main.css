@@ -654,9 +654,11 @@ body.menu-open{overflow:hidden}
 .record{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(32px,5vw,80px);align-items:center}
 .lbl-bar{display:flex;align-items:center;gap:12px;max-width:none}
 .lbl-bar::before{content:"";flex:none;width:30px;height:8px;background:var(--yellow)}
-.record-vis{position:relative;padding-bottom:190px}
-.record-vis > img{width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:6px solid var(--yellow)}
-.record-vis .docket{position:absolute;right:-16px;bottom:0;width:min(360px,52%)}
+.record-vis{position:relative}
+.record-vis .docket{max-width:440px;margin-left:auto}
+.inv .dk{color:var(--black);border-color:#3A3A3A;box-shadow:0 26px 60px rgba(0,0,0,.55)}
+.inv .docket figcaption{color:#A9AAAC}
+.inv .ticks li{border-color:#3A3A3A}
 .docket{margin:0}
 .dk{position:relative;padding:28px 24px 20px;background:#fff;border:1px solid var(--g4);box-shadow:0 1px 0 var(--g4),0 22px 50px rgba(14,14,14,.22);font-family:var(--mono);overflow:hidden}
 .dk::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:repeating-linear-gradient(-45deg,var(--black) 0 9px,var(--yellow) 9px 18px)}
@@ -672,8 +674,8 @@ body.menu-open{overflow:hidden}
 .dk-foot{margin:12px 0 0;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--g2);max-width:none}
 .dk-stamp{position:absolute;left:30%;top:66%;transform:rotate(-14deg);padding:6px 14px;border:3px solid rgba(14,14,14,.5);color:rgba(14,14,14,.5);font:600 22px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase}
 .docket figcaption{margin:10px 0 0;font-size:12.5px;color:var(--g2)}
-@media (max-width:900px){.record{grid-template-columns:1fr}.record-vis{padding-bottom:0}.record-vis > img{width:100%}.record-vis .docket{position:relative;width:auto;max-width:440px;margin:-60px 16px 0 auto}}
-@media (max-width:420px){.dk{padding:24px 16px 16px}.dk-head img{height:28px}.dk-head span{font-size:10px;letter-spacing:.05em;white-space:nowrap}.dk-stamp{font-size:18px}.record-vis .docket{margin:-40px 8px 0}}
+@media (max-width:900px){.record{grid-template-columns:1fr}.record-vis .docket{margin:0}}
+@media (max-width:420px){.dk{padding:24px 16px 16px}.dk-head img{height:28px}.dk-head span{font-size:10px;letter-spacing:.05em;white-space:nowrap}.dk-stamp{font-size:18px}}
 
 /* bins as photos */
 .bins-row{padding:0 0 clamp(40px,5vw,64px)}
