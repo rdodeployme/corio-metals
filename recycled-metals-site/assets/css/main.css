@@ -685,3 +685,7 @@ body.menu-open{overflow:hidden}
 .bincards span{color:var(--g1);font-size:16px}
 @media (max-width:900px){.bincards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:480px){.bincards{grid-template-columns:1fr}}
+
+/* hero byline (Richard, 26 Oct): three lines */
+.hero-by span{display:block}
+.hero-by span+span{margin-top:.35em}
