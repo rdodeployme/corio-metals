@@ -13,17 +13,24 @@ TOWNS = [
     ("Werribee", -37.900, 144.663, (14, 6, "start"), "north"),
     ("Bacchus Marsh", -37.675, 144.438, (14, 6, "start"), "north"),
     ("Ballarat", -37.562, 143.850, (0, -16, "middle"), "north"),
+    ("Bannockburn", -38.048, 144.170, (-14, -6, "end"), "north"),
     ("Hamilton", -37.744, 142.022, (0, -16, "middle"), "west"),
     ("Lismore", -37.953, 143.340, (0, -16, "middle"), "west"),
+    ("Camperdown", -38.233, 143.149, (0, 30, "middle"), "west"),
+    ("Port Fairy", -38.384, 142.237, (0, -16, "middle"), "west"),
     ("Portland", -38.342, 141.605, (0, 30, "middle"), "west"),
     ("Warrnambool", -38.383, 142.485, (0, 30, "middle"), "west"),
     ("Colac", -38.340, 143.585, (0, -16, "middle"), "west"),
+    ("Winchelsea", -38.242, 143.989, (0, -16, "middle"), "west"),
     ("Apollo Bay", -38.759, 143.670, (-14, 6, "end"), "coast"),
+    ("Wye River", -38.636, 143.890, (-14, 6, "end"), "coast"),
     ("Lorne", -38.542, 143.975, (-14, 6, "end"), "coast"),
-    ("Torquay", -38.331, 144.326, (-14, 8, "end"), "coast"),
-    ("Ocean Grove", -38.264, 144.524, (14, 10, "start"), "coast"),
+    ("Anglesea", -38.407, 144.186, (-14, 8, "end"), "coast"),
+    ("Torquay", -38.331, 144.326, (-14, -4, "end"), "coast"),
+    ("Ocean Grove", -38.264, 144.524, (8, 34, "start"), "coast"),
+    ("Queenscliff", -38.267, 144.662, (14, 6, "start"), "coast"),
 ]
-GROUPS = [("north", "North and east"), ("west", "The west"), ("coast", "The coast")]
+GROUPS = [("north", "Geelong and the north"), ("west", "The west"), ("coast", "The coast")]
 
 LON0, LON1, LAT0, LAT1 = 141.35, 145.20, -37.40, -38.95
 K = math.cos(math.radians(38.1))
@@ -78,7 +85,7 @@ def svg():
         x, y = xy(lat, lon)
         spokes.append(f'<path class="sp" d="M{bx:.1f} {by:.1f}L{x:.1f} {y:.1f}"/>')
         dots.append(f'<circle class="tn" cx="{x:.1f}" cy="{y:.1f}" r="7"/>')
-        hide = " sm-hide" if name in ("Torquay", "Ocean Grove", "Lorne", "Bacchus Marsh", "Lismore", "Portland", "Werribee") else ""
+        hide = " sm-hide" if name in ("Torquay", "Ocean Grove", "Lorne", "Bacchus Marsh", "Lismore", "Portland", "Werribee", "Bannockburn", "Anglesea", "Wye River", "Winchelsea", "Queenscliff", "Camperdown", "Port Fairy") else ""
         labels.append(f'<text class="lb{hide}" x="{x + dx:.1f}" y="{y + dy:.1f}" text-anchor="{anc}">{name}</text>')
     # 50 km scale bar, bottom left
     px50 = 50 / (111.32 * K) / (LON1 - LON0) * W
