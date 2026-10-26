@@ -689,3 +689,12 @@ body.menu-open{overflow:hidden}
 /* hero byline (Richard, 26 Oct): three lines */
 .hero-by span{display:block}
 .hero-by span+span{margin-top:.35em}
+
+/* example docket, John Citizen (27 Oct) */
+.dk-head span b{display:block;margin-top:4px;font-weight:600;letter-spacing:.06em}
+.dk-items{margin:0;padding:10px 0;border-bottom:1.5px dashed var(--g3)}
+.dk-items > div{display:flex;justify-content:space-between;gap:16px;padding:3px 0;font-size:12.5px}
+.dk-items dt{text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--black)}
+.dk-total .net{margin-top:6px;padding-top:10px;border-top:1px solid var(--black);font-weight:600;font-size:17px}
+.dk-total .net dt{color:var(--black);font-size:14px}
+.dk-foot{line-height:1.5}

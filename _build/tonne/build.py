@@ -117,14 +117,14 @@ def load_directory():
 
 DIR = load_directory()
 TOTAL = sum(len(c["items"]) for c in DIR)
-assert len(DIR) == 19, len(DIR)
+assert len(DIR) == 20, len(DIR)
 
 SHORT = {"councils": "Councils", "transfer-stations": "Transfer stations", "residential": "Residential", "roads": "State roads",
          "health": "Health and aged care", "education": "Education", "offices": "Offices", "whitegoods": "Retail and whitegoods",
          "warehousing": "Warehousing", "industry": "Industry", "trades": "Trades", "rural": "Rural and farming",
          "hospitality": "Hospitality", "solar": "Solar", "ports": "Airports and ports",
          "screens": "Phones and printers", "medical": "Medical equipment", "batteries": "Batteries",
-         "vehicles": "Cars, boats and caravans"}
+         "vehicles": "Cars, boats and caravans", "construction": "Construction and demolition"}
 # grey photo for each sector tile
 TILE_IMG = {"councils": ("councils", "A council depot skip bin of old street signs, a bench frame and bin lids beside a works ute"),
             "transfer-stations": ("transfer", "A transfer station bay of whitegoods and steel under a steel roof, a car and trailer backed up"),
@@ -142,6 +142,7 @@ TILE_IMG = {"councils": ("councils", "A council depot skip bin of old street sig
             "solar": ("solar", "Old solar panels on pallets with aluminium rails and a cage of inverters"),
             "ports": ("ports", "A retired shipping container and stacked steel at a port, cranes behind"),
             "screens": ("screens", "Flat-screen TVs and monitors upright in steel stillages, with a crate of mobile phones on a pallet"),
+            "construction": ("construction", "Sorted structural steel, reo and scaffolding tubes beside a hook-lift bin on a construction site"),
             "vehicles": ("vehicles", "A tilt tray truck carrying an old car body beside an aluminium boat on a trailer"),
             "batteries": ("batteries", "Car batteries and lithium battery packs on pallets in a clean battery store"),
             "medical": ("medical", "A decommissioned digital X-ray machine, an ultrasound unit and a patient monitor in a hospital storeroom")}
@@ -255,25 +256,38 @@ def cant_take():
 
 
 def docket():
+    # Example public drop-off docket (26 Oct 2026, Andy: "a real docket for citizen john"). Figures are illustrative.
     return """<figure class="docket">
-  <div class="dk" role="img" aria-label="Sample weighbridge docket: date, customer, site, material, then gross, tare and net weight">
-    <div class="dk-head"><img src="assets/brand/plate.svg" alt="" width="173" height="60"><span>Weighbridge docket</span></div>
+  <div class="dk" role="img" aria-label="Example weighbridge docket for John Citizen: a ute and trailer load of 480 kilograms, free drop-off">
+    <div class="dk-head"><img src="assets/brand/plate.svg" alt="" width="173" height="60"><span>Weighbridge docket<br><b>No. RM-104832</b></span></div>
     <dl class="dk-rows">
-      <div><dt>Docket</dt><dd>No. 000000</dd></div>
-      <div><dt>Date</dt><dd>DD / MM / YYYY</dd></div>
-      <div><dt>Customer</dt><dd>Your business</dd></div>
-      <div><dt>Site</dt><dd>Your site, VIC</dd></div>
-      <div><dt>Material</dt><dd>Mixed steel</dd></div>
+      <div><dt>Date</dt><dd>27 / 10 / 2026</dd></div>
+      <div><dt>In / out</dt><dd>09:42 / 09:58</dd></div>
+      <div><dt>Customer</dt><dd>John Citizen</dd></div>
+      <div><dt>From</dt><dd>Lara VIC 3212</dd></div>
+      <div><dt>Vehicle</dt><dd>Ute + box trailer · 1JC&nbsp;4XR</dd></div>
+      <div><dt>Type</dt><dd>Public drop-off</dd></div>
     </dl>
     <dl class="dk-w">
-      <div><dt>Gross</dt><dd>16,240&nbsp;kg</dd></div>
-      <div><dt>Tare</dt><dd>10,980&nbsp;kg</dd></div>
-      <div class="net"><dt>Net</dt><dd>5,260&nbsp;kg</dd></div>
+      <div><dt>Gross</dt><dd>3,120&nbsp;kg</dd></div>
+      <div><dt>Tare</dt><dd>2,640&nbsp;kg</dd></div>
+      <div class="net"><dt>Net</dt><dd>480&nbsp;kg</dd></div>
     </dl>
-    <p class="dk-foot">Recycled Metals · Recycling metals since 1955</p>
-    <span class="dk-stamp" aria-hidden="true">Sample</span>
+    <dl class="dk-items">
+      <div><dt>Light steel</dt><dd>312&nbsp;kg</dd></div>
+      <div><dt>Whitegoods (fridge, washer)</dt><dd>124&nbsp;kg</dd></div>
+      <div><dt>Aluminium</dt><dd>26&nbsp;kg</dd></div>
+      <div><dt>Copper pipe</dt><dd>11&nbsp;kg</dd></div>
+      <div><dt>Brass taps</dt><dd>7&nbsp;kg</dd></div>
+    </dl>
+    <dl class="dk-rows dk-total">
+      <div><dt>Drop-off</dt><dd>Free</dd></div>
+      <div><dt>Handling fees</dt><dd>Nil</dd></div>
+      <div class="net"><dt>Total</dt><dd>$0.00</dd></div>
+    </dl>
+    <p class="dk-foot">Recycled Metals · Recycle North Geelong · 116 Furner Avenue, North Geelong VIC 3215 · EPA R000312600 · Operator RT</p>
   </div>
-  <figcaption>Sample layout, for illustration only. Each docket shows the load's weighed&nbsp;figures.</figcaption>
+  <figcaption>Example docket. Every load is weighed in and out, and the docket shows what came in and what it&nbsp;weighed.</figcaption>
 </figure>"""
 
 

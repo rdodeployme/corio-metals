@@ -28,7 +28,7 @@ CONCEPTS = [
     {"id": "tonne", "name": "Recycled Metals", "dir": "recycled-metals/", "dots": ["#0E0E0E", "#FFD200", "#FFFFFF"], "flag": "Richard's notes",
      "line": "Recycling metals since 1955. BTT, renamed and rebuilt on Richard's notes: free drop-off at any volume, four ways to move metal, and everything else by enquiry.",
      "look": "Black and white with safety yellow: the riveted yellow nameplate now reads RECYCLED METALS, with grey photos for every sector and a map from Werribee to Portland.",
-     "tool": "Find out what you can drop off: 845 items across 19 categories with a drop-off column (free, or the gate fee), plus bin, boot, back of the ute or B-double.",
+     "tool": "Find out what you can drop off: 865 items across 20 categories with a drop-off column (free, or the gate fee), plus bin, boot, back of the ute or B-double.",
      "best": "Richard's direction. Drop-off free and clear for everyone, bins, an operator with excavator and grapple, and containers and boats taken away for the big jobs.",
      "watch": "Free drop-off sits beside five gate fees from the price list. Werribee already has a council tip that takes metal free, so the west and the coast are the stronger markets for bins."},
     {"id": "shed", "name": "Shedload", "dir": "shedload/", "dots": ["#2C2D2F", "#7C9177", "#EAE3D2"],
@@ -221,7 +221,7 @@ footer{{padding:28px 0 48px;color:var(--mute);font-size:14px;border-top:1px soli
   <ul class="pick">{"".join(f'<li><a href="#{c["id"]}"><span class="dots">{"".join(f"<i style=background:{d}></i>" for d in c["dots"])}</span>{esc(c["name"])}</a></li>' for c in CONCEPTS)}</ul>
   <div class="rec">
     <h2>The lead: Recycled Metals</h2>
-    <p><b>Richard's notes, built: Recycled Metals, recycling metals since 1955.</b> Free drop-off at any volume, four ways to move metal, the 845-item list with a drop-off column, and a map of the towns&nbsp;covered.</p>
+    <p><b>Richard's notes, built: Recycled Metals, recycling metals since 1955.</b> Free drop-off at any volume, four ways to move metal, the 865-item list with a drop-off column, and a map of the towns&nbsp;covered.</p>
     <p><b>For the public first: The Metal Drop.</b> The name says exactly what it does for signage and Google, and its item checker answers the question people ask before they load&nbsp;up.</p>
     <p>Crux Metals for a new national name. Shedload for the most memorable ads and signs, after a check on Shedload Pty&nbsp;Ltd.</p>
   </div>

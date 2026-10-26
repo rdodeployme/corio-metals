@@ -543,5 +543,119 @@
    }
   ],
   "count": 20
+ },
+ {
+  "id": "construction",
+  "num": "20",
+  "title": "Building, construction & demolition",
+  "desc": "Structural steel, reo, roofing and site steel from builds, strip-outs and demolition jobs.",
+  "note": "Clean steel only: concrete knocked off where it can be, and no asbestos-contaminated material.",
+  "items": [
+   {
+    "n": "Structural steel offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel beams and columns",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Reinforcing bar (reo)",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Reo mesh",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel purlins and girts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Roofing iron and cladding",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel decking",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Scaffolding tubes and fittings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel formwork and props",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Temporary fence panels and bases",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel stud framing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel lintels",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel door frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium window frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel stairs and handrails",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Demolition steel",
+    "note": "concrete knocked off",
+    "tags": []
+   },
+   {
+    "n": "Copper pipe and fittings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electrical cable",
+    "note": "stripped or unstripped",
+    "tags": []
+   },
+   {
+    "n": "Ductwork and air-con units",
+    "note": "degassed",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Site sheds and containers",
+    "note": "call first",
+    "tags": [
+     "Specialist"
+    ]
+   }
+  ],
+  "count": 20
  }
 ]
