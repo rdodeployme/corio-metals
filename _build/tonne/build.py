@@ -220,10 +220,14 @@ def sizes():
 
 
 def bin_sizes():
-    """Skip bins drawn to scale: side of each square = cube root of the volume."""
-    mx = max(BIN_SIZES) ** (1 / 3)
-    out = "".join(f'<li><span class="cube" style="--k:{(v ** (1 / 3)) / mx:.3f}" aria-hidden="true"></span><b>{v}&nbsp;m³</b></li>' for v in BIN_SIZES)
-    return f'<ul class="bins" aria-label="Skip bin sizes: 15, 32 and 42 cubic metres">{out}</ul>'
+    """The bins as photos: the small regular-pick-up bin and the three skip sizes."""
+    bins = [("1 to 2&nbsp;m³", "Regular steel, picked up on a regular run", "smallbin", "A small steel bin of offcuts outside a workshop"),
+            ("15&nbsp;m³", "A shed, garage or yard clean-up", "bin-15", "A skip bin half full of bed frames, roofing iron and an old bike beside a garage"),
+            ("32&nbsp;m³", "Strip-outs, refits and site&nbsp;clean-ups", "bin-32", "A large hook-lift bin of steel offcuts and reo mesh on a building site"),
+            ("42&nbsp;m³", "Big factory, farm and depot jobs", "bin-42", "A very large hook-lift bin piled with pallet racking, a forklift beside it")]
+    out = "".join(f'<li><img src="assets/img/{img}-sm.webp" width="700" height="523" alt="{alt}" loading="lazy"><b>{v}</b><span>{d}</span></li>'
+                  for v, d, img, alt in bins)
+    return f'<ul class="bincards">{out}</ul>'
 
 
 def gate_guide():
@@ -235,6 +239,29 @@ def gate_guide():
 
 def cant_take():
     return "".join(f'<li>{CROSS}<span>{x}</span></li>' for x in C.CANT_TAKE)
+
+
+def docket():
+    return """<figure class="docket">
+  <div class="dk" role="img" aria-label="Sample weighbridge docket: date, customer, site, material, then gross, tare and net weight">
+    <div class="dk-head"><img src="assets/brand/plate.svg" alt="" width="173" height="60"><span>Weighbridge docket</span></div>
+    <dl class="dk-rows">
+      <div><dt>Docket</dt><dd>No. 000000</dd></div>
+      <div><dt>Date</dt><dd>DD / MM / YYYY</dd></div>
+      <div><dt>Customer</dt><dd>Your business</dd></div>
+      <div><dt>Site</dt><dd>Your site, VIC</dd></div>
+      <div><dt>Material</dt><dd>Mixed steel</dd></div>
+    </dl>
+    <dl class="dk-w">
+      <div><dt>Gross</dt><dd>16,240&nbsp;kg</dd></div>
+      <div><dt>Tare</dt><dd>10,980&nbsp;kg</dd></div>
+      <div class="net"><dt>Net</dt><dd>5,260&nbsp;kg</dd></div>
+    </dl>
+    <p class="dk-foot">Recycled Metals · By the tonne</p>
+    <span class="dk-stamp" aria-hidden="true">Sample</span>
+  </div>
+  <figcaption>Sample layout, for illustration only. Each docket shows the load's weighed&nbsp;figures.</figcaption>
+</figure>"""
 
 
 def creds():
@@ -300,7 +327,7 @@ def page(fname):
         if key in body:
             body = body.replace(key, fn())
     for key, val in {
-        "{{DIR_CHIPS}}": dir_chips(), "{{SIZES}}": sizes(), "{{BIN_SIZES}}": bin_sizes(), "{{CREDS}}": creds(),
+        "{{DIR_CHIPS}}": dir_chips(), "{{DOCKET}}": docket(), "{{SIZES}}": sizes(), "{{BIN_SIZES}}": bin_sizes(), "{{CREDS}}": creds(),
         "{{GATE_GUIDE}}": gate_guide(), "{{CANT_TAKE}}": cant_take(), "{{ARROW}}": ARROW, "{{CHECK}}": CHECK, "{{SEARCH}}": SEARCH,
         "{{TOTAL}}": str(TOTAL), "{{CATS}}": str(len(DIR)),
         "{{PHONE}}": C.PHONE.replace(" ", "&nbsp;"), "{{PHONE_TEL}}": C.PHONE_TEL, "{{EMAIL}}": C.EMAIL,
