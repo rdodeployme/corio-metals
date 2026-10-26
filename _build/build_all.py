@@ -2,7 +2,7 @@
 """Build every concept, the review switcher and the comparison page.
 
 python3 _build/build_all.py            # all
-python3 _build/build_all.py corio drop # some: corio, drop, tonne, shed, crux, concepts
+python3 _build/build_all.py corio drop # some: corio, drop, tonne, site, shed, crux, concepts
 """
 import os, sys, shutil, subprocess, re, glob, datetime
 
@@ -11,7 +11,7 @@ REPO = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(HERE, "common"))
 import common as C  # noqa: E402
 
-CONCEPTS = [("corio", "corio/build.py"), ("drop", "metaldrop/build.py"), ("tonne", "tonne/build.py"),
+CONCEPTS = [("corio", "corio/build.py"), ("drop", "metaldrop/build.py"), ("tonne", "tonne/build.py"), ("site", "tonne/build_site.py"),
             ("shed", "shedload/build.py"), ("crux", "crux/build.py"), ("concepts", "concepts/build.py")]
 
 
@@ -40,7 +40,7 @@ def run(which):
             if what == "em dash":
                 if re.search(pat, s):
                     raise SystemExit(f"em dash in {js}")
-            elif what == "the word 'free'" and "/recycled-metals/" in js:
+            elif what == "the word 'free'" and ("/recycled-metals/" in js or "/recycled-metals-site/" in js):
                 continue
             elif re.search(pat, s, re.I):
                 raise SystemExit(f"{what} in {js}: {re.search(pat, s, re.I).group(0)}")

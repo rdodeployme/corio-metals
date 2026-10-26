@@ -20,7 +20,9 @@ import common as C  # noqa: E402
 import map as MAP  # noqa: E402
 
 SRC = os.path.join(ROOT, "src")
-SLUG = "recycled-metals"
+# STANDALONE=1 builds the same site without the version bar, at its own address (build_site.py)
+STANDALONE = os.environ.get("RM_STANDALONE") == "1"
+SLUG = "recycled-metals-site" if STANDALONE else "recycled-metals"
 SITE = os.path.join(C.REPO, SLUG)
 OLD = os.path.join(C.REPO, "by-the-tonne")
 DEPTH = 1
@@ -193,7 +195,7 @@ def finder():
   <aside class="ways" aria-label="Two ways in">
     <p class="label">Two ways in</p>
     <dl>
-      <div><dt>Drop it off</dt><dd><b class="big-free">Free</b>Any volume, at {C.STREET}, North&nbsp;Geelong. {C.HOURS_DAYS}, no&nbsp;booking.</dd></div>
+      <div><dt>Drop it off</dt><dd><b class="big-free">Free</b>Any volume, from a bucket to a&nbsp;B&#8209;double.</dd></div>
       <div><dt>Collection</dt><dd><b class="big-enq">By enquiry</b>{enq}.</dd></div>
       <div><dt>Handling fees at the gate</dt><dd><ul class="fees">{fees}</ul></dd></div>
     </dl>
@@ -204,15 +206,16 @@ def finder():
 <script>window.RM_DIR={dir_json()};</script>'''
 
 
-SIZES = [("Bucket", "A few offcuts, old taps and fittings, a box of bolts.", 1),
-         ("Boot", "A BBQ frame, a bike, a mower with the fuel drained.", 2),
-         ("Back of the ute", "Roofing iron, fence panels, an old hot water unit.", 3),
-         ("B-double", "Truckloads from a factory, a farm or a demolition job.", 4)]
+SIZES = [("Bucket", "A few offcuts, old taps and fittings, a box of bolts.", 1, "size-bucket", "A metal bucket of old bolts, taps and pipe fittings"),
+         ("Boot", "A BBQ frame, a bike, a mower with the fuel drained.", 2, "size-boot", "A car boot loaded with a barbecue frame, a bike and a mower"),
+         ("Back of the ute", "Roofing iron, fence panels, an old hot water unit.", 3, "size-ute", "A ute tray piled with roofing iron, fence panels and a hot water unit"),
+         ("B-double", "Truckloads from a factory, a farm or a demolition job.", 4, "size-bdouble", "A B-double truck loaded with scrap steel beams and plate")]
 
 
 def sizes():
-    out = "".join(f'<li><span class="sz-bar" style="--s:{s}" aria-hidden="true"></span><b>{n}</b><p>{d}</p><span class="pr">Free</span></li>'
-                  for n, d, s in SIZES)
+    out = "".join(f'<li><img src="assets/img/{img}-sm.webp" width="700" height="523" alt="{alt}" loading="lazy">'
+                  f'<span class="sz-bar" style="--s:{s}" aria-hidden="true"></span><b>{n}</b><p>{d}</p><span class="pr">Free</span></li>'
+                  for n, d, s, img, alt in SIZES)
     return f'<ol class="sizes">{out}</ol>'
 
 
@@ -336,7 +339,7 @@ def page(fname):
 <link rel="preload" href="assets/fonts/saira-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-tight-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/main.css?v={VER}">
-{C.review_script(DEPTH)}
+{"" if STANDALONE else C.review_script(DEPTH)}
 <script type="application/ld+json">{json.dumps(schema)}</script>
 </head>
 <body data-concept="tonne" data-page="{PAGE_KEY.get(fname, "home")}">
@@ -424,8 +427,9 @@ def main():
     C.copy_rg_logos(os.path.join(SITE, "assets", "brand"))
     built = [page(f) for f in sorted(os.listdir(os.path.join(SRC, "pages"))) if f.endswith(".html")]
     og_image()
-    redirects()
-    print("recycled metals built", built)
+    if not STANDALONE:
+        redirects()
+    print("recycled metals" + (" (standalone)" if STANDALONE else "") + " built", built)
 
 
 if __name__ == "__main__":

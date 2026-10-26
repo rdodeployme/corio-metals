@@ -14,7 +14,7 @@ import cairosvg
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VF = os.path.join(HERE, "fonts", "saira-latin-wdth-normal.woff2")
-OUT = os.path.join(os.path.dirname(os.path.dirname(HERE)), "recycled-metals", "assets", "brand")
+OUT = os.path.join(os.path.dirname(os.path.dirname(HERE)), "recycled-metals-site" if os.environ.get("RM_STANDALONE") == "1" else "recycled-metals", "assets", "brand")
 os.makedirs(OUT, exist_ok=True)
 YELLOW, BLACK, WHITE = "#FFD200", "#0E0E0E", "#FFFFFF"
 _inst = {}
