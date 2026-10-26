@@ -40,13 +40,15 @@ def run(which):
             if what == "em dash":
                 if re.search(pat, s):
                     raise SystemExit(f"em dash in {js}")
+            elif what == "the word 'free'" and "/recycled-metals/" in js:
+                continue
             elif re.search(pat, s, re.I):
                 raise SystemExit(f"{what} in {js}: {re.search(pat, s, re.I).group(0)}")
     # sitemap + robots for the whole repo
     pages = []
     for f in sorted(glob.glob(os.path.join(REPO, "**", "*.html"), recursive=True)):
         rel = os.path.relpath(f, REPO)
-        if rel.startswith("_build") or rel.startswith("concepts/") or rel.endswith("404.html") or rel in ("prices.html",):
+        if rel.startswith("_build") or rel.startswith("concepts/") or rel.endswith("404.html") or rel in ("prices.html",) or rel.startswith("by-the-tonne/"):
             continue
         pages.append(rel)
     today = datetime.date.today().isoformat()

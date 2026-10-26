@@ -25,12 +25,12 @@ CONCEPTS = [
      "tool": "Item checker: tap what you've got to see no charge, a fee or prep first, and whether to drop off or book a collection.",
      "best": "The order of the brief: a clear public drop-off, then a clear commercial path. The name says what it does.",
      "watch": "The name says drop, so business buyers rely on the Business collections page."},
-    {"id": "tonne", "name": "BTT By The Tonne", "dir": "by-the-tonne/", "dots": ["#0E0E0E", "#FFD200", "#FFFFFF"], "flag": "Redone",
-     "line": "Commercial first. Collections from one tonne, every tonne on the record. Drop-off is the second path.",
-     "look": "Black and white with safety yellow: heavy, straight expanded type, a riveted steel nameplate logo, black-and-white photos and a sample weighbridge docket. No serif, no italics.",
-     "tool": "Tonnage estimator: list what's on site, see the total against the one-tonne minimum, send the list with the quote.",
-     "best": "Councils, procurement teams and multi-site businesses. Reads as a serious commercial operator.",
-     "watch": "Households find the drop-off on its own page, not front and centre. BTT needs By The Tonne beside it until people know it."},
+    {"id": "tonne", "name": "Recycled Metals", "dir": "recycled-metals/", "dots": ["#0E0E0E", "#FFD200", "#FFFFFF"], "flag": "Richard's notes",
+     "line": "By the tonne. BTT, renamed and rebuilt on Richard's notes: free drop-off at any volume, four ways to move metal, and everything else by enquiry.",
+     "look": "Black and white with safety yellow: the riveted yellow nameplate now reads RECYCLED METALS, with grey photos for every sector and a map from Werribee to Portland.",
+     "tool": "Find out what you can drop off: Crux's 766 items with a drop-off column (free, or the gate fee), plus bucket, boot, back of the ute or B-double.",
+     "best": "Richard's direction. Drop-off free and clear for everyone, bins, an operator with excavator and grapple, and containers and boats taken away for the big jobs.",
+     "watch": "Free drop-off sits beside five gate fees from the price list. Werribee already has a council tip that takes metal free, so the west and the coast are the stronger markets for bins."},
     {"id": "shed", "name": "Shedload", "dir": "shedload/", "dots": ["#2C2D2F", "#7C9177", "#EAE3D2"],
      "line": "Brand first. Shedload? Drop it off. Truckload? We'll collect.",
      "look": "Colorbond shed colours, stencil capitals, poster photos and labels like rubber stamps.",
@@ -48,8 +48,8 @@ CONCEPTS = [
 SAME = [
     "Public drop-off at Recycle North Geelong, 116 Furner Avenue. Clean scrap metal is no charge: we don't pay for it, and you don't pay to leave it.",
     "Handling fees on a few items only: gas bottles, fire extinguishers, nitrous canisters, solar panels and tyres on rims, as on Recycle North Geelong's price list.",
-    "Collections from one tonne. One service fee, quoted before we come. Our crew and truck, a bin on site or a load on the day.",
-    "A weighbridge docket for every load, and environmental reporting through YARTA.",
+    "A commercial path in every version: collections from one tonne in four of them, and bins and big jobs by enquiry in Recycled Metals.",
+    "A weighbridge docket for every collected load. YARTA reporting in four versions; Richard's notes took it out of Recycled Metals.",
     "Nigel Taylor as the only contact: 0427 888 222, nigel@recycle.net.au. Enquiry forms open an email to Nigel.",
     "The same can't-take list: asbestos, chemicals and hazardous waste, full or hired gas cylinders, firearms and explosives, clinical waste, anything holding fuel or oil.",
     "“A Recycle Group business” with the official Recycle mark near the logo and in every footer.",
@@ -72,7 +72,8 @@ FEEDBACK = [
     ("Recycle Group credit", "Near the logo and in every footer."),
     ("YARTA reporting", "On the commercial side of every version."),
     ("Batteries and data", "Batteries taken; drives removed or wiped before IT collections."),
-    ("No pink, orange or blue", "Corio keeps the Recycle Group copper. BTT uses safety yellow, Crux uses red oxide."),
+    ("No pink, orange or blue", "Corio keeps the Recycle Group copper. Recycled Metals uses safety yellow, Crux uses red oxide."),
+    ("Richard's notes, 26 Oct", "Recycled Metals: free drop-off at any volume, four ways to move metal, bin sizes, panels for a shed, a farm and a business, grey photo tiles, the town map. No \"we\", no tonne thresholds, no YARTA, checked on every build."),
     ("One link, big buttons", "All five live on the one link. Big buttons at the top of every page swap between them."),
 ]
 
@@ -84,7 +85,8 @@ CONFIRM = [
     "How non-metal parts of a load are charged (sites say the transfer station's usual rate).",
     "The collection minimum fee, the service area, and bin sizes.",
     "Whether a collection statement goes with each docket.",
-    "The final name, domain and email address. BTT is a common set of initials, so check the ABN register and trade marks before committing to it.",
+    "The final name, domain and email address.",
+    "For Recycled Metals: that drop-off stays free at any volume with the five gate fees still applying; bin sizes and pick-ups across every town on the map; how containers, boats and operator jobs are priced.",
     "For Crux Metals: showing the group's EPA registration and ISO certifications as its backing (both are on the Recycle Group site now).",
 ]
 
@@ -156,7 +158,7 @@ def page():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Five concepts for approval | Scrap metal drop-off and collections</title>
-<meta name="description" content="Five versions of the scrap metal site for 116 Furner Avenue, North Geelong: Corio Metals, The Metal Drop, BTT By The Tonne, Shedload and Crux Metals. Same offer, five different brands.">
+<meta name="description" content="Five versions of the scrap metal site for 116 Furner Avenue, North Geelong: Corio Metals, The Metal Drop, Recycled Metals, Shedload and Crux Metals. Same offer, five different brands.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:,">
 {C.review_script(1)}
@@ -215,13 +217,13 @@ footer{{padding:28px 0 48px;color:var(--mute);font-size:14px;border-top:1px soli
 <header class="top"><div class="wrap">
   <p class="kick">For approval · {today}</p>
   <h1>One offer, five versions.</h1>
-  <p class="intro">Five versions of the scrap metal site for 116 Furner Avenue, North Geelong. Each one has a clear public drop-off and commercial collections from one tonne, and none of them pays for metal. They differ in name, look, which path leads, and the tool on the home page. Tap the big buttons at the top of any page to swap between them; you stay on the matching&nbsp;page.</p>
+  <p class="intro">Five versions of the scrap metal site for 116 Furner Avenue, North Geelong. Each one has a clear public drop-off and a commercial path, and none of them pays for metal. They differ in name, look, which path leads, and the tool on the home page. Tap the big buttons at the top of any page to swap between them; you stay on the matching&nbsp;page.</p>
   <ul class="pick">{"".join(f'<li><a href="#{c["id"]}"><span class="dots">{"".join(f"<i style=background:{d}></i>" for d in c["dots"])}</span>{esc(c["name"])}</a></li>' for c in CONCEPTS)}</ul>
   <div class="rec">
-    <h2>Two picks, depending on what leads</h2>
-    <p><b>Richard's focus: Crux Metals.</b> Built around his own lines and his directory of 766&nbsp;items, with the group's credentials and YARTA reporting up front, under a name with national&nbsp;reach.</p>
-    <p><b>The public first: The Metal Drop.</b> It follows the brief's order, the name says exactly what it does for signage and Google, and its item checker answers the question people ask before they load&nbsp;up.</p>
-    <p>BTT if collections are the bigger revenue goal. Shedload for the most memorable ads and signs, after a check on Shedload Pty&nbsp;Ltd.</p>
+    <h2>The lead: Recycled Metals</h2>
+    <p><b>Richard's notes, built: Recycled Metals, by the tonne.</b> Free drop-off at any volume, four ways to move metal, the 766-item list with a drop-off column, and a map of the towns&nbsp;covered.</p>
+    <p><b>For the public first: The Metal Drop.</b> The name says exactly what it does for signage and Google, and its item checker answers the question people ask before they load&nbsp;up.</p>
+    <p>Crux Metals for a new national name. Shedload for the most memorable ads and signs, after a check on Shedload Pty&nbsp;Ltd.</p>
   </div>
 </div></header>
 <main class="wrap">
@@ -236,7 +238,7 @@ footer{{padding:28px 0 48px;color:var(--mute);font-size:14px;border-top:1px soli
 </body>
 </html>
 '''
-    C.check(doc, "concepts/index.html")
+    C.check(doc, "concepts/index.html", allow_free=True)
     open(os.path.join(OUT, "index.html"), "w").write(C.glue(doc))
 
 

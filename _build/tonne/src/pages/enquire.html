@@ -1,0 +1,69 @@
+<!--
+title: Enquire about a bin, an operator or a collection | Recycled Metals
+description: Bins for regular steel, skip bins in 15,&nbsp;32 and 42 cubic metres, an operator with excavator and grapple, or containers and boats taken away. Send the details to Nigel.
+nav: contact
+-->
+<section class="phead">
+  <div class="wrap">
+    <p class="label">Enquire</p>
+    <h1>Tell {{CONTACT}} what you've&nbsp;got.</h1>
+    <p class="lead">A bin for regular steel, a skip bin, an operator with an excavator and grapple, or containers and boats taken away. Send the details and {{CONTACT}} comes back to you. Drop-off needs no&nbsp;booking.</p>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap split top">
+    <form class="enq" data-to="{{EMAIL}}" data-subject="Recycled Metals enquiry" novalidate>
+      <div class="row2">
+        <div><label for="f-org">Organisation</label><input id="f-org" name="org" data-label="Organisation" autocomplete="organization"></div>
+        <div><label for="f-name">Your name</label><input id="f-name" name="name" data-label="Name" autocomplete="name" required></div>
+      </div>
+      <div class="row2">
+        <div><label for="f-phone">Phone</label><input id="f-phone" name="phone" data-label="Phone" type="tel" autocomplete="tel" required></div>
+        <div><label for="f-email">Email</label><input id="f-email" name="email" data-label="Email" type="email" autocomplete="email"></div>
+      </div>
+      <div><label for="f-site">Site address or suburb</label><input id="f-site" name="site" data-label="Site" autocomplete="street-address"></div>
+      <div><label for="f-need">What suits?</label>
+        <select id="f-need" name="need" data-label="Looking for">
+          <option>Not sure yet</option>
+          <option>A 1 to 2 m³ bin for regular steel</option>
+          <option>A 15 m³ skip bin</option>
+          <option>A 32 m³ skip bin</option>
+          <option>A 42 m³ skip bin</option>
+          <option>Operator, excavator and grapple</option>
+          <option>Container or boat taken away</option>
+        </select></div>
+      <div><label for="f-what">What have you got?</label><textarea id="f-what" name="what" data-label="What" placeholder="e.g. 40 bays of pallet racking, steel offcuts each week, an old shipping container"></textarea></div>
+      <button class="btn btn-yellow" type="submit">Send to {{CONTACT}} {{ARROW}}</button>
+      <p class="form-note">Opens your email app with this filled in. Nothing is sent until you press&nbsp;send.</p>
+      <p class="form-note form-done" hidden>Your email app should be open with the details. If it isn't, email <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>.</p>
+    </form>
+    <div>
+      <p class="label">Details</p>
+      <dl class="dl">
+        <div><dt>Call</dt><dd>{{CONTACT_FULL}} <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></dd></div>
+        <div><dt>Drop-off</dt><dd>{{FACILITY}}<br>{{ADDRESS}}</dd></div>
+        <div><dt>Open</dt><dd>{{HOURS}} · {{HOURS_NOTE}}</dd></div>
+        <div><dt>Area</dt><dd>Werribee to Portland, the coast to Ballarat. <a href="./#area">Service area</a></dd></div>
+      </dl>
+      <div class="map" style="margin-top:28px">{{MAP}}</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec paper" id="faq">
+  <div class="wrap split top">
+    <div>
+      <p class="label">Questions</p>
+      <h2>The short&nbsp;answers.</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Is scrap metal paid for?</summary><div class="a"><p>No. Recycled Metals doesn't buy scrap metal. Drop-off is free, any volume, and bins and collections are by&nbsp;enquiry.</p></div></details>
+      <details><summary>Do I need to book a drop-off?</summary><div class="a"><p>No booking for a car, ute or trailer. {{HOURS}}, call for gate times. For a truckload, a call ahead&nbsp;helps.</p></div></details>
+      <details><summary>What bin sizes are there?</summary><div class="a"><p>1 to 2&nbsp;m³ bins for regular steel on a regular pick-up, and skip bins in 15,&nbsp;32 and 42&nbsp;m³.</p></div></details>
+      <details><summary>Hard drives and batteries?</summary><div class="a"><p>Drives and SSDs come out or get wiped before computers or servers are collected. Batteries removed from equipment travel separately, and are taken&nbsp;too.</p></div></details>
+      <details><summary>What can't come in?</summary><div class="a"><p>{{CANT_SHORT}}</p></div></details>
+    </div>
+  </div>
+</section>

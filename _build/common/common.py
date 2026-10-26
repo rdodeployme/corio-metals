@@ -153,10 +153,13 @@ BANNED = [
 ]
 
 
-def check(html, fname):
+def check(html, fname, allow_free=False):
+    """Stop the build on banned wording. allow_free: Recycled Metals, where drop-off is free (26 Oct)."""
     text = re.sub(r"<script.*?</script>|<style.*?</style>", " ", html, flags=re.S)
     text = re.sub(r"<[^>]+>", " ", text)
     for pat, what in BANNED:
+        if allow_free and what == "the word 'free'":
+            continue
         m = re.search(pat, text if what != "em dash" else html, re.I)
         if m:
             ctx = text[max(0, m.start() - 60): m.end() + 60] if what != "em dash" else ""

@@ -1,23 +1,37 @@
 <!--
-title: Under a tonne? Drop it off at 116 Furner Avenue, North Geelong | BTT By The Tonne
-description: Less than a tonne of scrap metal? Drop it off at Recycle North Geelong, 116 Furner Avenue. Clean scrap metal is no charge. Gate fees for a few items, and what we can't take.
+title: Free scrap metal drop-off at 116 Furner Avenue, North Geelong | Recycled Metals
+description: Bring it to Recycled Metals at Recycle North Geelong, 116 Furner Avenue. Free scrap metal drop-off, any volume, Monday to Saturday, no booking.
 nav: dropoff
 -->
 <section class="phead">
   <div class="wrap">
-    <p class="label">Drop-off</p>
-    <h1>Under a tonne? Drop it&nbsp;off.</h1>
-    <p class="lead">Collections start at one tonne. For anything smaller, bring it to {{FACILITY}}, 116 Furner Avenue, North Geelong. Clean scrap metal is no charge, and you unload under&nbsp;cover.</p>
+    <p class="label">Drop-off · Free, any volume</p>
+    <h1><span class="nw">Bring it to</span> <span class="nw">Recycled Metals.</span></h1>
+    <p class="lead">At {{FACILITY}}, {{STREET}}, North Geelong. Free scrap metal drop-off, any volume, from a bucket to a B&#8209;double. Unload under cover, with staff on hand to show where it&nbsp;goes.</p>
+    <div class="btns mt"><a class="btn btn-yellow" href="{{MAPS_DIR}}" target="_blank" rel="noopener">Directions {{ARROW}}</a><a class="btn btn-line" href="items.html">What you can drop off</a></div>
   </div>
 </section>
 
-<section class="sec tight">
+<figure class="band-ph">
+  <img src="assets/img/dropoff-floor.webp" srcset="assets/img/dropoff-floor-sm.webp 700w, assets/img/dropoff-floor.webp 1400w" sizes="100vw" width="1400" height="812" alt="The drop-off floor at Recycle North Geelong, with separate cages for gas bottles, fire extinguishers and car batteries">
+  <figcaption class="wrap cap">The drop-off floor at {{FACILITY}}. Gas bottles, extinguishers, nitrous canisters and car batteries each have their own&nbsp;cage.</figcaption>
+</figure>
+
+<section class="drop-facts">
+  <div class="wrap ones-in">
+    <div class="one"><p class="label">Where</p><p class="big-t">{{STREET}}</p><p>{{FACILITY}}, North Geelong VIC&nbsp;3215</p></div>
+    <div class="one"><p class="label">When</p><p class="big-t">{{HOURS}}</p><p>Call for gate times on <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a>. No booking for a car, ute or&nbsp;trailer.</p></div>
+    <div class="one"><p class="label">Cost</p><p class="big-t">Free</p><p>Any volume of clean scrap metal. A handling fee on a few&nbsp;items.</p></div>
+  </div>
+</section>
+
+<section class="sec tight" id="sizes">
   <div class="wrap">
-    <div class="ones-in drop-facts">
-      <div class="one"><p class="label">Where</p><p class="big-t">116 Furner Avenue</p><p>{{FACILITY}}, North Geelong VIC&nbsp;3215</p></div>
-      <div class="one"><p class="label">When</p><p class="big-t">{{HOURS}}</p><p>{{HOURS_NOTE}} on <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a></p></div>
-      <div class="one"><p class="label">Cost</p><p class="big-t">No charge</p><p>for clean scrap metal. A few items carry a&nbsp;fee.</p></div>
-    </div>
+    <header class="sh">
+      <p class="label">Any volume</p>
+      <div><h2>Bucket, boot, back of the ute or&nbsp;B&#8209;double.</h2></div>
+    </header>
+    {{SIZES}}
   </div>
 </section>
 
@@ -25,18 +39,22 @@ nav: dropoff
   <div class="wrap fee">
     <div>
       <p class="label">At the gate</p>
-      <h2>Most metal costs nothing to&nbsp;leave.</h2>
-      <p class="lead">These few items carry a handling fee because they need extra work before they can be recycled. Sort the metal from your rubbish and it stays no&nbsp;charge.</p>
+      <h2>Free, with a fee on a few&nbsp;items.</h2>
+      <p class="lead">Gas bottles, fire extinguishers, nitrous canisters, solar panels and tyres on rims need extra handling, so they carry a fee. Everything else metal is&nbsp;free.</p>
+      <p class="fine">Recycled Metals doesn't buy scrap metal.</p>
     </div>
     <div>{{GATE_GUIDE}}</div>
   </div>
 </section>
 
-<section class="sec" id="before">
+<section class="sec" id="prep">
   <div class="wrap">
     <header class="sh">
       <p class="label">Before you come</p>
-      <div><h2>Five minutes at home, in and out at the&nbsp;gate.</h2></div>
+      <div>
+        <h2>Sort it before you&nbsp;come.</h2>
+        <p class="lead">Sorted loads are quicker to unload. Staff on site show where each part&nbsp;goes.</p>
+      </div>
     </header>
     <ul class="list2">
       <li>{{CHECK}}<span>Metal in one pile, everything else in another</span></li>
@@ -52,8 +70,11 @@ nav: dropoff
 <section class="sec inv" id="cant">
   <div class="wrap">
     <header class="sh">
-      <p class="label">We can't take</p>
-      <div><h2>Please leave these at&nbsp;home.</h2></div>
+      <p class="label">Not accepted</p>
+      <div>
+        <h2>Please leave these at&nbsp;home.</h2>
+        <p class="lead">Car bodies and big machinery: call {{CONTACT}} first on <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a>.</p>
+      </div>
     </header>
     <ul class="list2">{{CANT_TAKE}}</ul>
   </div>
@@ -62,12 +83,12 @@ nav: dropoff
 <section class="sec" id="find">
   <div class="wrap split top">
     <div>
-      <p class="label">Find us</p>
+      <p class="label">Find it</p>
       <h2>116 Furner Avenue, North&nbsp;Geelong.</h2>
       <dl class="dl">
         <div><dt>Address</dt><dd>{{FACILITY}}<br>{{ADDRESS}}</dd></div>
         <div><dt>Open</dt><dd>{{HOURS}} · {{HOURS_NOTE}}</dd></div>
-        <div><dt>Call</dt><dd>{{CONTACT}} <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a></dd></div>
+        <div><dt>Call</dt><dd>{{CONTACT_FULL}} <a href="tel:{{PHONE_TEL}}">{{PHONE}}</a></dd></div>
       </dl>
       <div class="btns mt"><a class="btn btn-black" href="{{MAPS_DIR}}" target="_blank" rel="noopener">Directions {{ARROW}}</a></div>
     </div>
@@ -75,11 +96,14 @@ nav: dropoff
   </div>
 </section>
 
-<section class="sec tight">
+<section class="sec tight paper">
   <div class="wrap">
     <div class="band">
-      <h2>A tonne or more? We'll&nbsp;collect.</h2>
-      <div class="btns"><a class="btn btn-yellow" href="quote.html">Get a quote {{ARROW}}</a><a class="btn btn-line" href="services.html">Services</a></div>
+      <div>
+        <p class="label">Too much to bring in?</p>
+        <h2>Get a bin dropped&nbsp;off.</h2>
+      </div>
+      <div class="btns"><a class="btn btn-yellow" href="bins-and-collections.html">Bins and collections {{ARROW}}</a><a class="btn btn-line" href="enquire.html">Enquire</a></div>
     </div>
   </div>
 </section>

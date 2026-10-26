@@ -1,0 +1,4196 @@
+[
+ {
+  "id": "councils",
+  "num": "01",
+  "title": "Councils & local government",
+  "desc": "Parks, public infrastructure, maintenance depots, community facilities and municipal asset replacement.",
+  "count": 51,
+  "note": "",
+  "items": [
+   {
+    "n": "Street signs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Signposts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Streetlight poles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Streetlight fittings",
+    "note": "tubes and globes out",
+    "tags": []
+   },
+   {
+    "n": "Traffic signal poles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Traffic signal housings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel guardrails",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Pedestrian safety barriers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel bollards",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel fencing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel gates",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Park benches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Picnic tables with steel frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Playground frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Playground swings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Playground slides with metal parts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Basketball hoops and poles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Goalposts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Sportsground fencing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Grandstand seating frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Bicycle racks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Bus shelters",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Bus stop signs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal handrails",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal staircases",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal rubbish bins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Public litter bins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Skip bins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Hook-lift bins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel storage containers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Council fleet vehicles",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Council utility vehicles",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Maintenance trailers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Ride-on mowers",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "Tractors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Excavator attachments",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel water tanks",
+    "note": "empty",
+    "tags": []
+   },
+   {
+    "n": "Irrigation pumps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Water pipes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Fire hydrant components",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stormwater grates",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Drainage grilles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Manhole covers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal access covers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Public toilet fixtures",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel sinks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Air conditioning units",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Hot water systems",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Electrical switchboards",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Scrap electrical cable",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Nitrous oxide canisters from street and park clean-ups",
+    "note": "pierced and recycled",
+    "tags": [
+     "Specialist"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "transfer-stations",
+  "num": "02",
+  "title": "Transfer stations & resource recovery centres",
+  "desc": "Household and commercial metal received through public drop-off, hard-waste and recycling programs.",
+  "count": 54,
+  "note": "",
+  "items": [
+   {
+    "n": "Refrigerators",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Freezers",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Washing machines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Clothes dryers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Dishwashers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric ovens",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Gas stoves",
+    "note": "gas disconnected",
+    "tags": []
+   },
+   {
+    "n": "Rangehoods",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Microwave ovens",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Hot water systems",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Air conditioning units",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "BBQs",
+    "note": "gas bottle removed",
+    "tags": []
+   },
+   {
+    "n": "Bicycles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Exercise bikes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Trampolines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Lawn mowers",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "Whipper snippers",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "Wheelbarrows",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal garden furniture",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal bed frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Mattress springs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal sheds",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal clotheslines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal ladders",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Shopping trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Filing cabinets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal lockers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal cupboards",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel toolboxes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel fencing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel gates",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Corrugated roofing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium window frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium doors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel doors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Copper pipes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Brass taps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Water pumps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Car wheels",
+    "note": "tyres off",
+    "tags": []
+   },
+   {
+    "n": "Vehicle radiators",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Engine blocks",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Vehicle batteries",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electrical cables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel drums",
+    "note": "empty and clean",
+    "tags": []
+   },
+   {
+    "n": "Metal water tanks",
+    "note": "empty",
+    "tags": []
+   },
+   {
+    "n": "Steel pipes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Mixed steel offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "LPG and barbecue gas bottles",
+    "note": "empty, customer-owned",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Fire extinguishers",
+    "note": "discharged",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Aerosol and gas canisters",
+    "note": "empty",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Nitrous oxide canisters",
+    "note": "pierced and recycled",
+    "tags": [
+     "Specialist"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "residential",
+  "num": "03",
+  "title": "Residential & household",
+  "desc": "Kerbside collections, garage clean-outs, property clearances, renovations and appliance replacement.",
+  "count": 52,
+  "note": "",
+  "items": [
+   {
+    "n": "Fridges",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Freezers",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Washing machines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Dryers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Dishwashers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stoves",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Ovens",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Microwaves",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Rangehoods",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Hot water units",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Split-system air conditioners",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Window air conditioners",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "BBQs",
+    "note": "gas bottle removed",
+    "tags": []
+   },
+   {
+    "n": "Bicycles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Trampolines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal swing sets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal play equipment",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Exercise bikes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Treadmills",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Weight benches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal gym weights",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal bed frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Mattress springs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Outdoor metal chairs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Outdoor metal tables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal desks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal filing cabinets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal wardrobes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal tool cabinets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel workbenches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium ladders",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal sheds",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal gates",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel fencing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium window frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal security doors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal garage doors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel roofing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal guttering",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Copper pipes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Brass plumbing fittings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel sinks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal bathtubs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Water pumps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Car wheels",
+    "note": "tyres off",
+    "tags": []
+   },
+   {
+    "n": "Car parts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electrical wiring",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal water tanks",
+    "note": "empty",
+    "tags": []
+   },
+   {
+    "n": "LPG and barbecue gas bottles",
+    "note": "empty, customer-owned",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Camping gas and aerosol canisters",
+    "note": "empty",
+    "tags": [
+     "Specialist"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "roads",
+  "num": "04",
+  "title": "State roads & transport infrastructure",
+  "desc": "State road authorities, road maintenance contractors, roadside recovery and abandoned vehicle programs.",
+  "count": 50,
+  "note": "Vehicles, trailers and containers are collected by arrangement, once the owner or authority has cleared them for disposal.",
+  "items": [
+   {
+    "n": "Abandoned cars",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned utility vehicles",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned vans",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned trucks",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned buses",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned motorcycles",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned scooters",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned caravans",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned box trailers",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned boat trailers",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned camper trailers",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned machinery trailers",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Abandoned shipping containers",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Damaged car bodies",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Damaged truck bodies",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Vehicle chassis",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Truck chassis",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Vehicle engines",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Vehicle gearboxes",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Vehicle radiators",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Vehicle wheels",
+    "note": "tyres off",
+    "tags": []
+   },
+   {
+    "n": "Steel wheel rims",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium wheels",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Vehicle exhaust systems",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Vehicle suspension components",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Traffic light poles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Traffic light housings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Streetlight poles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Streetlight fittings",
+    "note": "tubes and globes out",
+    "tags": []
+   },
+   {
+    "n": "Road signposts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Road signs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Overhead sign gantries",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel guardrails",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Guardrail posts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Crash barriers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Wire rope safety barriers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Bridge steel beams",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Bridge expansion joints",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel bridge handrails",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Pedestrian barriers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Roadside steel fencing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel bollards",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal drainage grates",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Culvert pipes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stormwater grilles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal maintenance sheds",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Road maintenance machinery",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Road rollers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Road sweepers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Portable traffic signal trailers",
+    "note": "",
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "health",
+  "num": "05",
+  "title": "Health, hospitals & aged care",
+  "desc": "Hospitals, aged-care homes, medical clinics, rehabilitation centres, laboratories and healthcare facilities.",
+  "count": 53,
+  "note": "",
+  "items": [
+   {
+    "n": "Hospital bed frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric hospital beds",
+    "note": "batteries out",
+    "tags": []
+   },
+   {
+    "n": "Aged-care beds",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Patient lifting hoists",
+    "note": "batteries out",
+    "tags": []
+   },
+   {
+    "n": "Wheelchairs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Mobility scooters",
+    "note": "batteries removed",
+    "tags": []
+   },
+   {
+    "n": "Walking frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Shower chairs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commode chairs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Examination tables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Operating tables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "X-ray machines and mobile X-ray units",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "C-arms and other imaging equipment",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Dental and veterinary X-ray units",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Medical instrument trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel medical trays",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Medical storage cabinets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Medical shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "IV stands",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Surgical lighting frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Medical equipment stands",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Dental chairs",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Dental equipment",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Laboratory benches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Laboratory equipment",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Sterilisation equipment",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Autoclaves",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Medical equipment carts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel sinks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel benches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial dishwashers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial ovens",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial refrigerators",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Commercial freezers",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Food service trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel kitchen racks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Laundry washing machines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial dryers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Laundry pressing equipment",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Hot water systems",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Air conditioning units",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Ventilation ducting",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Water pumps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Backup generators",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "Electrical switchboards",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Electrical cables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal filing cabinets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal office furniture",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel lockers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal security doors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium window frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel fencing",
+    "note": "",
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "education",
+  "num": "06",
+  "title": "Schools, universities & TAFEs",
+  "desc": "Classroom refurbishment, campus maintenance, science laboratories, workshops, sports facilities and IT replacement.",
+  "count": 50,
+  "note": "",
+  "items": [
+   {
+    "n": "Metal school desks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal classroom chairs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal lockers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Filing cabinets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal bookshelves",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Library shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal storage cupboards",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal workbenches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Whiteboard frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Noticeboard frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Computer towers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Computer monitors",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Photocopiers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Printers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Server racks",
+    "note": "empty",
+    "tags": []
+   },
+   {
+    "n": "Network cabinets",
+    "note": "empty",
+    "tags": []
+   },
+   {
+    "n": "Air conditioning units",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Hot water systems",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Commercial refrigerators",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Commercial dishwashers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel sinks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel benches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial kitchen equipment",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal food trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal canteen shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Laboratory benches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Laboratory equipment",
+    "note": "decontaminated",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Science equipment stands",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal fume cupboards",
+    "note": "asbestos-free, decontaminated",
+    "tags": []
+   },
+   {
+    "n": "Workshop lathes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Milling machines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Drill presses",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Welding equipment",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Workshop compressors",
+    "note": "empty and depressurised",
+    "tags": []
+   },
+   {
+    "n": "Electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electrical training panels",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Scrap electrical cable",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Copper offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Basketball hoops",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Football goalposts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal gym equipment",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Playground frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel fencing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel gates",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Bicycle racks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal bleachers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Campus maintenance trailers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Grounds maintenance machinery",
+    "note": "",
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "offices",
+  "num": "07",
+  "title": "Offices & commercial buildings",
+  "desc": "Office refurbishments, tenancy changes, building maintenance, relocations and equipment replacement.",
+  "count": 51,
+  "note": "",
+  "items": [
+   {
+    "n": "Metal office desks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal desk frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Office chair frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Filing cabinets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal storage cupboards",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal lockers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal bookcases",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal partitions",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium partition frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal reception counters",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal meeting tables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal workstation frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal pedestals",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Photocopiers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Printers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Computers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Computer monitors",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Server racks",
+    "note": "empty",
+    "tags": []
+   },
+   {
+    "n": "Network cabinets",
+    "note": "empty",
+    "tags": []
+   },
+   {
+    "n": "Data centre cabinets",
+    "note": "empty",
+    "tags": []
+   },
+   {
+    "n": "Telephone systems",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Electronic security systems",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Vending machines",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Water coolers",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Commercial refrigerators",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Dishwashers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Microwaves",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Stainless steel sinks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel benches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Hot water systems",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Air conditioning units",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "HVAC motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Ventilation ducting",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electrical switchboards",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Electrical cables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Backup generators",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "UPS cabinets",
+    "note": "batteries removed",
+    "tags": []
+   },
+   {
+    "n": "Battery cabinets",
+    "note": "batteries removed",
+    "tags": []
+   },
+   {
+    "n": "Metal light fittings",
+    "note": "tubes and globes out",
+    "tags": []
+   },
+   {
+    "n": "Aluminium window frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal doors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel security doors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal handrails",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal staircases",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel fencing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal bollards",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal signage frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial waste bins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal storage cages",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Fire extinguishers",
+    "note": "discharged",
+    "tags": [
+     "Specialist"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "whitegoods",
+  "num": "08",
+  "title": "Retail, whitegoods & hardware",
+  "desc": "Appliance retailers, national chains, electrical and hardware stores, supermarkets and retail take-back programs.",
+  "count": 51,
+  "note": "",
+  "items": [
+   {
+    "n": "Refrigerators",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Freezers",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Washing machines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Clothes dryers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Dishwashers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric ovens",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Gas cooktops",
+    "note": "gas disconnected",
+    "tags": []
+   },
+   {
+    "n": "Rangehoods",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Microwave ovens",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Hot water systems",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Air conditioning units",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Portable air conditioners",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Commercial display refrigerators",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Commercial display freezers",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Refrigerated display cabinets",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Coffee machines",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Food processors",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Electric mixers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Electric kettles",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Toasters",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Electric fans",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Vacuum cleaners",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Lawn mowers",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "BBQs",
+    "note": "gas bottle removed",
+    "tags": []
+   },
+   {
+    "n": "Prams and strollers",
+    "note": "in bulk",
+    "tags": []
+   },
+   {
+    "n": "Metal tool cabinets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Retail display racks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel retail shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal gondola shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal display stands",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Clothing racks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal shop counters",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Shopping trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Shopping baskets with metal frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal stockroom shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Warehouse pallet racking",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal storage cages",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal security grilles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal roller shutters",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal signage frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium shopfront frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal display cabinets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal shelving brackets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Copper wiring",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electrical cables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Retail trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal waste bins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Damaged metal merchandise",
+    "note": "",
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "warehousing",
+  "num": "09",
+  "title": "Warehousing, logistics & distribution",
+  "desc": "Distribution centres, freight depots, third-party logistics, storage facilities and material handling.",
+  "count": 50,
+  "note": "",
+  "items": [
+   {
+    "n": "Pallet racking",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Warehouse shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel storage cages",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal pallet cages",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel pallets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium pallets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Roll cages",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stillages",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal picking trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Warehouse carts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Pallet jacks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric pallet trucks",
+    "note": "batteries removed",
+    "tags": []
+   },
+   {
+    "n": "Forklifts",
+    "note": "batteries and gas bottle removed",
+    "tags": []
+   },
+   {
+    "n": "Forklift attachments",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Forklift masts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Conveyor systems",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Conveyor rollers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Conveyor frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Loading dock levellers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Dock plates",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Dock shelters with metal frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel loading platforms",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Warehouse ladders",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Warehouse mezzanine steel",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel safety barriers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Truck bodies",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Truck tailgates",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Truck loading ramps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Trailer bodies",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Trailer chassis",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel shipping containers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Container doors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal storage bins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel drums",
+    "note": "empty and clean",
+    "tags": []
+   },
+   {
+    "n": "Metal strapping",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Scrap steel offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Copper cables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Gearboxes",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Hydraulic pumps",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Hydraulic cylinders",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Air compressors",
+    "note": "empty and depressurised",
+    "tags": []
+   },
+   {
+    "n": "Backup generators",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "Electrical switchboards",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Industrial lighting",
+    "note": "tubes and globes out",
+    "tags": []
+   },
+   {
+    "n": "Air conditioning units",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Metal ventilation ducting",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Industrial fans",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal security fencing",
+    "note": "",
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "industry",
+  "num": "10",
+  "title": "Industry, manufacturing & engineering",
+  "desc": "Factories, engineering workshops, manufacturers, heavy industry, machinery servicing and decommissioning.",
+  "count": 52,
+  "note": "",
+  "items": [
+   {
+    "n": "Steel plate offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel beams",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel channels",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel angles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel tubing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel pipe",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel sheet",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel pipe",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium sheet",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium extrusion",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Copper pipe",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Copper wire",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Brass offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Bronze offcuts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Cast iron components",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel castings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium castings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "CNC machines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal lathes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Milling machines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Drill presses",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal presses",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Guillotine cutters",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Welding machines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Industrial saws",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Gearboxes",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Hydraulic pumps",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Hydraulic cylinders",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Industrial compressors",
+    "note": "empty and depressurised",
+    "tags": []
+   },
+   {
+    "n": "Industrial generators",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "Industrial transformers",
+    "note": "PCB-free",
+    "tags": []
+   },
+   {
+    "n": "Electrical switchboards",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Industrial cables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Copper busbars",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Brass valves",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel tanks",
+    "note": "empty and clean",
+    "tags": []
+   },
+   {
+    "n": "Steel storage tanks",
+    "note": "empty and clean",
+    "tags": []
+   },
+   {
+    "n": "Pressure vessels",
+    "note": "empty and depressurised",
+    "tags": []
+   },
+   {
+    "n": "Industrial boilers",
+    "note": "empty and depressurised",
+    "tags": []
+   },
+   {
+    "n": "Heat exchangers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Industrial radiators",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Conveyor systems",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Conveyor rollers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Industrial mixers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Industrial shredders",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Industrial crushers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Industrial screening equipment",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel machinery frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Scrap metal bins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Welding gas cylinders",
+    "note": "empty, customer-owned, by arrangement",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Fire extinguishers",
+    "note": "discharged",
+    "tags": [
+     "Specialist"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "trades",
+  "num": "11",
+  "title": "Trades & contractors",
+  "desc": "Electricians, plumbers, HVAC, builders and contractors: workshops, building sites, renovations and service vehicles.",
+  "count": 51,
+  "note": "",
+  "items": [
+   {
+    "n": "Copper electrical cable",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Insulated copper wire",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium electrical cable",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Armoured cable",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electrical switchboards",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Distribution boards",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Circuit breaker panels",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Electrical transformers",
+    "note": "PCB-free",
+    "tags": []
+   },
+   {
+    "n": "Electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Generators",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "Metal electrical conduits",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Cable trays",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Cable ladders",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal junction boxes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal light fittings",
+    "note": "tubes and globes out",
+    "tags": []
+   },
+   {
+    "n": "Metal light poles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar panel frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar mounting rails",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar inverters",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Battery storage cabinets",
+    "note": "batteries removed",
+    "tags": []
+   },
+   {
+    "n": "Copper plumbing pipes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Brass plumbing fittings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Brass taps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Brass valves",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Copper hot water cylinders",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Steel water pipes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel pipe fittings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel pipe",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel sinks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel benches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Hot water systems",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Gas hot water units",
+    "note": "drained, gas disconnected",
+    "tags": []
+   },
+   {
+    "n": "Solar hot water tanks",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Water pumps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Circulation pumps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Air conditioning units",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Air conditioning compressors",
+    "note": "degassed first",
+    "tags": []
+   },
+   {
+    "n": "Refrigeration coils",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Copper refrigeration tubing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium ducting",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Galvanised ducting",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel roofing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal guttering",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal downpipes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel framing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel reinforcing mesh",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium window frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel doors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal scaffolding",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal ladders",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Oxy-acetylene and welding gas bottles",
+    "note": "empty, customer-owned, by arrangement",
+    "tags": [
+     "Specialist"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rural",
+  "num": "12",
+  "title": "Rural, farming & agriculture",
+  "desc": "Farms, machinery dealers, rural contractors, livestock properties, irrigation businesses and regional programs.",
+  "count": 50,
+  "note": "",
+  "items": [
+   {
+    "n": "Tractors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Harvesters",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Combine harvesters",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Hay balers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Hay rakes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Ploughs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Disc harrows",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Cultivators",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Seed drills",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Fertiliser spreaders",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Crop sprayers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Agricultural trailers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Farm utility vehicles",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Farm trucks",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Farm machinery chassis",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Tractor engines",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Tractor gearboxes",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Tractor wheels",
+    "note": "tyres off",
+    "tags": []
+   },
+   {
+    "n": "Tractor attachments",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Front-end loaders",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Excavators",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Post-hole diggers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Slasher decks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Rotary hoes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel roller drums",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Irrigation pumps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal irrigation pipes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Irrigation fittings",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel water tanks",
+    "note": "empty",
+    "tags": []
+   },
+   {
+    "n": "Galvanised troughs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel feed troughs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Grain silos",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Grain augers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Grain conveyors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel grain bins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel fencing wire",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel fence posts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel farm gates",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel cattle yards",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Sheep yard panels",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Livestock loading ramps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel animal feeders",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel sheds",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Corrugated roofing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel beams",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel pipe",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Farm generators",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "Electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Hydraulic cylinders",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Scrap machinery parts",
+    "note": "",
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "hospitality",
+  "num": "13",
+  "title": "Hotels, restaurants & venues",
+  "desc": "Commercial kitchen replacements, hotel refurbishments, restaurant closures and entertainment venues.",
+  "count": 51,
+  "note": "",
+  "items": [
+   {
+    "n": "Commercial refrigerators",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Commercial freezers",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Coolroom panels with metal skins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Coolroom shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial ovens",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial stoves",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial cooktops",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Deep fryers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Griddles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial grills",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial BBQs",
+    "note": "gas bottle removed",
+    "tags": []
+   },
+   {
+    "n": "Rangehoods",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Extraction fans",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel ducting",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial dishwashers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Glasswashers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Coffee machines",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Ice machines",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Beer cooling systems",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Beer kegs",
+    "note": "empty",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel sinks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel benches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel preparation tables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel shelving",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel food containers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Food service carts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal dining chairs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal dining tables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal bar stools",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Outdoor metal furniture",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal bed frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Hotel luggage trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal housekeeping carts",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal laundry trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial washing machines",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial dryers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Commercial ironing equipment",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Hot water systems",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Air conditioning units",
+    "note": "degassed first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Ventilation motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Water pumps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Backup generators",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "Electrical switchboards",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Metal lighting fixtures",
+    "note": "tubes and globes out",
+    "tags": []
+   },
+   {
+    "n": "Metal signage",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal security doors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal waste bins",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Metal storage racks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Cream charger (nitrous oxide) canisters",
+    "note": "pierced and recycled",
+    "tags": [
+     "Specialist"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "solar",
+  "num": "14",
+  "title": "Solar panels & solar equipment",
+  "desc": "Residential installations, commercial solar farms, solar retailers, electrical contractors and replacement programs.",
+  "count": 50,
+  "note": "Solar panels collected. Valuable resources recovered. Panels of any size, working or damaged, with their frames, rails, inverters, cable and battery storage.",
+  "items": [
+   {
+    "n": "190 W solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "250 W solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "270 W solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "300 W solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "330 W solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "370 W solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "400 W solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "440 W solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "550 W solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "600 W solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Monocrystalline panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Polycrystalline panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Thin-film solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Bifacial solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Flexible solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Damaged solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Hail-damaged solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Fire-damaged solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Decommissioned solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Commercial rooftop panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Solar farm panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Solar carport panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Building-integrated solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Portable solar panels",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Solar panel glass",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Aluminium mounting rails",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium panel frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel mounting frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel roof brackets",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar ground-mount structures",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar tracking frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar tracker motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar mounting clamps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Stainless steel fasteners",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar DC copper cables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar AC cables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aluminium electrical cables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar cable trays",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar cable conduits",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar junction boxes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar combiner boxes",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar isolator switches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Solar inverters",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Solar microinverters",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Solar optimisers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Solar transformers",
+    "note": "PCB-free",
+    "tags": []
+   },
+   {
+    "n": "Solar switchboards",
+    "note": "asbestos-free",
+    "tags": []
+   },
+   {
+    "n": "Solar battery enclosures",
+    "note": "batteries removed",
+    "tags": []
+   },
+   {
+    "n": "Solar battery storage systems",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Solar system steel cabinets",
+    "note": "",
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "ports",
+  "num": "15",
+  "title": "Airports, ports & freight terminals",
+  "desc": "Airports, seaports, shipping and freight terminals, intermodal hubs and transport operators: equipment replacement, fleet maintenance, upgrades and decommissioning.",
+  "count": 50,
+  "note": "Ports. Airports. Terminals. We collect it. We recycle it. We report it, with environmental reporting through YARTA. Aircraft components, marine equipment, electrical infrastructure and anything that may be contaminated need ownership verification, decommissioning and the right handling first, and secure or safety-critical equipment may need controlled disposal. We arrange it with you.",
+  "items": [
+   {
+    "n": "Shipping containers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Container doors and frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Container twist locks",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Container spreader beams",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Container handling attachments",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Ship-to-shore crane components",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Rubber-tyred gantry crane components",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Mobile harbour crane components",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Straddle carriers",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Reach stackers",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Container forklifts",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Terminal tractors",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Port trailers and chassis",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Cargo loading ramps",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel mooring bollards",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Mooring winches",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Marine anchors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Anchor chains",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Ship propellers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Marine engine components",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Airport baggage trolleys",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Baggage handling conveyors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Baggage conveyor rollers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aircraft tow tractors",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Aircraft baggage trailers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aircraft cargo dollies",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aircraft passenger stairs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aircraft catering trucks",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Aircraft ground power units",
+    "note": "by arrangement",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Aircraft maintenance platforms",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aircraft service ladders",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aircraft maintenance stands",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Aircraft wheel rims",
+    "note": "tyres off",
+    "tags": []
+   },
+   {
+    "n": "Aircraft engine components",
+    "note": "by arrangement",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Aircraft aluminium panels",
+    "note": "by arrangement",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Airport runway lighting housings",
+    "note": "lamps out",
+    "tags": []
+   },
+   {
+    "n": "Airport lighting poles",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Airfield signage frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Airport security fencing",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Airport terminal seating frames",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Passenger boarding bridge components",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Freight terminal pallet racking",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Air cargo unit load devices (ULDs)",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Freight terminal steel storage cages",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Freight handling forklifts",
+    "note": "by arrangement",
+    "tags": []
+   },
+   {
+    "n": "Rail freight wagon components",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Railway tracks and rails",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Industrial electric motors",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Electrical transformers",
+    "note": "PCB-free",
+    "tags": []
+   },
+   {
+    "n": "Electrical cables and switchboards",
+    "note": "switchboards asbestos-free",
+    "tags": []
+   }
+  ]
+ }
+]
