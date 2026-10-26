@@ -126,7 +126,7 @@ SHORT = {"councils": "Councils", "transfer-stations": "Transfer stations", "resi
          "screens": "Phones and printers", "medical": "Medical equipment", "batteries": "Batteries",
          "vehicles": "Cars, boats and caravans"}
 # grey photo for each sector tile
-TILE_IMG = {"councils": ("councils", "A council depot bin of old street signs, a bench and bin lids beside a works ute"),
+TILE_IMG = {"councils": ("councils", "A council depot skip bin of old street signs, a bench frame and bin lids beside a works ute"),
             "transfer-stations": ("transfer", "A transfer station bay of whitegoods and steel under a steel roof, a car and trailer backed up"),
             "residential": ("residential", "Bikes, a barbecue frame, a mower and roofing iron sorted on a suburban driveway"),
             "roads": ("roads", "Stacks of bent guardrail, sign posts and old sign plates in a roadworks depot"),
@@ -234,10 +234,10 @@ def sizes():
 
 def bin_sizes():
     """The bins as photos: the small regular-pick-up bin and the three skip sizes."""
-    bins = [("1 to 2&nbsp;m³", "Regular steel, picked up on a regular run", "smallbin", "A small steel bin of offcuts outside a workshop"),
+    bins = [("1 to 2&nbsp;m³", "Regular steel, picked up on a regular run", "smallbin", "A small skip bin of steel offcuts outside a workshop"),
             ("15&nbsp;m³", "A shed, garage or yard clean-up", "bin-15", "A skip bin of bed frames, roofing iron and an old bike beside a garage"),
-            ("32&nbsp;m³", "Strip-outs, refits and site&nbsp;clean-ups", "bin-32", "A large hook-lift bin of scrap steel on a building site"),
-            ("42&nbsp;m³", "Big factory, farm and depot jobs", "bin-42", "A very large hook-lift bin piled with racking and beams, a forklift beside it")]
+            ("32&nbsp;m³", "Strip-outs, refits and site&nbsp;clean-ups", "bin-32", "A long hook-lift bin full of scrap steel and mesh on a building site"),
+            ("42&nbsp;m³", "Big factory, farm and depot jobs", "bin-42", "A high-sided hook-lift bin piled with racking and beams, a forklift beside it")]
     out = "".join(f'<li><img src="assets/img/{img}-sm.webp" width="700" height="523" alt="{alt}" loading="lazy"><b>{v}</b><span>{d}</span></li>'
                   for v, d, img, alt in bins)
     return f'<ul class="bincards">{out}</ul>'
