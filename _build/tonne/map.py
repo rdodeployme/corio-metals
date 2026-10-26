@@ -80,10 +80,9 @@ def km(a, b):
 
 def svg():
     bx, by = xy(BASE[1], BASE[2])
-    spokes, dots, labels = [], [], []
+    dots, labels = [], []
     for name, lat, lon, (dx, dy, anc), grp in TOWNS:
         x, y = xy(lat, lon)
-        spokes.append(f'<path class="sp" d="M{bx:.1f} {by:.1f}L{x:.1f} {y:.1f}"/>')
         dots.append(f'<circle class="tn" cx="{x:.1f}" cy="{y:.1f}" r="7"/>')
         hide = " sm-hide" if name in ("Torquay", "Ocean Grove", "Lorne", "Bacchus Marsh", "Lismore", "Portland", "Werribee", "Bannockburn", "Anglesea", "Wye River", "Winchelsea", "Queenscliff", "Camperdown", "Port Fairy") else ""
         labels.append(f'<text class="lb{hide}" x="{x + dx:.1f}" y="{y + dy:.1f}" text-anchor="{anc}">{name}</text>')
@@ -105,7 +104,7 @@ def svg():
             f'<desc id="map-d">A map of south-west Victoria. The free drop-off is at North Geelong, with lines out to '
             + ", ".join(t[0] for t in TOWNS) + '.</desc>'
             f'<rect class="bg" width="{W}" height="{H}"/><path class="land" d="{land_path()}"/>{road_paths()}{sea}'
-            + "".join(spokes) + "".join(dots) + "".join(labels) + base + scale + "</svg>")
+            + "".join(dots) + "".join(labels) + base + scale + "</svg>")
 
 
 def town_list():

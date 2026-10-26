@@ -548,7 +548,6 @@ body.menu-open{overflow:hidden}
 .svmap .land{fill:#202020;stroke:#4A4A4A;stroke-width:1.2}
 .svmap .rd{fill:none;stroke:#353535;stroke-width:1.3}
 .svmap .rd.maj{stroke:#4A4A4A;stroke-width:2}
-.svmap .sp{stroke:var(--yellow);stroke-width:1.8;stroke-dasharray:2 7;stroke-linecap:round}
 .svmap .tn{fill:#fff;stroke:#0E0E0E;stroke-width:3}
 .svmap .lb{fill:#fff;font:700 22px/1 var(--disp);font-stretch:108%}
 .svmap .sea{fill:#5A5A5A;font:500 16px var(--mono);letter-spacing:.24em;text-transform:uppercase}
@@ -565,7 +564,7 @@ body.menu-open{overflow:hidden}
 .towns li{padding:8px 0;border-bottom:1px solid #3A3A3A;font:700 18px/1.2 var(--disp);font-stretch:108%}
 .towns li::before{content:"";display:inline-block;width:8px;height:8px;margin-right:12px;background:var(--yellow);vertical-align:2px}
 
-@media (max-width:700px){.svmap .lb{font-size:56px}.svmap .lb.sm-hide{display:none}.svmap .tn{r:13}.svmap .sp{stroke-width:3.5}.svmap .pin{transform-box:fill-box;transform-origin:center;transform:scale(1.7)}.svmap .btag{display:none}.svmap .scale text{font-size:24px}.svmap .sea{display:none}}
+@media (max-width:700px){.svmap .lb{font-size:56px}.svmap .lb.sm-hide{display:none}.svmap .tn{r:13}.svmap .pin{transform-box:fill-box;transform-origin:center;transform:scale(1.7)}.svmap .btag{display:none}.svmap .scale text{font-size:24px}.svmap .sea{display:none}}
 @media (max-width:560px){.towns{grid-template-columns:1fr 1fr}.towns > div:last-child{grid-column:1/-1}}
 
 /* credentials */
