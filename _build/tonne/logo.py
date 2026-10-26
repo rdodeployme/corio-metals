@@ -1,5 +1,5 @@
 """Recycled Metals logo: a safety-yellow steel nameplate with four rivets reading RECYCLED / METALS
-in heavy expanded type, locked up with BY THE / TONNE (the BTT plate, renamed).
+in heavy expanded type, locked up with SINCE / 1955 (the BTT plate, renamed; "By the tonne" dropped 26 Oct).
 
 Type is Saira (variable, wdth 125 / wght 900 and 800), converted to paths so the logo renders
 the same everywhere.
@@ -104,14 +104,14 @@ def lockup(theme="light"):
     f2 = font(800, 125)
     size = 15.5 / 0.688
     gap_x = 14
-    d1, w1, b1 = text_path(f2, "BY THE", size, 0, 0, tracking=0.08)
+    d1, w1, b1 = text_path(f2, "SINCE", size, 0, 0, tracking=0.08)
     caph = b1[3] - b1[1]
     lead = 9
     top = (H - 2 * caph - lead) / 2
-    d1, w1, b1 = text_path(f2, "BY THE", size, mw + gap_x, top + caph, tracking=0.08)
-    d2, w2, b2 = text_path(f2, "TONNE", size, mw + gap_x, top + 2 * caph + lead, tracking=0.08)
+    d1, w1, b1 = text_path(f2, "SINCE", size, mw + gap_x, top + caph, tracking=0.08)
+    d2, w2, b2 = text_path(f2, "1955", size, mw + gap_x, top + 2 * caph + lead, tracking=0.08)
     W = mw + gap_x + max(w1, w2) + 2
-    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H}" width="{W:.0f}" height="{H}" role="img" aria-label="Recycled Metals, by the tonne">'
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H}" width="{W:.0f}" height="{H}" role="img" aria-label="Recycled Metals, since 1955">'
            f'{mark}<path d="{d1}" fill="{ink}"/><path d="{d2}" fill="{ink}"/></svg>')
     open(os.path.join(OUT, f"logo-{theme}.svg"), "w").write(svg)
     return round(W), H

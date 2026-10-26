@@ -26,9 +26,9 @@ CONCEPTS = [
      "best": "The order of the brief: a clear public drop-off, then a clear commercial path. The name says what it does.",
      "watch": "The name says drop, so business buyers rely on the Business collections page."},
     {"id": "tonne", "name": "Recycled Metals", "dir": "recycled-metals/", "dots": ["#0E0E0E", "#FFD200", "#FFFFFF"], "flag": "Richard's notes",
-     "line": "By the tonne. BTT, renamed and rebuilt on Richard's notes: free drop-off at any volume, four ways to move metal, and everything else by enquiry.",
+     "line": "Recycling metals since 1955. BTT, renamed and rebuilt on Richard's notes: free drop-off at any volume, four ways to move metal, and everything else by enquiry.",
      "look": "Black and white with safety yellow: the riveted yellow nameplate now reads RECYCLED METALS, with grey photos for every sector and a map from Werribee to Portland.",
-     "tool": "Find out what you can drop off: Crux's 766 items with a drop-off column (free, or the gate fee), plus bucket, boot, back of the ute or B-double.",
+     "tool": "Find out what you can drop off: 845 items across 19 categories with a drop-off column (free, or the gate fee), plus bin, boot, back of the ute or B-double.",
      "best": "Richard's direction. Drop-off free and clear for everyone, bins, an operator with excavator and grapple, and containers and boats taken away for the big jobs.",
      "watch": "Free drop-off sits beside five gate fees from the price list. Werribee already has a council tip that takes metal free, so the west and the coast are the stronger markets for bins."},
     {"id": "shed", "name": "Shedload", "dir": "shedload/", "dots": ["#2C2D2F", "#7C9177", "#EAE3D2"],
@@ -50,7 +50,7 @@ SAME = [
     "Handling fees on a few items only: gas bottles, fire extinguishers, nitrous canisters, solar panels and tyres on rims, as on Recycle North Geelong's price list.",
     "A commercial path in every version: collections from one tonne in four of them, and bins and big jobs by enquiry in Recycled Metals.",
     "A weighbridge docket for every collected load. YARTA reporting in four versions; Richard's notes took it out of Recycled Metals.",
-    "Nigel Taylor as the only contact: 0427 888 222, nigel@recycle.net.au. Enquiry forms open an email to Nigel.",
+    "Rory Tonkin as the only contact: 0433 115 500. Enquiry forms open an email.",
     "The same can't-take list: asbestos, chemicals and hazardous waste, full or hired gas cylinders, firearms and explosives, clinical waste, anything holding fuel or oil.",
     "“A Recycle Group business” with the official Recycle mark near the logo and in every footer.",
     "The same address, hours, fees, can't-take list and contact from one shared source file, so the facts can't drift between versions.",
@@ -60,7 +60,7 @@ FEEDBACK = [
     ("No payment for metal", "Nothing about buying metal in any version: no rates, no payment details, no ID checks."),
     ("Two clear paths", "A public drop-off and commercial collections from one tonne."),
     ("One service fee, quoted first", "Every collection carries one service fee, quoted before we come. Checked automatically on every build."),
-    ("Nigel only", "One contact on every page, form and footer."),
+    ("Rory only", "One contact on every page, form and footer."),
     ("No em dashes", "Checked automatically on every build."),
     ("Easy, Aussie names", "Checked on the ABN register on 25 Oct."),
     ("Logos that say scrap metal", "A hook-lift bin, a hex nut, a riveted steel nameplate, a corrugated shed and two bolted steel bars. No sleek app marks."),
@@ -221,7 +221,7 @@ footer{{padding:28px 0 48px;color:var(--mute);font-size:14px;border-top:1px soli
   <ul class="pick">{"".join(f'<li><a href="#{c["id"]}"><span class="dots">{"".join(f"<i style=background:{d}></i>" for d in c["dots"])}</span>{esc(c["name"])}</a></li>' for c in CONCEPTS)}</ul>
   <div class="rec">
     <h2>The lead: Recycled Metals</h2>
-    <p><b>Richard's notes, built: Recycled Metals, by the tonne.</b> Free drop-off at any volume, four ways to move metal, the 766-item list with a drop-off column, and a map of the towns&nbsp;covered.</p>
+    <p><b>Richard's notes, built: Recycled Metals, recycling metals since 1955.</b> Free drop-off at any volume, four ways to move metal, the 845-item list with a drop-off column, and a map of the towns&nbsp;covered.</p>
     <p><b>For the public first: The Metal Drop.</b> The name says exactly what it does for signage and Google, and its item checker answers the question people ask before they load&nbsp;up.</p>
     <p>Crux Metals for a new national name. Shedload for the most memorable ads and signs, after a check on Shedload Pty&nbsp;Ltd.</p>
   </div>

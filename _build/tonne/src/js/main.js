@@ -2,7 +2,7 @@
    window.RM_DIR), the directory search on items.html, and the enquiry form that opens a pre-filled email. */
 (function () {
   "use strict";
-  var S = window.RM || { phone: "0427888222", contact: "Nigel" };
+  var S = window.RM || { phone: "0433115500", contact: "Rory" };
 
   /* shorter search placeholders on phones, so they aren't cut off */
   if (window.matchMedia && window.matchMedia("(max-width: 560px)").matches) {

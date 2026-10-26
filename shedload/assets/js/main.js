@@ -1,7 +1,7 @@
 /* Shedload site behaviour. Settings from window.SL; the load scale from window.SL_LOADS. */
 (function () {
   "use strict";
-  var S = window.SL || { phone: "0427888222", minKg: 1000, maps: "#", contact: "Nigel" };
+  var S = window.SL || { phone: "0433115500", minKg: 1000, maps: "#", contact: "Rory" };
 
   /* ---- menu ---- */
   var btn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");

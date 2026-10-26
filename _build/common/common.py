@@ -11,10 +11,11 @@ REPO = os.path.dirname(BUILD)            # repo root (Corio lives here)
 SITE_BASE = "https://rdodeployme.github.io/corio-metals/"
 
 # ---------------------------------------------------------------- contact
-CONTACT_NAME = "Nigel"
-CONTACT_FULL = "Nigel Taylor"
-PHONE, PHONE_TEL, EMAIL = "0427 888 222", "0427888222", "nigel@recycle.net.au"
-PHONE_INTL = "+61427888222"
+CONTACT_NAME = "Rory"
+CONTACT_FULL = "Rory Tonkin"
+# 26 Oct 2026: contact changed from Nigel Taylor to Rory Tonkin. Rory's email not yet supplied; enquiries still go to the inbox below.
+PHONE, PHONE_TEL, EMAIL = "0433 115 500", "0433115500", "nigel@recycle.net.au"
+PHONE_INTL = "+61433115500"
 
 # ---------------------------------------------------------------- the drop-off
 FACILITY = "Recycle North Geelong"

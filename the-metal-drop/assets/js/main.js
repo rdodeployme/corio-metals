@@ -1,7 +1,7 @@
 /* The Metal Drop site behaviour. Site settings from window.MD. */
 (function () {
   "use strict";
-  var MD = window.MD || { phone: "0427888222", minKg: 1000, maps: "#", contact: "Nigel" };
+  var MD = window.MD || { phone: "0433115500", minKg: 1000, maps: "#", contact: "Rory" };
   // Handling fees at the gate (Recycle North Geelong price list): low and high per item
   var FEE = { gas: [15, 25], ext: [10, 15], solar: [39, 39] };
 

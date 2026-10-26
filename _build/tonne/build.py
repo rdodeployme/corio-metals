@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Recycled Metals (concept 3, was BTT By The Tonne). By the tonne.
+"""Build Recycled Metals (concept 3, was BTT By The Tonne). Recycling metals since 1955.
 
 Richard's notes, 26 Oct 2026: free drop-off at any volume; four ways to move metal (drop it off,
 a bin dropped off, an operator with excavator and grapple, containers and boats taken away);
@@ -18,6 +18,11 @@ sys.path.insert(0, os.path.join(os.path.dirname(ROOT), "common"))
 sys.path.insert(0, ROOT)
 import common as C  # noqa: E402
 import map as MAP  # noqa: E402
+
+# Recycled Metals overrides (26 Oct 2026, Andy): gate hours. Contact (Rory Tonkin) is set in common.py.
+C.HOURS_DAYS = "Monday to Saturday, 7am to 5pm"
+C.HOURS_SHORT = "Mon to Sat 7am to 5pm"
+C.HOURS_NOTE = "6am to 6pm by appointment"
 
 SRC = os.path.join(ROOT, "src")
 # STANDALONE=1 builds the same site without the version bar, at its own address (build_site.py)
@@ -94,6 +99,8 @@ def fee_for(name):
 
 def load_directory():
     cats = json.load(open(os.path.join(ROOT, "data", "directory-source.json")))
+    # Added 26 Oct 2026 (Andy): phones, TVs and screens; medical equipment such as X-ray machines
+    cats += json.load(open(os.path.join(ROOT, "data", "extra-categories.json")))
     for c in cats:
         c["title"] = c["title"].replace(" ", " ")
         c["note"] = clean_note(c.get("note", ""))
@@ -110,28 +117,34 @@ def load_directory():
 
 DIR = load_directory()
 TOTAL = sum(len(c["items"]) for c in DIR)
-assert TOTAL == 766, TOTAL
+assert len(DIR) == 19, len(DIR)
 
 SHORT = {"councils": "Councils", "transfer-stations": "Transfer stations", "residential": "Residential", "roads": "State roads",
          "health": "Health and aged care", "education": "Education", "offices": "Offices", "whitegoods": "Retail and whitegoods",
          "warehousing": "Warehousing", "industry": "Industry", "trades": "Trades", "rural": "Rural and farming",
-         "hospitality": "Hospitality", "solar": "Solar", "ports": "Airports and ports"}
+         "hospitality": "Hospitality", "solar": "Solar", "ports": "Airports and ports",
+         "screens": "Phones and printers", "medical": "Medical equipment", "batteries": "Batteries",
+         "vehicles": "Cars, boats and caravans"}
 # grey photo for each sector tile
-TILE_IMG = {"councils": ("councils", "A council depot skip bin of old street signs and bench frames beside a works ute"),
-            "transfer-stations": ("transfer", "A metal bay at a transfer station piled with whitegoods and steel, a car and trailer backed up"),
+TILE_IMG = {"councils": ("councils", "A council depot bin of old street signs, a bench and bin lids beside a works ute"),
+            "transfer-stations": ("transfer", "A transfer station bay of whitegoods and steel under a steel roof, a car and trailer backed up"),
             "residential": ("residential", "Bikes, a barbecue frame, a mower and roofing iron sorted on a suburban driveway"),
             "roads": ("roads", "Stacks of bent guardrail, sign posts and old sign plates in a roadworks depot"),
-            "health": ("health", "Old hospital bed frames and steel trolleys lined up on a loading dock"),
-            "education": ("education", "Old steel lockers, chair frames and computer towers in a school storeroom"),
-            "offices": ("offices", "Filing cabinets and desk frames gathered on an emptied office floor"),
-            "whitegoods": ("whitegoods", "Old fridges, washing machines and ovens lined up at a store's loading dock"),
+            "health": ("health", "Retired hospital bed frames lined up outside a new hospital building"),
+            "education": ("education", "Steel lockers, chair frames and computer gear stacked by the windows of a school building"),
+            "offices": ("offices", "Filing cabinets and desk frames gathered on an emptied office floor above the city"),
+            "whitegoods": ("whitegoods", "Fridges, washing machines and ovens lined up at a store's loading dock"),
             "warehousing": ("warehousing", "Dismantled pallet racking stacked on a warehouse floor beside a forklift"),
-            "industry": ("industry", "A steel bin of offcuts in an engineering workshop, with a lathe and steel racks behind"),
-            "trades": ("trades", "A ute tray loaded with copper pipe, cable, window frames and an old hot water unit"),
-            "rural": ("rural", "Old farm machinery, fencing wire and star pickets beside a hay shed"),
-            "hospitality": ("hospitality", "Stainless benches and old commercial ovens in a kitchen being stripped out"),
+            "industry": ("industry", "A steel stillage of offcuts in an engineering workshop, with CNC machines and steel racks behind"),
+            "trades": ("trades", "A ute tray loaded with copper pipe, coiled cable and aluminium window frames"),
+            "rural": ("rural", "Old implements, fencing wire and star pickets beside a machinery shed, a tractor parked"),
+            "hospitality": ("hospitality", "Stainless benches and commercial ovens in a kitchen being stripped out"),
             "solar": ("solar", "Old solar panels on pallets with aluminium rails and a cage of inverters"),
-            "ports": ("ports", "An old shipping container and scrap steel at a port, cranes behind")}
+            "ports": ("ports", "A retired shipping container and stacked steel at a port, cranes behind"),
+            "screens": ("screens", "Flat-screen TVs and monitors upright in steel stillages, with a crate of mobile phones on a pallet"),
+            "vehicles": ("vehicles", "A tilt tray truck carrying an old car body beside an aluminium boat on a trailer"),
+            "batteries": ("batteries", "Car batteries and lithium battery packs on pallets in a clean battery store"),
+            "medical": ("medical", "A decommissioned digital X-ray machine, an ultrasound unit and a patient monitor in a hospital storeroom")}
 
 
 def dir_json():
@@ -195,7 +208,7 @@ def finder():
   <aside class="ways" aria-label="Two ways in">
     <p class="label">Two ways in</p>
     <dl>
-      <div><dt>Drop it off</dt><dd><b class="big-free">Free</b>Any volume, from a bucket to a&nbsp;B&#8209;double.</dd></div>
+      <div><dt>Drop it off</dt><dd><b class="big-free">Free</b>Any volume, from a bin to a&nbsp;B&#8209;double.</dd></div>
       <div><dt>Collection</dt><dd><b class="big-enq">By enquiry</b>{enq}.</dd></div>
       <div><dt>Handling fees at the gate</dt><dd><ul class="fees">{fees}</ul></dd></div>
     </dl>
@@ -206,15 +219,15 @@ def finder():
 <script>window.RM_DIR={dir_json()};</script>'''
 
 
-SIZES = [("Bucket", "A few offcuts, old taps and fittings, a box of bolts.", 1, "size-bucket", "A metal bucket of old bolts, taps and pipe fittings"),
-         ("Boot", "A BBQ frame, a bike, a mower with the fuel drained.", 2, "size-boot", "A car boot loaded with a barbecue frame, a bike and a mower"),
-         ("Back of the ute", "Roofing iron, fence panels, an old hot water unit.", 3, "size-ute", "A ute tray piled with roofing iron, fence panels and a hot water unit"),
-         ("B-double", "Truckloads from a factory, a farm or a demolition job.", 4, "size-bdouble", "A B-double truck loaded with scrap steel beams and plate")]
+SIZES = [("Bin", "A wheelie bin of offcuts, old taps and fittings, a box of bolts.", 1, "size-bin", "A wheelie bin filled with steel offcuts, taps, bolts and an old saucepan"),
+         ("Boot", "A BBQ frame, a bike, a mower with the fuel drained.", 2, "size-boot", "An SUV boot loaded with a barbecue frame, a bike and a mower"),
+         ("Back of the ute", "Roofing iron, fence panels, an old hot water unit.", 3, "size-ute", "A ute tray loaded with fence panels, roofing iron and a hot water unit"),
+         ("B-double", "Semi-trailer and B&#8209;double loads go to Nunjara, Atkinsons Road, Moorabool.", 4, "size-bdouble", "A B-double loaded with steel beams and plate")]
 
 
 def sizes():
     out = "".join(f'<li><img src="assets/img/{img}-sm.webp" width="700" height="523" alt="{alt}" loading="lazy">'
-                  f'<span class="sz-bar" style="--s:{s}" aria-hidden="true"></span><b>{n}</b><p>{d}</p><span class="pr">Free</span></li>'
+                  f'<span class="sz-bar" style="--s:{s}" aria-hidden="true"></span><b>{n}</b><p>{d}</p>{'<span class="pr paid">To Nunjara</span>' if n == "B-double" else '<span class="pr">Free</span>'}</li>'
                   for n, d, s, img, alt in SIZES)
     return f'<ol class="sizes">{out}</ol>'
 
@@ -222,9 +235,9 @@ def sizes():
 def bin_sizes():
     """The bins as photos: the small regular-pick-up bin and the three skip sizes."""
     bins = [("1 to 2&nbsp;m³", "Regular steel, picked up on a regular run", "smallbin", "A small steel bin of offcuts outside a workshop"),
-            ("15&nbsp;m³", "A shed, garage or yard clean-up", "bin-15", "A skip bin half full of bed frames, roofing iron and an old bike beside a garage"),
-            ("32&nbsp;m³", "Strip-outs, refits and site&nbsp;clean-ups", "bin-32", "A large hook-lift bin of steel offcuts and reo mesh on a building site"),
-            ("42&nbsp;m³", "Big factory, farm and depot jobs", "bin-42", "A very large hook-lift bin piled with pallet racking, a forklift beside it")]
+            ("15&nbsp;m³", "A shed, garage or yard clean-up", "bin-15", "A skip bin of bed frames, roofing iron and an old bike beside a garage"),
+            ("32&nbsp;m³", "Strip-outs, refits and site&nbsp;clean-ups", "bin-32", "A large hook-lift bin of scrap steel on a building site"),
+            ("42&nbsp;m³", "Big factory, farm and depot jobs", "bin-42", "A very large hook-lift bin piled with racking and beams, a forklift beside it")]
     out = "".join(f'<li><img src="assets/img/{img}-sm.webp" width="700" height="523" alt="{alt}" loading="lazy"><b>{v}</b><span>{d}</span></li>'
                   for v, d, img, alt in bins)
     return f'<ul class="bincards">{out}</ul>'
@@ -257,7 +270,7 @@ def docket():
       <div><dt>Tare</dt><dd>10,980&nbsp;kg</dd></div>
       <div class="net"><dt>Net</dt><dd>5,260&nbsp;kg</dd></div>
     </dl>
-    <p class="dk-foot">Recycled Metals · By the tonne</p>
+    <p class="dk-foot">Recycled Metals · Recycling metals since 1955</p>
     <span class="dk-stamp" aria-hidden="true">Sample</span>
   </div>
   <figcaption>Sample layout, for illustration only. Each docket shows the load's weighed&nbsp;figures.</figcaption>
@@ -292,7 +305,7 @@ def header(nav_key):
     return f'''<a class="sr skip" href="#main">Skip to content</a>
 {topbar()}
 <header class="hd"><div class="wrap hd-in">
-  <a class="brand" href="./" aria-label="{NAME} home"><picture><source media="(max-width:620px)" srcset="assets/brand/plate.svg"><img src="assets/brand/logo-dark.svg" alt="{NAME}, by the tonne" width="289" height="60"></picture></a>
+  <a class="brand" href="./" aria-label="{NAME} home"><picture><source media="(max-width:620px)" srcset="assets/brand/plate.svg"><img src="assets/brand/logo-dark.svg" alt="{NAME}, recycling metals since 1955" width="289" height="60"></picture></a>
   <nav class="nav" id="nav" aria-label="Main">{links}<a class="m-only m-call" href="tel:{C.PHONE_TEL}">Call {C.CONTACT_NAME} {C.PHONE}</a></nav>
   <a class="btn btn-yellow hd-cta" href="enquire.html"{" aria-current=page" if nav_key == "contact" else ""}><span>Enquire</span></a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
@@ -304,8 +317,8 @@ def footer():
     pages = "".join(f'<li><a href="{h}">{l}</a></li>' for _, h, l in NAV)
     return f'''<footer class="ft"><div class="wrap">
   <div class="ft-top">
-    <img class="ft-logo" src="assets/brand/logo-dark.svg" alt="{NAME}, by the tonne" width="289" height="60">
-    <p class="ft-line"><span class="nw">Free drop-off.</span> <span class="nw">Any volume.</span> <span class="nw">By the tonne.</span></p>
+    <img class="ft-logo" src="assets/brand/logo-dark.svg" alt="{NAME}, recycling metals since 1955" width="289" height="60">
+    <p class="ft-line"><span class="nw">Free drop-off.</span> <span class="nw">Any volume.</span> <span class="nw">Recycling metals since&nbsp;1955.</span></p>
   </div>
   <div class="ft-grid">
     <div><p class="label">Drop-off</p><ul><li>{C.FACILITY}</li><li>{C.STREET}, {C.SUBURB}</li><li>{C.HOURS_DAYS}</li><li><a href="drop-off.html">Drop-off details</a></li></ul></div>
@@ -320,6 +333,7 @@ def footer():
 def page(fname):
     raw = open(os.path.join(SRC, "pages", fname)).read()
     meta = dict(re.findall(r"^(\w+):\s*(.+)$", raw[: raw.index("-->")], re.M))
+    meta = {k: v.replace("{{TOTAL}}", str(TOTAL)).replace("{{CATS}}", str(len(DIR))) for k, v in meta.items()}
     body = raw[raw.index("-->") + 3:].strip()
     map_iframe = f'<iframe title="Map: {C.ADDRESS}" loading="lazy" referrerpolicy="no-referrer" src="{C.MAP_EMBED}"></iframe>'
     lazy = {"{{FINDER}}": finder, "{{DIRECTORY}}": directory, "{{AREA}}": area, "{{TILES}}": tiles}
@@ -340,10 +354,11 @@ def page(fname):
     assert "{{" not in body, f"unfilled placeholder in {fname}: {re.findall(r'{{[A-Z_:a-z]+}}', body)}"
     body = C.glue(body)
     url = SITE_URL + ("" if fname == "index.html" else fname)
-    schema = {"@context": "https://schema.org", "@type": "LocalBusiness", "name": NAME, "slogan": "By the tonne",
+    schema = {"@context": "https://schema.org", "@type": "LocalBusiness", "name": NAME, "slogan": "Recycling metals since 1955", "foundingDate": "1955",
               "parentOrganization": {"@type": "Organization", "name": "Recycle Group"},
               "description": "Free scrap metal drop-off at any volume at Recycle North Geelong, 116 Furner Avenue. Bins, operators with excavator and grapple, and container and boat removal by enquiry.",
-              "url": SITE_URL, "telephone": C.PHONE_INTL, "email": C.EMAIL,
+              "url": SITE_URL, "telephone": C.PHONE_INTL,
+              "openingHours": "Mo-Sa 07:00-17:00", "email": C.EMAIL,
               "areaServed": [t[0] for t in MAP.TOWNS] + ["Geelong"],
               "address": {"@type": "PostalAddress", "streetAddress": C.STREET, "addressLocality": C.SUBURB,
                           "addressRegion": C.STATE, "postalCode": C.POSTCODE, "addressCountry": "AU"}}
@@ -415,7 +430,7 @@ def og_image():
     import cairosvg, io
     import logo as L
     W, H = 1200, 630
-    ph = Image.open(os.path.join(SITE, "assets/img/bales-forklift.webp")).convert("RGB")
+    ph = Image.open(os.path.join(SITE, "assets/img/hero.webp")).convert("RGB")
     s = max(W / ph.width, H / ph.height)
     ph = ph.resize((int(ph.width * s), int(ph.height * s)))
     left = int((ph.width - W) * 0.7)
@@ -433,7 +448,7 @@ def og_image():
     d.text((56, 262), "Free metal drop-off.", font=f1, fill=(255, 255, 255))
     d.text((56, 340), "Any volume.", font=f1, fill=(255, 210, 0))
     d.rectangle((56, 462, 104, 472), fill=(255, 210, 0))
-    d.text((56, 498), "BUCKET, BOOT, BACK OF THE UTE OR B-DOUBLE · 116 FURNER AVENUE", font=f2, fill=(205, 205, 205))
+    d.text((56, 498), "RECYCLING METALS SINCE 1955 · 116 FURNER AVENUE", font=f2, fill=(205, 205, 205))
     bg.save(os.path.join(SITE, "og.jpg"), quality=86)
 
 

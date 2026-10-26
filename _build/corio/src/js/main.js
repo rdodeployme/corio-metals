@@ -1,7 +1,7 @@
 /* Corio Metals site behaviour. Site settings from window.CM; item data from window.CM_ITEMS. */
 (function () {
   "use strict";
-  var CM = window.CM || { phone: "0427888222", minKg: 1000, maps: "#" };
+  var CM = window.CM || { phone: "0433115500", minKg: 1000, maps: "#" };
 
   /* ---- menu ---- */
   var btn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
@@ -95,7 +95,7 @@
     } else if (big) {
       verdict.innerHTML = "<b>That's over a tonne.</b> We can collect it from your site. One service fee, quoted before we come.";
       cta.innerHTML = '<a class="btn btn-amber" href="collections.html?kg=' + Math.round(kg) + "&what=" + encodeURIComponent(what.join(", ")) + '#quote">Book a collection</a>' +
-        '<a class="btn btn-line" href="tel:' + CM.phone + '">Call Nigel</a>';
+        '<a class="btn btn-line" href="tel:' + CM.phone + '">Call Rory</a>';
     } else {
       verdict.innerHTML = "<b>Drop it off.</b> " + fmt(CM.minKg - kg) + "&nbsp;kg under a tonne, so bring it to 116 Furner Avenue.";
       cta.innerHTML = '<a class="btn btn-amber" href="' + CM.maps + '" target="_blank" rel="noopener">Directions</a>' +

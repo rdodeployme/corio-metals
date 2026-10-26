@@ -1,0 +1,547 @@
+[
+ {
+  "id": "screens",
+  "num": "16",
+  "title": "Phones, screens & printers",
+  "desc": "Mobile phones, tablets, TVs, monitors and printers from homes, offices, schools and retail.",
+  "note": "Phones, tablets and computers need personal data wiped first. Batteries removed from equipment travel separately.",
+  "items": [
+   {
+    "n": "Mobile phones",
+    "note": "data wiped first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Smartphones",
+    "note": "data wiped first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Tablets",
+    "note": "data wiped first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Flat-screen TVs",
+    "note": "LCD and LED",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Plasma TVs",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "CRT televisions",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Smart TVs",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "TV wall brackets and stands",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Computer monitors",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Widescreen and curved monitors",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Digital signage screens",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Display panels and video walls",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Touchscreen kiosks",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Laptops",
+    "note": "drives removed or wiped",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Desktop computers",
+    "note": "drives removed or wiped",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Projectors",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Set-top boxes and media players",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Monitor arms and stands",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Phone chargers and cables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Two-way radios",
+    "note": "batteries out",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Printers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Multifunction printers and copiers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Large-format printers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Label and receipt printers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "3D printers",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   }
+  ],
+  "count": 25
+ },
+ {
+  "id": "medical",
+  "num": "17",
+  "title": "Medical equipment",
+  "desc": "X-ray, imaging and clinical equipment from hospitals, clinics, dental and vet practices.",
+  "note": "Imaging and clinical equipment needs to be decommissioned and cleared by the owner first. Anything radioactive or contaminated can't be taken.",
+  "items": [
+   {
+    "n": "X-ray machines",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Mobile X-ray units",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "C-arms",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "CT scanners",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Ultrasound machines",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Mammography units",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Dental X-ray units",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Veterinary X-ray units",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Patient monitors",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "ECG machines",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Defibrillators",
+    "note": "batteries out",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Infusion pumps",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Anaesthetic machines",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Ventilators",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Sterilisers and autoclaves",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Operating lights",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Operating tables",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Dental chairs",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Laboratory centrifuges",
+    "note": "once cleared",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Medical gas regulators",
+    "note": "empty",
+    "tags": [
+     "Specialist"
+    ]
+   }
+  ],
+  "count": 20
+ },
+ {
+  "id": "batteries",
+  "num": "18",
+  "title": "Batteries",
+  "desc": "Car, truck and deep-cycle batteries, and lithium batteries from tools, bikes, phones and solar.",
+  "note": "Tape the terminals. Damaged, swollen or leaking lithium batteries: call first.",
+  "items": [
+   {
+    "n": "Car batteries",
+    "note": "tape the terminals",
+    "tags": []
+   },
+   {
+    "n": "Truck and tractor batteries",
+    "note": "tape the terminals",
+    "tags": []
+   },
+   {
+    "n": "Deep-cycle batteries",
+    "note": "tape the terminals",
+    "tags": []
+   },
+   {
+    "n": "Forklift batteries",
+    "note": "tape the terminals",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "UPS batteries",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Lead-acid batteries",
+    "note": "tape the terminals",
+    "tags": []
+   },
+   {
+    "n": "Lithium-ion batteries",
+    "note": "tape the terminals",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Power tool batteries",
+    "note": "tape the terminals",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "E-bike and e-scooter batteries",
+    "note": "not damaged or swollen",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Laptop batteries",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Phone and tablet batteries",
+    "note": "",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Home and solar battery packs",
+    "note": "disconnected by an electrician",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Marine and caravan batteries",
+    "note": "tape the terminals",
+    "tags": []
+   },
+   {
+    "n": "Motorbike batteries",
+    "note": "tape the terminals",
+    "tags": []
+   }
+  ],
+  "count": 14
+ },
+ {
+  "id": "vehicles",
+  "num": "19",
+  "title": "Cars, boats, caravans & trailers",
+  "desc": "Car bodies, boats, caravans and trailers, dropped off or taken away from the property.",
+  "note": "Call first for car bodies, boats and caravans. Fuel, oil and gas drained or removed; gas bottles out.",
+  "items": [
+   {
+    "n": "Car bodies",
+    "note": "call first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Utes and vans",
+    "note": "call first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Vehicle chassis",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Truck cabs and chassis",
+    "note": "call first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Motorbikes",
+    "note": "fuel and oil drained",
+    "tags": []
+   },
+   {
+    "n": "Engines and gearboxes",
+    "note": "drained",
+    "tags": []
+   },
+   {
+    "n": "Boats",
+    "note": "call first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Aluminium boats and tinnies",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Steel-hulled boats",
+    "note": "call first",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Outboard motors",
+    "note": "fuel drained",
+    "tags": []
+   },
+   {
+    "n": "Boat trailers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Caravans",
+    "note": "call first, gas bottles out",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Camper trailers",
+    "note": "gas bottles out",
+    "tags": []
+   },
+   {
+    "n": "Pop-tops",
+    "note": "call first, gas bottles out",
+    "tags": [
+     "Specialist"
+    ]
+   },
+   {
+    "n": "Box trailers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Car trailers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Plant and tradie trailers",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Horse floats",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Trailer axles and springs",
+    "note": "",
+    "tags": []
+   },
+   {
+    "n": "Jet ski trailers",
+    "note": "",
+    "tags": []
+   }
+  ],
+  "count": 20
+ }
+]
