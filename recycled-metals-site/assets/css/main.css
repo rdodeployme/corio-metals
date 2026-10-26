@@ -630,3 +630,17 @@ body.menu-open{overflow:hidden}
 @media (max-width:1100px){.dir-head{grid-template-columns:minmax(0,1fr) auto}.dir-head span:nth-child(n+3){display:none}.dir-head span:nth-child(2){margin-right:0}}
 @media (max-width:1100px){.dir ul{grid-template-columns:1fr}}
 @media (max-width:700px){.dir summary{grid-template-columns:34px minmax(0,1fr) 22px}.dir .c{display:none}.dir-terms,.dir .note,.dir-head,.dir ul{margin-left:0}.dir-terms{flex-direction:column}}
+
+/* any volume: the alliteration as the headline, with a free stamp */
+.vol{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px 56px;align-items:end;margin-bottom:clamp(32px,4vw,52px)}
+.vol .label{display:flex;align-items:center;gap:12px;max-width:none}
+.vol .label::before{content:"";flex:none;width:30px;height:8px;background:var(--yellow)}
+.vol-h{margin:0;font-size:clamp(34px,4.6vw,70px);line-height:1.04;max-width:none}
+.vol-h .b{display:inline-block;padding:0 .06em;margin-right:.02em;background:var(--yellow);line-height:.92}
+.vol-free{display:grid;gap:4px;padding:22px 24px 20px;background:var(--black);color:#fff;border-top:6px solid var(--yellow)}
+.vol-free b{font:900 clamp(48px,4.4vw,64px)/.9 var(--disp);font-stretch:125%;color:var(--yellow)}
+.vol-free span{font:700 18px/1.25 var(--disp);font-stretch:110%}
+.vol-free small{margin-top:8px;font-size:14.5px;line-height:1.45;color:#C9C9C6}
+#sizes .sizes{border-top:0}
+#sizes .sizes li{padding-top:0}
+@media (max-width:980px){.vol{grid-template-columns:1fr;align-items:start}.vol-free{max-width:420px}}
