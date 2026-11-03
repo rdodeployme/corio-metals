@@ -16,14 +16,14 @@ Comparison page: `concepts/` (not part of any brand, noindex).
 - Public drop-off at Recycle North Geelong, 116 Furner Avenue, North Geelong VIC 3215. Clean scrap metal is no charge. We don't pay for metal.
 - Handling fees on a few items (gas bottles, extinguishers, nitrous canisters, solar panels, tyres on rims), per Recycle North Geelong's price list.
 - Collections from one tonne: one service fee, quoted before we come; weighbridge docket for every load; reporting through YARTA (four versions; Recycled Metals has bins and big jobs by enquiry, no YARTA).
-- Contact: Nigel Taylor, 0427 888 222, nigel@recycle.net.au.
+- Contact: Rory Tonkin, 0433 115 500, rory@recycle.au.
 
 ## Where things live
 - `common/common.py` is the single source of truth: contact, address, hours, fees, can't-take list, item list with guide weights, load sizes, and the banned-word checks. Change a fact here and rebuild; every concept picks it up.
 - `common/review/` is the version bar (switcher): big buttons, one per version, plus Compare. `common/brand/` holds the official Recycle Group marks.
 - Each concept has `build.py`, `src/pages/*.html`, `src/css/main.css`, `src/js/main.js`, `fonts/` and a `logo.py` (logos are drawn from fonts as paths).
 - Crux Metals (`crux/`): Roboto Slab and Source Sans 3; charcoal, red oxide and bone; the CRUX logo's X is two bolted steel bars (`crux/logo.py`). Real facility photos from the Recycle Group site plus three generated collection shots. `crux/data/directory-source.json` is Richard's 766-item directory, parsed from the Recycle Group site's metals section; notes are cleaned at build time (no "free" wording) and gate-fee items are matched in `crux/build.py` (`fee_for`).
-- Recycled Metals (`tonne/`) uses Saira (variable, expanded) for display type, Inter Tight for text and IBM Plex Mono for figures; black, white and safety yellow; the riveted yellow nameplate reads RECYCLED / METALS (`tonne/logo.py`). Crux's 766-item directory is in `tonne/data/directory-source.json`, with a drop-off column (free, or the gate fee). Grey photos in `tonne/img/` (Higgsfield, plus the real Furner Avenue photos in greyscale). The service map is drawn by `tonne/map.py` from Natural Earth 10m land and roads clipped into `tonne/data/sw-vic.json`. Its build stops on "we/our/us", tonne thresholds, YARTA or free collections; "free" is allowed for drop-off on this site only.
+- Recycled Metals (`tonne/`) uses Saira (variable, expanded) for display type, Inter Tight for text and IBM Plex Mono for figures; black, white and safety yellow; logo is the original Recycled | METALS cube with its stripe in yellow (sources in `tonne/brand-src/`, recoloured by `tonne/logo.py`). Crux's 766-item directory is in `tonne/data/directory-source.json`, with a drop-off column (free, or the gate fee). Grey photos in `tonne/img/` (Higgsfield, plus the real Furner Avenue photos in greyscale). The service map is drawn by `tonne/map.py` from Natural Earth 10m land and roads clipped into `tonne/data/sw-vic.json`. Its build stops on "we/our/us", tonne thresholds, YARTA or free collections; "free" is allowed for drop-off on this site only.
 
 ## Build
 ```
