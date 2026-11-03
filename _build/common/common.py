@@ -13,8 +13,8 @@ SITE_BASE = "https://rdodeployme.github.io/corio-metals/"
 # ---------------------------------------------------------------- contact
 CONTACT_NAME = "Rory"
 CONTACT_FULL = "Rory Tonkin"
-# 26 Oct 2026: contact changed from Nigel Taylor to Rory Tonkin. Rory's email not yet supplied; enquiries still go to the inbox below.
-PHONE, PHONE_TEL, EMAIL = "0433 115 500", "0433115500", "nigel@recycle.net.au"
+# 26 Oct 2026: contact changed from Nigel Taylor to Rory Tonkin. 3 Nov 2026: Rory's email rory@recycle.au.
+PHONE, PHONE_TEL, EMAIL = "0433 115 500", "0433115500", "rory@recycle.au"
 PHONE_INTL = "+61433115500"
 
 # ---------------------------------------------------------------- the drop-off

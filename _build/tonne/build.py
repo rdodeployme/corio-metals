@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Recycled Metals (concept 3, was BTT By The Tonne). Recycling metals since 1955.
+"""Build Recycled Metals (concept 3, was BTT By The Tonne). Logo: the Recycled cube with a yellow stripe (3 Nov 2026).
 
 Richard's notes, 26 Oct 2026: free drop-off at any volume; four ways to move metal (drop it off,
 a bin dropped off, an operator with excavator and grapple, containers and boats taken away);
@@ -259,7 +259,7 @@ def docket():
     # Example public drop-off docket (26 Oct 2026, Andy: "a real docket for citizen john"). Figures are illustrative.
     return """<figure class="docket">
   <div class="dk" role="img" aria-label="Example weighbridge docket for John Citizen: a ute and trailer load of 480 kilograms, free drop-off">
-    <div class="dk-head"><img src="assets/brand/plate.svg" alt="" width="173" height="60"><span>Weighbridge docket<br><b>No. RM-104832</b></span></div>
+    <div class="dk-head"><img src="assets/brand/logo-light.svg" alt="" width="223" height="28"><span>Weighbridge docket<br><b>No. RM-104832</b></span></div>
     <dl class="dk-rows">
       <div><dt>Date</dt><dd>27 / 10 / 2026</dd></div>
       <div><dt>In / out</dt><dd>09:42 / 09:58</dd></div>
@@ -319,7 +319,7 @@ def header(nav_key):
     return f'''<a class="sr skip" href="#main">Skip to content</a>
 {topbar()}
 <header class="hd"><div class="wrap hd-in">
-  <a class="brand" href="./" aria-label="{NAME} home"><picture><source media="(max-width:620px)" srcset="assets/brand/plate.svg"><img src="assets/brand/logo-dark.svg" alt="{NAME}, recycling metals since 1955" width="289" height="60"></picture></a>
+  <a class="brand" href="./" aria-label="{NAME} home"><picture><source media="(max-width:620px)" srcset="assets/brand/plate.svg"><img src="assets/brand/logo-dark.svg" alt="{NAME}" width="350" height="44"></picture></a>
   <nav class="nav" id="nav" aria-label="Main">{links}<a class="m-only m-call" href="tel:{C.PHONE_TEL}">Call {C.CONTACT_NAME} {C.PHONE}</a></nav>
   <a class="btn btn-yellow hd-cta" href="enquire.html"{" aria-current=page" if nav_key == "contact" else ""}><span>Enquire</span></a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
@@ -331,8 +331,8 @@ def footer():
     pages = "".join(f'<li><a href="{h}">{l}</a></li>' for _, h, l in NAV)
     return f'''<footer class="ft"><div class="wrap">
   <div class="ft-top">
-    <img class="ft-logo" src="assets/brand/logo-dark.svg" alt="{NAME}, recycling metals since 1955" width="289" height="60">
-    <p class="ft-line"><span class="nw">Free drop-off.</span> <span class="nw">Any volume.</span> <span class="nw">Recycling metals since&nbsp;1955.</span></p>
+    <img class="ft-logo" src="assets/brand/logo-dark.svg" alt="{NAME}" width="446" height="56">
+    <p class="ft-line"><span class="nw">Free drop-off.</span> <span class="nw">Any volume.</span></p>
   </div>
   <div class="ft-grid">
     <div><p class="label">Drop-off</p><ul><li>{C.FACILITY}</li><li>{C.STREET}, {C.SUBURB}</li><li>{C.HOURS_DAYS}</li><li><a href="drop-off.html">Drop-off details</a></li></ul></div>
@@ -368,7 +368,7 @@ def page(fname):
     assert "{{" not in body, f"unfilled placeholder in {fname}: {re.findall(r'{{[A-Z_:a-z]+}}', body)}"
     body = C.glue(body)
     url = SITE_URL + ("" if fname == "index.html" else fname)
-    schema = {"@context": "https://schema.org", "@type": "LocalBusiness", "name": NAME, "slogan": "Recycling metals since 1955", "foundingDate": "1955",
+    schema = {"@context": "https://schema.org", "@type": "LocalBusiness", "name": NAME, 
               "parentOrganization": {"@type": "Organization", "name": "Recycle Group"},
               "description": "Free scrap metal drop-off at any volume at Recycle North Geelong, 116 Furner Avenue. Bins, operators with excavator and grapple, and container and boat removal by enquiry.",
               "url": SITE_URL, "telephone": C.PHONE_INTL,
@@ -453,7 +453,7 @@ def og_image():
     shade.putdata([int(max(0, 236 - x * 0.28)) for x in range(W)] * H)
     black = Image.new("RGB", (W, H), (14, 14, 14))
     bg = Image.composite(black, ph, shade)
-    logo = cairosvg.svg2png(url=os.path.join(SITE, "assets/brand/logo-dark.svg"), output_width=380)
+    logo = cairosvg.svg2png(url=os.path.join(SITE, "assets/brand/logo-dark.svg"), output_width=560)
     lg = Image.open(io.BytesIO(logo)).convert("RGBA")
     bg.paste(lg, (56, 54), lg)
     d = ImageDraw.Draw(bg)
@@ -462,7 +462,7 @@ def og_image():
     d.text((56, 262), "Free metal drop-off.", font=f1, fill=(255, 255, 255))
     d.text((56, 340), "Any volume.", font=f1, fill=(255, 210, 0))
     d.rectangle((56, 462, 104, 472), fill=(255, 210, 0))
-    d.text((56, 498), "RECYCLING METALS SINCE 1955 · 116 FURNER AVENUE", font=f2, fill=(205, 205, 205))
+    d.text((56, 498), "FREE DROP-OFF · 116 FURNER AVENUE, NORTH GEELONG", font=f2, fill=(205, 205, 205))
     bg.save(os.path.join(SITE, "og.jpg"), quality=86)
 
 
