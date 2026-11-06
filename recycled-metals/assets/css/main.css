@@ -698,3 +698,95 @@ body.menu-open{overflow:hidden}
 .dk-total .net{margin-top:6px;padding-top:10px;border-top:1px solid var(--black);font-weight:600;font-size:17px}
 .dk-total .net dt{color:var(--black);font-size:14px}
 .dk-foot{line-height:1.5}
+
+/* where it started: Robert Hyde & Co., 1857 (6 Nov 2026) */
+.hl-y{color:var(--yellow)}
+.inv .tlink:hover{color:var(--black)}
+.hist-hero > img{object-position:50% 40%;filter:contrast(1.05)}
+.hist-hero h1{max-width:12em}
+.tok{width:100%;height:auto;overflow:visible}
+.tk-face{fill:#171717}
+.tk-edge{fill:none;stroke:#F2F2EF;stroke-width:2.4}
+.tk-beads{fill:#F2F2EF}
+.tk-ring{fill:none;stroke:#F2F2EF;stroke-width:1.1}
+.tk-leg{fill:#F2F2EF;font:600 12.6px/1 var(--mono);letter-spacing:.16em;text-anchor:middle}
+.tk-dot{fill:#F2F2EF}
+.tok text:not(.tk-leg){fill:#F2F2EF;text-anchor:middle;font-family:var(--disp);font-stretch:118%}
+.tk-c1{font-size:11px;font-weight:800;letter-spacing:.06em}
+.tk-c2{font-size:10.4px;font-weight:700;letter-spacing:.05em}
+.tk-c3{font-size:8.6px;font-weight:600;letter-spacing:.09em}
+.tok .tk-yr{font:500 10px/1 var(--mono);letter-spacing:.2em}
+.tk-rule{stroke:var(--yellow);stroke-width:1.6}
+.tok-rm .tk-edge,.tok-rm .tk-ring{stroke:var(--yellow)}
+.tok-rm .tk-beads,.tok-rm .tk-dot,.tok-rm .tk-leg{fill:var(--yellow)}
+.tok-rm .tk-yr{fill:var(--yellow)!important}
+.tokens{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr);align-items:center;gap:8px}
+.tk-fig{margin:0;text-align:center}
+.tk-fig figcaption{margin-top:18px;font:500 12px/1.45 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#BDBDBA}
+.tk-fig figcaption b{display:block;margin-bottom:4px;font:800 26px/1 var(--disp);font-stretch:118%;letter-spacing:0;color:#fff}
+.tk-arrow{height:3px;background:var(--yellow);position:relative;margin-bottom:64px}
+.tk-arrow::after{content:"";position:absolute;right:-2px;top:-6px;border:7.5px solid transparent;border-left:10px solid var(--yellow);border-right:0}
+.hist-token{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);align-items:center}
+.hist-token .lead{color:#E2E2DF}
+.hist-token .fine{color:#A9AAAC;margin-top:22px}
+.tk-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin:26px 0 0;border-top:1px solid var(--line-d)}
+.tk-facts div{padding:14px 0;border-bottom:1px solid var(--line-d)}
+.tk-facts dt{font:500 11.5px/1.3 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:#A9AAAC;margin-bottom:5px}
+.tk-facts dd{margin:0;font-weight:600}
+@media (max-width:900px){.hist-token{grid-template-columns:1fr}.tokens{max-width:560px}}
+@media (max-width:480px){.tokens{grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr)}.tk-fig figcaption{font-size:10.5px}.tk-fig figcaption b{font-size:20px}.tk-facts{grid-template-columns:1fr}}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;border-top:3px solid var(--black)}
+.tl > li{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:12px 32px;padding:clamp(22px,2.6vw,34px) 0;border-bottom:1px solid var(--rule)}
+.tl-y{margin:0;font:800 clamp(40px,4.4vw,68px)/.9 var(--disp);font-stretch:125%;letter-spacing:-.02em}
+.tl-b p{color:var(--g1);font-size:17.5px;max-width:58ch}
+.tl-b h3{font-size:clamp(21px,1.8vw,26px)}
+.src{display:inline-block;font:500 12px/1.4 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--g2);text-decoration:none;border-bottom:2px solid var(--yellow);padding-bottom:2px}
+.src:hover{color:var(--black);background:var(--yellow)}
+.tl > li.tl-big{grid-template-columns:minmax(0,3fr) minmax(0,4.2fr) minmax(0,4.8fr)}
+.tl-big .tl-y{color:var(--black);background:var(--yellow);justify-self:start;padding:8px 12px 6px}
+.tl-big figure{margin:0}
+.tl-big img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.tl-big figcaption{margin-top:10px;font:500 11.5px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--g2)}
+@media (max-width:860px){.tl > li,.tl > li.tl-big{grid-template-columns:1fr}.tl-y{font-size:44px}}
+
+/* then and now */
+.tn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.tn figure{position:relative;margin:0}
+.tn img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.tn figcaption{margin-top:10px;font:500 11.5px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--g2)}
+.tn-y{position:absolute;left:0;top:0;z-index:1;background:var(--black);color:#fff;font:800 22px/1 var(--disp);font-stretch:118%;padding:10px 14px 9px}
+.tn figure + figure .tn-y{background:var(--yellow);color:var(--black)}
+@media (max-width:700px){.tn{grid-template-columns:1fr}}
+.cmp{margin-top:clamp(36px,4vw,56px);border-top:3px solid var(--black)}
+.cmp-h,.cmp dl > div{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4.5fr) minmax(0,4.5fr);gap:12px 32px}
+.cmp-h{padding:14px 0;border-bottom:1px solid var(--rule);font:500 12.5px/1.3 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--g2)}
+.cmp-h span:last-child{color:var(--black)}
+.cmp dl{margin:0}
+.cmp dl > div{padding:16px 0;border-bottom:1px solid var(--rule)}
+.cmp dt{font-weight:700}
+.cmp dd{margin:0;color:var(--g1)}
+.cmp dd:last-child{color:var(--black);font-weight:500}
+@media (max-width:760px){
+  .cmp-h{display:none}
+  .cmp dl > div{grid-template-columns:1fr;gap:6px}
+  .cmp dd::before{display:inline-block;min-width:62px;font:500 11.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--g2);content:"1857"}
+  .cmp dd:last-child::before{content:"Today";color:var(--black)}
+}
+
+/* sources */
+.srcs{border-top:3px solid var(--black);border-bottom:1px solid var(--rule)}
+.srcs summary{cursor:pointer;padding:18px 0;font:700 15px/1.2 var(--disp);font-stretch:112%;letter-spacing:.03em;text-transform:uppercase}
+.srcs ol{margin:0 0 24px;padding-left:22px;font-size:15px;color:var(--g1)}
+.srcs li{padding:4px 0}
+
+/* home strip */
+.hs-in{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.hs-tok{display:block;transition:transform .3s}
+.hs-tok:hover{transform:rotate(-8deg)}
+.hist-strip .label{color:#A9AAAC}
+.hist-strip h2{max-width:14em}
+.hist-strip .lead{color:#E2E2DF;margin:18px 0 26px;max-width:38em}
+@media (max-width:760px){.hs-in{grid-template-columns:1fr}.hs-tok{max-width:220px}}
+.tl-big .tl-y{align-self:start}

@@ -18,6 +18,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(ROOT), "common"))
 sys.path.insert(0, ROOT)
 import common as C  # noqa: E402
 import map as MAP  # noqa: E402
+import heritage as HER  # noqa: E402
 
 # Recycled Metals overrides (26 Oct 2026, Andy): gate hours. Contact (Rory Tonkin) is set in common.py.
 C.HOURS_DAYS = "Monday to Saturday, 7am to 5pm"
@@ -37,7 +38,7 @@ SITE_URL = C.SITE_BASE + SLUG + "/"
 NAV = [("dropoff", "drop-off.html", "Drop-off"), ("collect", "bins-and-collections.html", "Bins and collections"),
        ("take", "items.html", "What you can drop off"), ("area", "./#area", "Service area")]
 PAGE_KEY = {"index.html": "home", "drop-off.html": "dropoff", "bins-and-collections.html": "collect",
-            "items.html": "take", "enquire.html": "contact"}
+            "items.html": "take", "enquire.html": "contact", "where-it-started.html": "story"}
 # old BTT pages -> new pages (redirects stay at by-the-tonne/)
 REDIRECTS = {"index.html": "", "drop-off.html": "drop-off.html", "services.html": "bins-and-collections.html",
              "what-we-collect.html": "items.html", "quote.html": "enquire.html", "reporting.html": "bins-and-collections.html"}
@@ -337,7 +338,7 @@ def footer():
   <div class="ft-grid">
     <div><p class="label">Drop-off</p><ul><li>{C.FACILITY}</li><li>{C.STREET}, {C.SUBURB}</li><li>{C.HOURS_DAYS}</li><li><a href="drop-off.html">Drop-off details</a></li></ul></div>
     <div><p class="label">Bins and collections</p><ul><li>By enquiry</li><li>{C.CONTACT_FULL}</li><li><a href="tel:{C.PHONE_TEL}">{C.PHONE}</a></li><li><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li></ul></div>
-    <div><p class="label">Pages</p><ul><li><a href="./">Home</a></li>{pages}<li><a href="enquire.html">Enquire</a></li></ul></div>
+    <div><p class="label">Pages</p><ul><li><a href="./">Home</a></li>{pages}<li><a href="enquire.html">Enquire</a></li><li><a href="where-it-started.html">Where it started</a></li></ul></div>
     <div><p class="label">Backed by Recycle Group</p><ul><li>EPA Victoria R000312600</li><li>ISO 9001, 14001 and 45001</li></ul></div>
   </div>
   <div class="ft-rg"><img src="assets/brand/recycle-logo.svg" alt="Recycle Group" width="124" height="19"><p>{C.rg_business(NAME)} · {C.RG_LINE}</p><p class="ft-c">&copy; {year} {NAME}</p></div>
@@ -358,6 +359,7 @@ def page(fname):
         "{{DIR_CHIPS}}": dir_chips(), "{{DOCKET}}": docket(), "{{SIZES}}": sizes(), "{{BIN_SIZES}}": bin_sizes(), "{{CREDS}}": creds(),
         "{{GATE_GUIDE}}": gate_guide(), "{{CANT_TAKE}}": cant_take(), "{{ARROW}}": ARROW, "{{CHECK}}": CHECK, "{{SEARCH}}": SEARCH,
         "{{TOTAL}}": str(TOTAL), "{{CATS}}": str(len(DIR)),
+        "{{TOKENS}}": HER.pair() if "{{TOKENS}}" in body else "", "{{TOKEN_HYDE}}": HER.token("hyde", "h0") if "{{TOKEN_HYDE}}" in body else "",
         "{{PHONE}}": C.PHONE.replace(" ", "&nbsp;"), "{{PHONE_TEL}}": C.PHONE_TEL, "{{EMAIL}}": C.EMAIL,
         "{{CONTACT}}": C.CONTACT_NAME, "{{CONTACT_FULL}}": C.CONTACT_FULL, "{{FACILITY}}": C.FACILITY,
         "{{STREET}}": C.STREET, "{{SUBURB}}": C.SUBURB, "{{ADDRESS}}": C.ADDRESS.replace("VIC 3215", "VIC&nbsp;3215"),
