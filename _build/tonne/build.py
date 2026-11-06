@@ -308,7 +308,7 @@ def area():
 # ---------------------------------------------------------------- layout
 def topbar():
     return (f'<div class="tb"><div class="wrap tb-in">'
-            f'<span class="tb-rg">A Recycle Group business <img src="assets/brand/recycle-logo.svg" alt="Recycle Group" width="96" height="15"></span>'
+            f'<span class="tb-rg">A Recycle Group initiative <img src="assets/brand/recycle-logo.svg" alt="Recycle Group" width="96" height="15"></span>'
             f'<span class="tb-r"><span class="tb-hide">Free drop-off · {C.HOURS_SHORT} · {C.STREET}, North Geelong</span>'
             f'<a href="tel:{C.PHONE_TEL}">{C.PHONE}</a></span>'
             f'</div></div>')
