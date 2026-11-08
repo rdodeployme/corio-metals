@@ -50,6 +50,29 @@ def recolour(svg, text_accent):
     return svg
 
 
+def fade_wordmark(svg, white="#F2F4F5"):
+    """8 Nov 2026 (Andy): a very slow gradient across "Recycled", the R white and the d full yellow.
+    The glyphs each carry their own translate, so a userSpaceOnUse gradient on them would restart per
+    letter. Instead the glyphs become a clipPath and one gradient-filled rect, in the root coordinates,
+    is clipped to them. Glyph units: R starts at 0 and is about 628 wide; the d starts at about 4036."""
+    i = svg.find("<g transform=")
+    j = svg.find("</g>", i) + 4
+    g = svg[i:j]
+    tx, ty, s = map(float, re.match(r'<g transform="translate\(([\d.]+),([\d.]+)\) scale\(([\d.]+),', g).groups())
+    x_white = tx + 314 * s      # middle of the R
+    x_yellow = tx + 4036 * s    # left edge of the d
+    left, right = tx - 10, tx + 4800 * s
+    top, bottom = ty - 760 * s, ty + 220 * s   # cap height down to the g's descender
+    # Browsers ignore a <g> inside a clipPath, so the group's transform moves onto the clipPath itself.
+    gt = re.match(r'<g (transform="[^"]+")>', g).group(1)
+    glyphs = re.sub(r' fill="#[0-9A-Fa-f]{6}"', "", g[g.find(">") + 1:-4])
+    new = (f'<defs><linearGradient id="rm-fade" gradientUnits="userSpaceOnUse" x1="{x_white:.1f}" y1="0" x2="{x_yellow:.1f}" y2="0">'
+           f'<stop offset="0" stop-color="{white}"/><stop offset="1" stop-color="{YELLOW}"/></linearGradient>'
+           f'<clipPath id="rm-word" {gt}>{glyphs}</clipPath></defs>'
+           f'<rect x="{left:.1f}" y="{top:.1f}" width="{right - left:.1f}" height="{bottom - top:.1f}" fill="url(#rm-fade)" clip-path="url(#rm-word)"/>')
+    return svg[:i] + new + svg[j:]
+
+
 def label(svg, text="Recycled Metals"):
     return svg.replace("<svg ", f'<svg role="img" aria-label="{text}" ', 1)
 
@@ -66,7 +89,7 @@ def size(svg):
 def lockup(theme="light"):
     """logo-dark.svg: for dark backgrounds. logo-light.svg: for light backgrounds."""
     if theme == "dark":
-        svg = recolour(read("recycled-logo-on-dark.svg"), YELLOW)
+        svg = fade_wordmark(recolour(read("recycled-logo-on-dark.svg"), YELLOW))
     else:
         svg = recolour(read("recycled-logo-on-light.svg"), BLACK).replace("#0F1214", BLACK)
     open(os.path.join(OUT, f"logo-{theme}.svg"), "w").write(label(svg))
@@ -76,7 +99,7 @@ def lockup(theme="light"):
 def plate_only():
     """Compact logo for narrow screens (kept as plate.svg so build.py's paths don't change):
     the stacked lockup on dark."""
-    svg = recolour(read("recycled-logo-stacked-on-dark.svg"), YELLOW)
+    svg = fade_wordmark(recolour(read("recycled-logo-stacked-on-dark.svg"), YELLOW))
     open(os.path.join(OUT, "plate.svg"), "w").write(label(svg))
     open(os.path.join(OUT, "mark.svg"), "w").write(label(recolour(read("recycled-mark-on-dark.svg"), YELLOW)))
     return size(svg)
