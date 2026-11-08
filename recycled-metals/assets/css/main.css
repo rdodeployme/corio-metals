@@ -790,3 +790,9 @@ body.menu-open{overflow:hidden}
 .hist-strip .lead{color:#E2E2DF;margin:18px 0 26px;max-width:38em}
 @media (max-width:760px){.hs-in{grid-template-columns:1fr}.hs-tok{max-width:220px}}
 .tl-big .tl-y{align-self:start}
+/* 8 Nov: story hero on top of home; its heading is an h2 so the page h1 stays "Free metal drop-off" */
+.hero h2.h1{max-width:11.5em;margin-bottom:.36em;font-size:clamp(36px,5.4vw,80px)}
+.hero h2.h1 .hl{color:var(--yellow)}
+.hist-token .tlink{margin-top:22px}
+@media (max-width:560px){.hero h2.h1{font-stretch:108%}}
+.hist-hero h2.h1{max-width:12em}
